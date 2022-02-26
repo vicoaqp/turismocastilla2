@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Castilla</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="BotonSiguiente">siguiente</string>
+    <string name="BotonAnterior">Anterior</string>
+    <string name="txtdezcripcion">Descripcion</string>
+    <string name="txtdireccion">Direccion</string>
+    <string name="txthorarios">Horarios</string>
+    <string name="txtcelulares">Celulares</string>
+    <string name="fundobarra">Fundo barra es un lugar pensado en cada momento. Es un lugar para una salida con amigo, una reunión de trabajo, un festejo de cumpleaños o una cena tranquila. Ven y crea tu instante.</string>
+    <string name="desaplao">La provincia fue creada en honor al Mariscal Ramón Castilla a petición del pueblo de Aplao mediante acta suscrita por 410 ciudadanos del valle de Majes el 7 de marzo de 1854. Fue creada mediante Decreto Supremo del 21 de marzo de 1854, sobre la base de las parroquias de Aplao, Andagua, Chachas, Huancarqui, Pampacolca, Viraco y Choco.</string>
+    <string name="castilloencantado"> Formacion rocosa como castillo formada por el pasar de los años y con la ayuda del viento, se cuenta muchas leyendas de este lugar maravilloso y encantador el cual se puede llegar a pie o a caballo </string>
+    <string name="itemA">Diseño Web</string>
+
+
+
 </resources>

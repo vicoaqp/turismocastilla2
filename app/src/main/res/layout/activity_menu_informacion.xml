@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <Button
+            0<Button
                 android:id="@+id/button_historia"
                 style="@style/botonesdise"
                 android:background="@drawable/historiapng" />

@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         val boton1=findViewById<Button>(R.id.button_princ)
 
         boton1.setOnClickListener {
-            val lanzar= Intent(this, MenuDistritos::class.java)
+            val lanzar= Intent(this, HistoriaApl::class.java)
             startActivity(lanzar)
         }
 

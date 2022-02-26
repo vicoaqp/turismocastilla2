@@ -16,4 +16,31 @@
         <item name="android:layout_marginEnd">10dp</item>
     </style>
 
+
+    <style name="labeltitulo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="labeldezcripcion">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+    </style>
+
+    <style name="contenedorez">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+    </style>
+
+
 </resources>
