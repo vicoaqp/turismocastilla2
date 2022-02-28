@@ -6,127 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".HistoriaApl">
 
-
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/slider"
+        android:layout_width="364dp"
+        android:layout_height="447dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/slider"
-                android:layout_width="match_parent"
-                android:layout_height="284dp" />
-
-            <TextView
-                android:id="@+id/textdescripcion"
-                style="@style/labeltitulo"
-                android:text="@string/txtdezcripcion"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-            <TextView
-                android:id="@+id/texdescripgastro"
-                style="@style/labeldezcripcion"
-                android:text="@string/desaplao"
-                />
-            <TextView
-                android:id="@+id/textdireccion"
-                style="@style/labeltitulo"
-                android:text="@string/txtdireccion"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-            <TextView
-                android:id="@+id/txtdireccion"
-                style="@style/labeldezcripcion"
-                android:text="Distrito de Aplao - Provincia Castilla - Departamento Arequipa"
-                />
-            <TextView
-                android:id="@+id/texthorarios"
-                style="@style/labeltitulo"
-                android:text="@string/txthorarios"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-            <TextView
-                android:id="@+id/txthorarios"
-                style="@style/labeldezcripcion"
-                android:text="Lunes a Domingo"
-                />
-            <TextView
-                android:id="@+id/texttitulocelulares"
-                style="@style/labeltitulo"
-                android:text="@string/txtcelulares"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-            <TextView
-                android:id="@+id/txtcelulares"
-                style="@style/labeldezcripcion"
-                android:text="969734486"
-                />
-
-
-
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/imageView4"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/logollamada" />
-
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="20dp"
-                        app:srcCompat="@drawable/logofacebook" />
-                    <ImageView
-                        android:id="@+id/imageView6"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="20dp"
-                        app:srcCompat="@drawable/maps" />
-
-                </LinearLayout>
-            </HorizontalScrollView>
-
-
-
-
-        </LinearLayout>
-    </ScrollView>
-    <ScrollView
-        android:id="@+id/scrollboton"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/button_home"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/homepng" />
-        </LinearLayout>
-    </ScrollView>
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="199dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
