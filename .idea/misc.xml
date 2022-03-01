@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_historia_apl.xml" value="0.22" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_distritos.xml" value="0.33" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_eleccion.xml" value="0.25" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_historia_apl.xml" value="0.16033755274261605" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_main.xml" value="0.15384615384615385" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_menu_distritos.xml" value="0.16429840142095914" />

@@ -7,64 +7,71 @@
     tools:context=".login">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="130dp"
-        android:layout_height="67dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        android:id="@+id/btningreso"
+        android:layout_width="124dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="4dp"
+        android:text="Ingreso"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/paslog"
+        app:layout_constraintTop_toBottomOf="@+id/paslog"
+        app:layout_constraintVertical_bias="0.305" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnsalir"
         android:layout_width="130dp"
         android:layout_height="67dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="36dp"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        app:layout_constraintBottom_toBottomOf="@+id/btningreso"
+        app:layout_constraintEnd_toStartOf="@+id/btningreso"
+        app:layout_constraintTop_toTopOf="@+id/btningreso"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/userlog"
+        android:layout_width="315dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtlogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Usuario" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/paslog"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="296dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/userlog">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtpas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="179dp"
-        android:layout_height="198dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginBottom="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        android:layout_width="287dp"
+        android:layout_height="228dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintHorizontal_bias="0.413"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/aplao1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
