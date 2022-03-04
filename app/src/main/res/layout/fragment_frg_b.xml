@@ -32,7 +32,7 @@
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="318dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/aplao1" />
@@ -40,14 +40,16 @@
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="318dp"
                 android:src="@drawable/aplao4" />
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="318dp"
-                android:src="@drawable/aplao3" />
+                android:src="@drawable/aplao3"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"/>
 
         </LinearLayout>
     </ScrollView>

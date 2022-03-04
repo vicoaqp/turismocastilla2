@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Eleccion">
+    tools:context=".Hoteles">
 
     <ScrollView
         android:layout_width="0dp"
@@ -16,38 +16,22 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button_historia"
+                android:id="@+id/button_buenosaires"
                 style="@style/botonesdise"
-                android:background="@drawable/historiapng" />
-
+                android:background="@drawable/hbuenosairesaplao" />
             <Button
-                android:id="@+id/button_quehacer"
+                android:id="@+id/button_hrambo1"
                 style="@style/botonesdise"
-                android:background="@drawable/quehacerpng" />
-
+                android:background="@drawable/hcasalindaaplao" />
             <Button
-                android:id="@+id/button_hospedaje"
+                android:id="@+id/button_titanic1"
                 style="@style/botonesdise"
-                android:background="@drawable/hospedajepng" />
-
-            <Button
-                android:id="@+id/button_gastronomia"
-                style="@style/botonesdise"
-                android:background="@drawable/gastronomiapng" />
-            <Button
-                android:id="@+id/button_vinedos"
-                style="@style/botonesdise"
-                android:background="@drawable/vinedos" />
-
-            <Button
-                android:id="@+id/button_movilidad"
-                style="@style/botonesdise"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/movilidadpng" />
+                android:background="@drawable/hmunicipalaplao" />
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

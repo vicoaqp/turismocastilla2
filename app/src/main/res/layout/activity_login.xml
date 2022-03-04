@@ -8,58 +8,73 @@
 
     <Button
         android:id="@+id/btningreso"
+
         android:layout_width="124dp"
         android:layout_height="66dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:text="Ingreso"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/paslog"
         app:layout_constraintTop_toBottomOf="@+id/paslog"
-        app:layout_constraintVertical_bias="0.305" />
+        app:layout_constraintVertical_bias="0.338" />
 
     <Button
         android:id="@+id/btnsalir"
         android:layout_width="130dp"
         android:layout_height="67dp"
         android:layout_marginEnd="36dp"
-        android:text="Button"
+        android:text="Salir"
         app:layout_constraintBottom_toBottomOf="@+id/btningreso"
         app:layout_constraintEnd_toStartOf="@+id/btningreso"
+        app:layout_constraintStart_toStartOf="@+id/paslog"
         app:layout_constraintTop_toTopOf="@+id/btningreso"
         app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userlog"
-        android:layout_width="315dp"
+
+        android:layout_width="match_parent"
+
         android:layout_height="0dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:startIconDrawable="@drawable/iconusuario">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtlogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FBF2F2"
             android:hint="Usuario" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/paslog"
         android:layout_width="0dp"
+
         android:layout_height="wrap_content"
+
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
+        app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userlog">
+        app:layout_constraintTop_toBottomOf="@+id/userlog"
+        app:startIconDrawable="@drawable/ic_baseline_security_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtpas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#F8F0F0"
             android:hint="Contraseña" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,7 +82,7 @@
         android:id="@+id/imageView"
         android:layout_width="287dp"
         android:layout_height="228dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.413"
         app:layout_constraintStart_toStartOf="parent"

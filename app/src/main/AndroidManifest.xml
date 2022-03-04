@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Castilla">
         <activity
+            android:name=".Turismo"
+            android:exported="false" />
+        <activity
+            android:name=".Hoteles"
+            android:exported="false" />
+        <activity
+            android:name=".Gastronomia"
+            android:exported="false" />
+        <activity
+            android:name=".LocalDistrito"
+            android:exported="false" />
+        <activity
+            android:name=".LocalInfo"
+            android:exported="false" />
+        <activity
             android:name=".Eleccion"
             android:exported="false" />
         <activity
