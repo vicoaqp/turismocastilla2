@@ -15,6 +15,7 @@ class Distritos : AppCompatActivity() {
 
         botonapl.setOnClickListener{
             val aplao= Intent(this,Eleccion::class.java)
+            aplao.putExtra("Distrito","aplao")
             startActivity(aplao)
         }
 

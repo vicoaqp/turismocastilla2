@@ -1,10 +1,15 @@
 package com.turismo.castilla
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.turismo.castilla.databinding.FragmentFrgABinding
+import com.turismo.castilla.databinding.FragmentFrgDBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,8 +38,18 @@ class frgD : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_frg_d, container, false)
+        val boton= FragmentFrgDBinding.inflate(layoutInflater)
+
+        boton.bllamada.setOnClickListener{
+            val myUri= Uri.parse("tel:969734486").let { numeroTelefonoUri ->
+                Intent(Intent.ACTION_DIAL,numeroTelefonoUri)
+            }
+            startActivity(myUri)
+
+        }
+
+
+        return boton.root
     }
 
     companion object {

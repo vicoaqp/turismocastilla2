@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_distritos.xml" value="0.33" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_distritos.xml" value="0.2138570649208947" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_eleccion.xml" value="0.25" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_gastronomia.xml" value="0.25" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_historia_apl.xml" value="0.16033755274261605" />
@@ -14,7 +14,10 @@
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_menu_distritos.xml" value="0.16429840142095914" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_menu_informacion.xml" value="0.25" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_movilidad.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_pruebas.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_turismo.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_vinedos.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frg_a.xml" value="0.33" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frg_b.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frg_c.xml" value="0.20416666666666666" />

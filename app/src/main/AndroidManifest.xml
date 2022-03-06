@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Castilla">
         <activity
+            android:name=".Pruebas"
+            android:exported="false" />
+        <activity
+            android:name=".Movilidad"
+            android:exported="false" />
+        <activity
+            android:name=".Vinedos"
+            android:exported="false" />
+        <activity
             android:name=".Turismo"
             android:exported="false" />
         <activity

@@ -23,18 +23,9 @@ class MainActivity : AppCompatActivity() {
 
         },5000)
 
-        val boton1=findViewById<Button>(R.id.button_princ)
 
-        boton1.setOnClickListener {
-            val lanzar= Intent(this, login::class.java)
-            startActivity(lanzar)
-        }
-        val boton2=findViewById<Button>(R.id.botonsecu)
 
-        boton2.setOnClickListener {
-            val lanzar2= Intent(this, HistoriaApl::class.java)
-            startActivity(lanzar2)
-        }
+
 
     }
 }
