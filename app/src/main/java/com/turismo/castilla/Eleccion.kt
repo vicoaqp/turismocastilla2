@@ -21,8 +21,11 @@ class Eleccion : AppCompatActivity() {
         val aplaovin=findViewById<Button>(R.id.button_vinedos)
         val aplaomov=findViewById<Button>(R.id.button_movilidad)
 
+
+        //DISTRITO
         aplaoh.setOnClickListener{
             val lanzar=Intent(this,HistoriaApl::class.java)
+            lanzar.putExtra("dist",namedistrito)
             startActivity(lanzar)
         }
         aplaoqh.setOnClickListener{
@@ -30,7 +33,7 @@ class Eleccion : AppCompatActivity() {
             startActivity(lanzar2)
         }
         aplaogast.setOnClickListener{
-            val lanzar3=Intent(this,Gastronomia::class.java)
+            val lanzar3=Intent(this,GastronomiaAplao::class.java)
             startActivity(lanzar3)
         }
         aplaohos.setOnClickListener{

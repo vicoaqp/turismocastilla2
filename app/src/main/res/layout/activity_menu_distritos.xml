@@ -21,42 +21,42 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button_aplao"
+                android:id="@+id/button_fundobarra"
                 style="@style/botonesdise"
                 android:background="@drawable/aplaopripng" />
 
             <Button
-                android:id="@+id/button_huancarqui"
+                android:id="@+id/button_casmauro"
                 style="@style/botonesdise"
                 android:background="@drawable/huancarquipng" />
 
             <Button
-                android:id="@+id/button_corire"
+                android:id="@+id/button_yupanqui"
                 style="@style/botonesdise"
                 android:background="@drawable/uracapng" />
 
             <Button
-                android:id="@+id/button_viraco"
+                android:id="@+id/button_kasamia"
                 style="@style/botonesdise"
                 android:background="@drawable/viracopng" />
 
             <Button
-                android:id="@+id/button_pampacolca"
+                android:id="@+id/button_majeriver"
                 style="@style/botonesdise"
                 android:background="@drawable/pampacolcapripng" />
 
             <Button
-                android:id="@+id/button_machahuay"
+                android:id="@+id/button_rambo"
                 style="@style/botonesdise"
                 android:background="@drawable/machahuaypng" />
 
             <Button
-                android:id="@+id/button_andagua"
+                android:id="@+id/button_rocasbambu"
                 style="@style/botonesdise"
                 android:background="@drawable/andaguapng" />
 
             <Button
-                android:id="@+id/button_chilcaymarca"
+                android:id="@+id/button_titanic"
                 style="@style/botonesdise"
                 android:background="@drawable/chilcaymarcapng" />
 

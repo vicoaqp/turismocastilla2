@@ -34,9 +34,8 @@
                 />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/tdes"
                 style="@style/labeldezcripcion"
-                android:text="@string/desaplao"
                 app:layout_constraintTop_toBottomOf="@+id/textdescripcion" />
 
             <TextView
@@ -44,12 +43,11 @@
                 style="@style/labeltitulo"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/txtdireccion"
-                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                app:layout_constraintTop_toBottomOf="@+id/tdes" />
 
             <TextView
-                android:id="@+id/txtdireccion"
+                android:id="@+id/tdireccion"
                 style="@style/labeldezcripcion"
-                android:text="Distrito de Aplao - Provincia Castilla - Departamento Arequipa"
                 app:layout_constraintTop_toBottomOf="@+id/textdireccion" />
 
             <TextView
@@ -57,12 +55,11 @@
                 style="@style/labeltitulo"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/titualcalde"
-                app:layout_constraintTop_toBottomOf="@+id/txtdireccion" />
+                app:layout_constraintTop_toBottomOf="@+id/tdireccion" />
 
             <TextView
-                android:id="@+id/txtalcalde"
+                android:id="@+id/talcalde"
                 style="@style/labeldezcripcion"
-                android:text="@string/txtalcalde"
                 app:layout_constraintTop_toBottomOf="@+id/textalcalde" />
 
             <TextView
@@ -70,12 +67,11 @@
                 style="@style/labeltitulo"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/txtanexos"
-                app:layout_constraintTop_toBottomOf="@+id/txtalcalde" />
+                app:layout_constraintTop_toBottomOf="@+id/talcalde" />
 
             <TextView
-                android:id="@+id/txtanexos"
+                android:id="@+id/tanexos"
                 style="@style/labeldezcripcion"
-                android:text="@string/aplaoanexos"
                 app:layout_constraintTop_toBottomOf="@+id/textanexos" />
 
             <TextView
@@ -83,12 +79,11 @@
                 style="@style/labeltitulo"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/txtfestividades"
-                app:layout_constraintTop_toBottomOf="@+id/txtalcalde" />
+                app:layout_constraintTop_toBottomOf="@+id/talcalde" />
 
             <TextView
-                android:id="@+id/txtfiestas"
+                android:id="@+id/tfestividades"
                 style="@style/labeldezcripcion"
-                android:text="@string/festividades"
                 app:layout_constraintTop_toBottomOf="@+id/textanexos" />
 
             <TextView
@@ -96,12 +91,11 @@
                 style="@style/labeltitulo"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/txtcelulares"
-                app:layout_constraintTop_toBottomOf="@+id/txtanexos" />
+                app:layout_constraintTop_toBottomOf="@+id/tanexos" />
 
             <TextView
-                android:id="@+id/txtcelulares"
+                android:id="@+id/tcelulares"
                 style="@style/labeldezcripcion"
-                android:text="969734486"
                 app:layout_constraintTop_toBottomOf="@+id/texttitulocelulares" />
 
             <Button

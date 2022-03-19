@@ -2,12 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout5"
+    android:id="@+id/frameLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".frgE">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".Restaurante">
 
     <ScrollView
         android:layout_width="0dp"
@@ -28,91 +26,69 @@
 
 
             <TextView
-                android:id="@+id/textdescripcion"
+                android:id="@+id/textrdescripcion"
                 style="@style/labeltitulo"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/txtdezcripcion"
                 />
 
             <TextView
-                android:id="@+id/tdes"
+                android:id="@+id/trdes"
                 style="@style/labeldezcripcion"
-                android:text="@string/desaplao"
                 app:layout_constraintTop_toBottomOf="@+id/textdescripcion" />
 
             <TextView
-                android:id="@+id/textdireccion"
+                android:id="@+id/textrdireccion"
                 style="@style/labeltitulo"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/txtdireccion"
                 app:layout_constraintTop_toBottomOf="@+id/tdes" />
 
             <TextView
-                android:id="@+id/tdireccion"
+                android:id="@+id/trdireccion"
                 style="@style/labeldezcripcion"
-                android:text="Distrito de Aplao - Provincia Castilla - Departamento Arequipa"
                 app:layout_constraintTop_toBottomOf="@+id/textdireccion" />
 
             <TextView
-                android:id="@+id/textalcalde"
+                android:id="@+id/textfalcalde"
                 style="@style/labeltitulo"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:text="@string/titualcalde"
+                android:text="@string/txthorarios"
                 app:layout_constraintTop_toBottomOf="@+id/tdireccion" />
 
             <TextView
-                android:id="@+id/talcalde"
+                android:id="@+id/trhorarios"
                 style="@style/labeldezcripcion"
-                android:text="@string/txtalcalde"
                 app:layout_constraintTop_toBottomOf="@+id/textalcalde" />
 
             <TextView
-                android:id="@+id/textanexos"
+                android:id="@+id/textdatencion"
                 style="@style/labeltitulo"
+                android:text="@string/txtdiasatencion"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:text="@string/txtanexos"
-                app:layout_constraintTop_toBottomOf="@+id/talcalde" />
+                app:layout_constraintTop_toBottomOf="@+id/trhorarios" />
 
             <TextView
-                android:id="@+id/tanexos"
+                android:id="@+id/trdias"
                 style="@style/labeldezcripcion"
-                android:text="@string/aplaoanexos"
-                app:layout_constraintTop_toBottomOf="@+id/textanexos" />
+                app:layout_constraintTop_toBottomOf="@+id/textdatencion" />
 
             <TextView
-                android:id="@+id/textfiestas"
-                style="@style/labeltitulo"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:text="@string/txtfestividades"
-                app:layout_constraintTop_toBottomOf="@+id/talcalde" />
-
-            <TextView
-                android:id="@+id/tfestividades"
-                style="@style/labeldezcripcion"
-                android:text="@string/festividades"
-                app:layout_constraintTop_toBottomOf="@+id/textanexos" />
-
-            <TextView
-                android:id="@+id/texttitulocelulares"
+                android:id="@+id/textrtitulocelulares"
                 style="@style/labeltitulo"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/txtcelulares"
-                app:layout_constraintTop_toBottomOf="@+id/tanexos" />
+                app:layout_constraintTop_toBottomOf="@+id/trdias" />
 
             <TextView
-                android:id="@+id/tcelulares"
+                android:id="@+id/trcelulares"
                 style="@style/labeldezcripcion"
-                android:text="969734486"
                 app:layout_constraintTop_toBottomOf="@+id/texttitulocelulares" />
-
-            <Button
-                android:id="@+id/buttonllamada"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
 
         </LinearLayout>
     </ScrollView>
+
+
 
 
 

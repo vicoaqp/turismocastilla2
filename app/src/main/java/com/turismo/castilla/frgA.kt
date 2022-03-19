@@ -1,73 +1,66 @@
 package com.turismo.castilla
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.FragmentResultListener
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import com.turismo.castilla.databinding.ActivityHistoriaAplBinding
 import com.turismo.castilla.databinding.FragmentFrgABinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [frgA.newInstance] factory method to
- * create an instance of this fragment.
- */
 class frgA : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    lateinit var layout:FragmentFrgABinding
+    private val binding get() = layout
+    var ndistrito:String?=""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
 
+        parentFragmentManager.setFragmentResultListener("paquete1",this,
+            FragmentResultListener { reStr: String, data: Bundle ->
+                ndistrito= data.getString("DISTRITO")
+                //Log.i("resu",ndistrito.toString())
+                //layout.tdes.text=ndistrito
+                val db= Firebase.firestore
+                db.collection("distritos")
+                    .whereEqualTo("namedistrito",ndistrito)
+                    .get()
+                    .addOnSuccessListener { result ->
+                        for (document in result) {
+                            layout.tdes.text= document.data.get("descripcion").toString()
+                            layout.talcalde.text=document.data.get("alcalde").toString()
+                            layout.tdireccion.text=document.data.get("direccion").toString()
+                            layout.tanexos.text=document.data.get("anexos").toString()
+                            layout.tfestividades.text=document.data.get("festividades").toString()
+                            layout.tcelulares.text=document.data.get("celular").toString()
+                        }
+                    }
+            }
+        )
 
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
 
-        val boton=FragmentFrgABinding.inflate(layoutInflater)
+        layout= FragmentFrgABinding.inflate(inflater,container,false)
 
-        boton.buttonllamada.setOnClickListener{
-            Toast.makeText(this@frgA.requireContext(),"salio resulto",Toast.LENGTH_LONG).show()
 
-        }
 
-        return boton.root
+        return layout.root
 
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment frgA.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            frgA().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }
