@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_descri_hotel.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_descri_restaurante.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_descri_turismo.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_descri_vinedos.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_distritos.xml" value="0.2138570649208947" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_eleccion.xml" value="0.25" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_gastro_corire.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_gastronomia.xml" value="0.25" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_gastronomia_aplao.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_historia_apl.xml" value="0.16033755274261605" />
@@ -20,8 +24,17 @@
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_pruebas.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_turismo.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_vinedos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_des_hotel.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_des_turi.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_des_vinedos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_foto_turi.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_fotos_hotel.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_fotos_res.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_fotos_vinedos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_link_hotel.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_link_res.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_link_vinedos.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frg_a.xml" value="0.25" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frg_b.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vicoaqp/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frg_c.xml" value="0.20416666666666666" />

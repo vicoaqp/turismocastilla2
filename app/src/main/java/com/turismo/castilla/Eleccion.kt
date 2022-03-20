@@ -11,7 +11,7 @@ class Eleccion : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_eleccion)
 
-        val namedistrito=intent.extras?.getString("Distrito")
+        var namedistrito=intent.extras?.getString("Distrito")
         Toast.makeText(this,namedistrito.toString(),Toast.LENGTH_LONG).show()
 
         val aplaoh=findViewById<Button>(R.id.button_historia)
@@ -30,11 +30,18 @@ class Eleccion : AppCompatActivity() {
         }
         aplaoqh.setOnClickListener{
             val lanzar2=Intent(this,Turismo::class.java)
+            lanzar2.putExtra("dist",namedistrito)
             startActivity(lanzar2)
         }
+
         aplaogast.setOnClickListener{
-            val lanzar3=Intent(this,GastronomiaAplao::class.java)
-            startActivity(lanzar3)
+            if(namedistrito =="aplao"){
+                val lanzar3=Intent(this,GastronomiaAplao::class.java)
+                startActivity(lanzar3)
+            }else if(namedistrito =="uraca"){
+                val lanzar3=Intent(this,GastroCorire::class.java)
+                startActivity(lanzar3)
+            }
         }
         aplaohos.setOnClickListener{
             val lanzar4=Intent(this,Hoteles::class.java)

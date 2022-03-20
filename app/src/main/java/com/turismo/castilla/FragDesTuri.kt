@@ -1,19 +1,15 @@
 package com.turismo.castilla
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.text.Layout
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.FragmentResultListener
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.turismo.castilla.databinding.FragmentFragLinkResBinding
+import com.turismo.castilla.databinding.FragmentFragDesTuriBinding
 import com.turismo.castilla.databinding.FragmentRestauranteBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -23,63 +19,50 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FragLinkRes.newInstance] factory method to
+ * Use the [FragDesTuri.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FragLinkRes : Fragment() {
-    lateinit var layout:FragmentFragLinkResBinding
-    private val binding get()=layout
-    var linkf:String?=""
-
-    lateinit var cadenare:String
+class FragDesTuri : Fragment() {
+    lateinit var layout:FragmentFragDesTuriBinding
+    private val Binding get() = layout
+    var turiva:String?=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-
-            Log.i("resu","ENTRO AHORAAAA")
 
 
+        parentFragmentManager.setFragmentResultListener("fragturismo",this,
+            FragmentResultListener{ reStr: String, data: Bundle ->
+                turiva= data.getString("turismova")
+                Log.i("resu",turiva.toString())
+                //layout.tdes.text=ndistrito
+
+                val db= Firebase.firestore
+                db.collection("turismo")
+                    .whereEqualTo("nameturismo",turiva)
+                    .get()
+                    .addOnSuccessListener { result ->
+                        for (document in result) {
+                            layout.turides.text= document.data.get("descripcion").toString()
+                            layout.turidireccion.text=document.data.get("direccion").toString()
+                            layout.turidias.text=document.data.get("dias").toString()
+                            layout.turihorarios.text=document.data.get("horario").toString()
+                            layout.turicelulares.text=document.data.get("celular").toString()
+
+                        }
+                    }
+            }
+        )
 
 
 
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        layout= FragmentFragLinkResBinding.inflate(inflater,container,false)
-        var datolink:String?=""
-        Log.i("resu","VIEW2")
-
-
-
-
-
-        layout.brface.setOnClickListener{
-
-                    val db= Firebase.firestore
-                    db.collection("facebook")
-                        .whereEqualTo("nameface","titanic")
-                        .get()
-                        .addOnSuccessListener { result ->
-                            for (document in result) {
-                                layout.linkrez.text= document.data.get("url").toString()
-                                Log.i("resu","dae"+cadenare.toString())
-
-                            }
-                            //layout.linkrez.text=cadenare
-
-
-                        }
-
-            val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/LibertadorCastillaAplao"))
-            startActivity(face)
-
-        }
+        layout= FragmentFragDesTuriBinding.inflate(inflater,container,false)
 
         return layout.root
     }
@@ -91,12 +74,12 @@ class FragLinkRes : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment FragLinkRes.
+         * @return A new instance of fragment FragDesTuri.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FragLinkRes().apply {
+            FragDesTuri().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

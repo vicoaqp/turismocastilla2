@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout9"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragDesHotel">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/texthdescripcion"
+                style="@style/labeltitulo"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:text="@string/txtdezcripcion"
+                />
+
+            <TextView
+                android:id="@+id/hoteldes"
+                style="@style/labeldezcripcion"
+                app:layout_constraintTop_toBottomOf="@+id/textdescripcion" />
+
+            <TextView
+                android:id="@+id/texthdireccion"
+                style="@style/labeltitulo"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:text="@string/txtdireccion"
+                app:layout_constraintTop_toBottomOf="@+id/tdes" />
+
+            <TextView
+                android:id="@+id/hoteldireccion"
+                style="@style/labeldezcripcion"
+                app:layout_constraintTop_toBottomOf="@+id/textdireccion" />
+
+            <TextView
+                android:id="@+id/texthfalcalde"
+                style="@style/labeltitulo"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:text="@string/txthorarios"
+                app:layout_constraintTop_toBottomOf="@+id/tdireccion" />
+
+            <TextView
+                android:id="@+id/hotelhorarios"
+                style="@style/labeldezcripcion"
+                app:layout_constraintTop_toBottomOf="@+id/textalcalde" />
+
+            <TextView
+                android:id="@+id/texthdatencion"
+                style="@style/labeltitulo"
+                android:text="@string/txtdiasatencion"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintTop_toBottomOf="@+id/trhorarios" />
+
+            <TextView
+                android:id="@+id/hoteldias"
+                style="@style/labeldezcripcion"
+                app:layout_constraintTop_toBottomOf="@+id/textdatencion" />
+
+            <TextView
+                android:id="@+id/texthtitulocelulares"
+                style="@style/labeltitulo"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:text="@string/txtcelulares"
+                app:layout_constraintTop_toBottomOf="@+id/trdias" />
+
+            <TextView
+                android:id="@+id/hotelcelulares"
+                style="@style/labeldezcripcion"
+                app:layout_constraintTop_toBottomOf="@+id/texttitulocelulares" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

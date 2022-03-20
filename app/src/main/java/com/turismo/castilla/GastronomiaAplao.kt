@@ -12,7 +12,49 @@ class GastronomiaAplao : AppCompatActivity() {
 
         val btitanic=findViewById<Button>(R.id.button_titanic)
         val bkasamia=findViewById<Button>(R.id.button_kasamia)
+        val bfundobarra=findViewById<Button>(R.id.button_fundobarra)
+        val bcasademauro=findViewById<Button>(R.id.button_casmauro)
+        val bfundoyupanqui=findViewById<Button>(R.id.button_yupanqui)
+        val bmajesriver=findViewById<Button>(R.id.button_majeriver)
+        val brambo=findViewById<Button>(R.id.button_rambo)
+        val brocasbambu=findViewById<Button>(R.id.button_rocasbambu)
 
+
+        brocasbambu.setOnClickListener{
+            val lanzar=Intent(this,DescriRestaurante::class.java)
+            lanzar.putExtra("resta","rokasbambu")
+            startActivity(lanzar)
+        }
+
+        brambo.setOnClickListener{
+            val lanzar=Intent(this,DescriRestaurante::class.java)
+            lanzar.putExtra("resta","rambo")
+            startActivity(lanzar)
+        }
+
+        bmajesriver.setOnClickListener{
+            val lanzar=Intent(this,DescriRestaurante::class.java)
+            lanzar.putExtra("resta","majesriver")
+            startActivity(lanzar)
+        }
+
+        bfundoyupanqui.setOnClickListener{
+            val lanzar=Intent(this,DescriRestaurante::class.java)
+            lanzar.putExtra("resta","fundoyupanqui")
+            startActivity(lanzar)
+        }
+
+        bcasademauro.setOnClickListener{
+            val lanzar=Intent(this,DescriRestaurante::class.java)
+            lanzar.putExtra("resta","casademauro")
+            startActivity(lanzar)
+        }
+
+        bfundobarra.setOnClickListener{
+            val lanzar=Intent(this,DescriRestaurante::class.java)
+            lanzar.putExtra("resta","fundobarra")
+            startActivity(lanzar)
+        }
 
         btitanic.setOnClickListener{
             val lanzar=Intent(this,DescriRestaurante::class.java)

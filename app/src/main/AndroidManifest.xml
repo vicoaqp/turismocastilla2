@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Castilla">
         <activity
+            android:name=".DescriVinedos"
+            android:exported="false" />
+        <activity
+            android:name=".DescriHotel"
+            android:exported="false" />
+        <activity
+            android:name=".DescriTurismo"
+            android:exported="false" />
+        <activity
+            android:name=".GastroCorire"
+            android:exported="false" />
+        <activity
             android:name=".DescriRestaurante"
             android:exported="false" />
         <activity
@@ -29,9 +41,6 @@
             android:exported="false" />
         <activity
             android:name=".Hoteles"
-            android:exported="false" />
-        <activity
-            android:name=".Gastronomia"
             android:exported="false" />
         <activity
             android:name=".LocalDistrito"

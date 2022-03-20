@@ -24,11 +24,11 @@
                 style="@style/botonesdise"
                 android:background="@drawable/hbuenosairesaplao" />
             <Button
-                android:id="@+id/button_hrambo1"
+                android:id="@+id/button_casalinda"
                 style="@style/botonesdise"
                 android:background="@drawable/hcasalindaaplao" />
             <Button
-                android:id="@+id/button_titanic1"
+                android:id="@+id/button_municipal"
                 style="@style/botonesdise"
                 android:background="@drawable/hmunicipalaplao" />
         </LinearLayout>
