@@ -98,11 +98,7 @@
                 style="@style/labeldezcripcion"
                 app:layout_constraintTop_toBottomOf="@+id/texttitulocelulares" />
 
-            <Button
-                android:id="@+id/buttonllamada"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+
 
         </LinearLayout>
     </ScrollView>

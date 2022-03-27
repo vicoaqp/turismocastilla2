@@ -26,7 +26,7 @@
                 android:background="@drawable/bodegaestre" />
 
             <Button
-                android:id="@+id/button_casalinda"
+                android:id="@+id/button_yanez"
                 style="@style/botonesdise"
                 android:background="@drawable/bodegayanez" />
 

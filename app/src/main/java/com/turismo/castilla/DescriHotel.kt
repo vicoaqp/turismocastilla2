@@ -6,7 +6,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class DescriHotel : AppCompatActivity() {
+class DescriHotel : MenuTodos() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_descri_hotel)
@@ -16,6 +16,11 @@ class DescriHotel : AppCompatActivity() {
         val paqueteresta:Bundle= Bundle()
         paqueteresta.putString("hotelva",vhotel)
         supportFragmentManager.setFragmentResult("fraghotel",paqueteresta)
+
+        val paquelink:Bundle= Bundle()
+        paquelink.putString("hotellinkva",vhotel)
+        supportFragmentManager.setFragmentResult("fraglinkhotel",paquelink)
+
 
 
         val sliderhotel=findViewById<ViewPager2>(R.id.sliderhotel)

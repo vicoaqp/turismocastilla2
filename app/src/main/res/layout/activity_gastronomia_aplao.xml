@@ -21,6 +21,11 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/button_tuno"
+                style="@style/botonesdise"
+                android:background="@drawable/tuno" />
+
+            <Button
                 android:id="@+id/button_fundobarra"
                 style="@style/botonesdise"
                 android:background="@drawable/fundobarra3" />
