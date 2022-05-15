@@ -116,5 +116,12 @@ class Distritos : MenuTodos() {
 
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        val item=menu?.findItem(R.id.act1)
+        item?.setVisible(false)
+        item?.isEnabled=false
+        return super.onPrepareOptionsMenu(menu)
+    }
+
 
 }

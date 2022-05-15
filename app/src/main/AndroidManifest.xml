@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Castilla">
         <activity
+            android:name=".Desarrollador"
+            android:exported="false" />
+        <activity
             android:name=".DescriVinedos"
             android:exported="false" />
         <activity
