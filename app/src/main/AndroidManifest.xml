@@ -15,6 +15,9 @@
             android:name=".Desarrollador"
             android:exported="false" />
         <activity
+            android:name=".Desarrollador"
+            android:exported="false" />
+        <activity
             android:name=".DescriVinedos"
             android:exported="false" />
         <activity
