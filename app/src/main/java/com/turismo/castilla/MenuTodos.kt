@@ -21,6 +21,10 @@ open class MenuTodos: AppCompatActivity() {
                 menuActivity(Distritos::class.java)
                 true
             }
+            R.id.act2->{
+                menuActivity(Desarrollador::class.java)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
