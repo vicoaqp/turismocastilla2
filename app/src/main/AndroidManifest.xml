@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Castilla">
+
+
+        <activity
+            android:name=".Desarrollador"
+            android:exported="false" />
         <activity
             android:name=".Youtube"
             android:exported="false" />
@@ -57,15 +62,20 @@
         <activity
             android:name=".Eleccion"
             android:exported="false" />
+
         <activity
-            android:name=".Distritos"
+            android:name=".Portada"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".Distritos"
+            android:exported="false" />
+
         <activity
             android:name=".HistoriaApl"
             android:exported="false" />
