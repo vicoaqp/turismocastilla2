@@ -28,6 +28,13 @@ class Distritos : MenuTodos() {
         val btnayo=findViewById<Button>(R.id.button_ayo)
         val btnorcopampa=findViewById<Button>(R.id.button_orcopampa)
 
+        val btnpruebaa=findViewById<Button>(R.id.buttonpruebaaaa)
+
+        btnpruebaa.setOnClickListener{
+            val orco2= Intent(this,Youtube::class.java)
+            startActivity(orco2)
+        }
+
 
         btnorcopampa.setOnClickListener{
             val orco= Intent(this,Eleccion::class.java)

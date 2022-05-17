@@ -9,111 +9,77 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-
-            <TextView
-                android:id="@+id/textdescripcion"
-                style="@style/labeltitulo"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:text="@string/txtdezcripcion"
-                />
-
-            <TextView
-                android:id="@+id/tdes"
-                style="@style/labeldezcripcion"
-                android:text="@string/desaplao"
-                app:layout_constraintTop_toBottomOf="@+id/textdescripcion" />
-
-            <TextView
-                android:id="@+id/textdireccion"
-                style="@style/labeltitulo"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:text="@string/txtdireccion"
-                app:layout_constraintTop_toBottomOf="@+id/tdes" />
-
-            <TextView
-                android:id="@+id/tdireccion"
-                style="@style/labeldezcripcion"
-                android:text="Distrito de Aplao - Provincia Castilla - Departamento Arequipa"
-                app:layout_constraintTop_toBottomOf="@+id/textdireccion" />
-
-            <TextView
-                android:id="@+id/textalcalde"
-                style="@style/labeltitulo"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:text="@string/titualcalde"
-                app:layout_constraintTop_toBottomOf="@+id/tdireccion" />
-
-            <TextView
-                android:id="@+id/talcalde"
-                style="@style/labeldezcripcion"
-                android:text="@string/txtalcalde"
-                app:layout_constraintTop_toBottomOf="@+id/textalcalde" />
-
-            <TextView
-                android:id="@+id/textanexos"
-                style="@style/labeltitulo"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:text="@string/txtanexos"
-                app:layout_constraintTop_toBottomOf="@+id/talcalde" />
-
-            <TextView
-                android:id="@+id/tanexos"
-                style="@style/labeldezcripcion"
-                android:text="@string/aplaoanexos"
-                app:layout_constraintTop_toBottomOf="@+id/textanexos" />
-
-            <TextView
-                android:id="@+id/textfiestas"
-                style="@style/labeltitulo"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:text="@string/txtfestividades"
-                app:layout_constraintTop_toBottomOf="@+id/talcalde" />
-
-            <TextView
-                android:id="@+id/tfestividades"
-                style="@style/labeldezcripcion"
-                android:text="@string/festividades"
-                app:layout_constraintTop_toBottomOf="@+id/textanexos" />
-
-            <TextView
-                android:id="@+id/texttitulocelulares"
-                style="@style/labeltitulo"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:text="@string/txtcelulares"
-                app:layout_constraintTop_toBottomOf="@+id/tanexos" />
-
-            <TextView
-                android:id="@+id/tcelulares"
-                style="@style/labeldezcripcion"
-                android:text="969734486"
-                app:layout_constraintTop_toBottomOf="@+id/texttitulocelulares" />
-
-            <Button
-                android:id="@+id/buttonllamada"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        </LinearLayout>
-    </ScrollView>
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textdescripcion"
+                        style="@style/labeltitulo"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Videos Turisticos de Aplao"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/youapla1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textdescripcion" />
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/youmarfuego"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
