@@ -39,10 +39,7 @@ class frgB : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val ui= FragmentFrgDBinding.inflate(layoutInflater,container,false)
-
-        return  ui.root
-
+        return inflater.inflate(R.layout.fragment_frg_b, container, false)
 
     }
 

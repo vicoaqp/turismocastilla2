@@ -38,6 +38,7 @@ class frgD : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val boton= FragmentFrgDBinding.inflate(layoutInflater)
 
         boton.bllamada.setOnClickListener{

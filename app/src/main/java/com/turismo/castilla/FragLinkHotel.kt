@@ -34,23 +34,6 @@ class FragLinkHotel : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        parentFragmentManager.setFragmentResultListener("fraglinkhotel",this,
-            FragmentResultListener{ reStr: String, data: Bundle ->
-                lhotelval= data.getString("hotellinkva")
-                Log.i("resu",lhotelval.toString())
-                //layout.tdes.text=ndistrito
-
-                val db= Firebase.firestore
-                db.collection("facebook")
-                    .whereEqualTo("nameface",lhotelval)
-                    .get()
-                    .addOnSuccessListener { result ->
-                        for (document in result) {
-                            layout.textprueba.text= document.data.get("url").toString()
-                        }
-                    }
-            }
-        )
 
 
     }
@@ -63,12 +46,7 @@ class FragLinkHotel : Fragment() {
 
         layout= FragmentFragLinkHotelBinding.inflate(inflater,container,false)
 
-        layout.buttonprueba.setOnClickListener{
-            datol=layout.textprueba.text.toString()
-            val face= Intent(Intent.ACTION_VIEW, Uri.parse(datol))
-            startActivity(face)
 
-        }
 
         return layout.root
     }

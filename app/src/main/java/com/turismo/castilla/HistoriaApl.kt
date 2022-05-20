@@ -38,7 +38,7 @@ class HistoriaApl : MenuTodos() {
                 1->tab.text="Fotos"
                 2->tab.text="Mapa"
                 3->tab.text="contacto"
-                4->tab.text="Descripcion"
+                4->tab.text="Videos"
             }
 
 

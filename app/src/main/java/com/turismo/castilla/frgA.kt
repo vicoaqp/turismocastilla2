@@ -56,8 +56,6 @@ class frgA : Fragment() {
 
         layout= FragmentFrgABinding.inflate(inflater,container,false)
 
-
-
         return layout.root
 
     }
