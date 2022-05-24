@@ -20,18 +20,6 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/buttonpruebaaaa"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/buttonfotosss"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
                 android:id="@+id/button_fundobarra"
                 style="@style/botonesdise"
                 android:background="@drawable/aplaopripng" />

@@ -32,6 +32,19 @@ class Portada : AppCompatActivity() {
         }
 
         val botondis=findViewById<ImageView>(R.id.imageDistritos)
+        val botongaleria=findViewById<ImageView>(R.id.imageViewgaleria)
+        val botonyoutube=findViewById<ImageView>(R.id.imageyoutube)
+
+
+        botonyoutube.setOnClickListener {
+            val youvar=Intent(this,Youtube::class.java)
+            startActivity(youvar)
+        }
+
+        botongaleria.setOnClickListener {
+            val galvar=Intent(this,PortaFotos::class.java)
+            startActivity(galvar)
+        }
 
         botondis.setOnClickListener {
             val distele=Intent(this,Distritos::class.java)
