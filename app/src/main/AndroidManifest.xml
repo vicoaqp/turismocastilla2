@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Castilla">
         <activity
+            android:name=".EventosInfo"
+            android:exported="false" />
+        <activity
             android:name=".FotosWeb"
             android:exported="false" />
         <activity
