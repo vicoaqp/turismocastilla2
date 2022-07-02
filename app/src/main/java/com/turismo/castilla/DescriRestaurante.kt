@@ -30,8 +30,8 @@ class DescriRestaurante : MenuTodos() {
             tab, position ->
             when(position){
                 0->tab.text="Descripcion"
-                1->tab.text="Fotos"
-                2->tab.text="Contacto"
+                1->tab.text="Contacto"
+
             }
         })
         admintabres.attach()

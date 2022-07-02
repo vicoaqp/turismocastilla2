@@ -14,10 +14,6 @@ class myResta(fC:FragmentActivity):FragmentStateAdapter(fC) {
                 val f1=Restaurante()
                 return f1
             }
-            1->{
-                val f2=FragFotosRes()
-                return f2
-            }
             else -> {
                 val f3=FragLinkRes()
                 return f3

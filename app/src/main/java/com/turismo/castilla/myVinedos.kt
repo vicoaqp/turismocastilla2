@@ -14,10 +14,7 @@ class myVinedos(fF:FragmentActivity):FragmentStateAdapter(fF) {
                 val f1=FragDesVinedos()
                 return f1
             }
-            1->{
-                val f2=FragFotosVinedos()
-                return f2
-            }
+
             else -> {
                 val f3=FragLinkVinedos()
                 return f3

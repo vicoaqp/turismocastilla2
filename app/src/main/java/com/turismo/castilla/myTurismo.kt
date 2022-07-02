@@ -16,10 +16,6 @@ class myTurismo(fD:FragmentActivity):FragmentStateAdapter(fD) {
                 val f1=FragDesTuri()
                 return f1
             }
-            1->{
-                val f2=FragFotoTuri()
-                return f2
-            }
             else -> {
                 val f3=FragLinkTuri()
                 return f3

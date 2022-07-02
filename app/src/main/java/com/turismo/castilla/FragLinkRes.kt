@@ -59,7 +59,7 @@ class FragLinkRes : Fragment() {
 
 
 
-        layout.brface.setOnClickListener{
+       /* layout.brface.setOnClickListener{
 
                     val db= Firebase.firestore
                     db.collection("facebook")
@@ -79,7 +79,7 @@ class FragLinkRes : Fragment() {
             val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/LibertadorCastillaAplao"))
             startActivity(face)
 
-        }
+        }*/
 
         return layout.root
     }

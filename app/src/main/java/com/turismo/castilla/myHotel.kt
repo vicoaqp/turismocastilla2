@@ -14,13 +14,9 @@ class myHotel(fE:FragmentActivity):FragmentStateAdapter(fE) {
                 val f1=FragDesHotel()
                 return f1
             }
-            1->{
-                val f2=FragFotosHotel()
-                return f2
-            }
             else -> {
-                val f3=FragLinkHotel()
-                return f3
+                val f2=FragLinkHotel()
+                return f2
             }
         }
 
