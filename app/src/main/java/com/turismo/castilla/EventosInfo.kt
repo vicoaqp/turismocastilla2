@@ -28,8 +28,8 @@ class EventosInfo : AppCompatActivity() {
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-                    val user = documents.toObjects(UserEventos::class.java)
-                    binding.eventoRecyclerview.adapter= UserAdpaterEve(this,user)
+                    val usereve = documents.toObjects(UserEventos::class.java)
+                    binding.eventoRecyclerview.adapter= UserAdpaterEve(this,usereve)
                 }
             }
             .addOnFailureListener{

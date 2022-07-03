@@ -8,10 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class UserAdpaterEve(private val context: EventosInfo, private val users: List<UserEventos>): RecyclerView.Adapter<UserViewHolder2>() {
+class UserAdpaterEve(private val context: EventosInfo, private val userseve: List<UserEventos>): RecyclerView.Adapter<UserViewHolder2>() {
 
     override fun getItemCount(): Int {
-        return users.size
+        return userseve.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder2 {
@@ -23,7 +23,7 @@ class UserAdpaterEve(private val context: EventosInfo, private val users: List<U
 
 
     override fun onBindViewHolder(holder: UserViewHolder2, position: Int) {
-        val user =users[position]
+        val user =userseve[position]
         holder.TextoEvento.text = user.TextoEvento
         Glide.with(context)
             .load(user.FotoEvento)

@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class myHotel(fE:FragmentActivity):FragmentStateAdapter(fE) {
-    override fun getItemCount(): Int=3
+    override fun getItemCount(): Int=2
 
     override fun createFragment(position: Int): Fragment {
 
