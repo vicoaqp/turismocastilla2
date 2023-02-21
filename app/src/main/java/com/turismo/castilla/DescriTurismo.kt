@@ -29,7 +29,7 @@ class DescriTurismo : MenuTodos() {
                 tab, position ->
             when(position){
                 0->tab.text="Descripcion"
-                1->tab.text="Contacto"
+                1->tab.text="Informacion"
             }
         })
         admintabturismo.attach()

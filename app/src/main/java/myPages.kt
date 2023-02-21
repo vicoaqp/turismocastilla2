@@ -5,7 +5,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.turismo.castilla.*
 
 class myPages(fA:FragmentActivity):FragmentStateAdapter(fA) {
-    override fun getItemCount(): Int=5
+    override fun getItemCount(): Int=2
 
     override fun createFragment(position: Int): Fragment {
 
@@ -14,21 +14,13 @@ class myPages(fA:FragmentActivity):FragmentStateAdapter(fA) {
                 val f1=frgA()
                 return f1
             }
-            1->{
-                val f2=frgB()
-                return f2
-            }
-            2->{
-                val f3=frgC()
-                return f3
-            }
-            3->{
-                val f4=frgD()
-                return f4
-            }
+            //1->{
+              //  val f2=frgB()
+                //return f2
+            //}
             else -> {
-                val f5=frgE()
-                return f5
+                val f2=frgD()
+                return f2
             }
         }
 

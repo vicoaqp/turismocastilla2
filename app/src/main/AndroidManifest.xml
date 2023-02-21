@@ -12,6 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Castilla">
         <activity
+            android:name=".generalmovilidad"
+            android:exported="false" />
+        <activity
+            android:name=".generalvinedos"
+            android:exported="false" />
+        <activity
+            android:name=".generalturismo2"
+            android:exported="false" />
+        <activity
+            android:name=".queuraca2"
+            android:exported="false" />
+        <activity
+            android:name=".generalhotel2"
+            android:exported="false" />
+        <activity
+            android:name=".generalgastronomia"
+            android:exported="false" />
+        <activity
+            android:name=".queuraca"
+            android:exported="false" />
+        <activity
+            android:name=".quehuancarqui"
+            android:exported="false" />
+        <activity
             android:name=".EventosInfo"
             android:exported="false" />
         <activity

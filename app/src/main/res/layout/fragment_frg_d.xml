@@ -26,20 +26,24 @@
 
                 <Button
                     android:id="@+id/bface"
-                    android:layout_width="140dp"
+                    android:layout_width="0dp"
                     android:layout_height="140dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/logofacebook"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/f_frag"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/bwas"
-                    android:layout_width="140dp"
+                    android:layout_width="0dp"
                     android:layout_height="140dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/logowasap"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/galeriau"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
@@ -47,21 +51,25 @@
 
                 <Button
                     android:id="@+id/bllamada"
-                    android:layout_width="140dp"
+                    android:layout_width="0dp"
                     android:layout_height="140dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/logollamada"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/c_frag"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/bwas" />
 
                 <Button
                     android:id="@+id/bmapa"
-                    android:layout_width="140dp"
+                    android:layout_width="0dp"
                     android:layout_height="140dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginBottom="16dp"
-                    android:background="@drawable/maps"
+                    android:background="@drawable/g_frag"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

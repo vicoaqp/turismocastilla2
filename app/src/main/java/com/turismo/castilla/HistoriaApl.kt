@@ -21,6 +21,12 @@ class HistoriaApl : MenuTodos() {
         paqueteDatos.putString("DISTRITO",distrito)
         supportFragmentManager.setFragmentResult("paquete1",paqueteDatos)
 
+        val paqueteDatosdis:Bundle= Bundle()
+        paqueteDatosdis.putString("DISTRITO2",distrito)
+        supportFragmentManager.setFragmentResult("paquete2",paqueteDatosdis)
+
+
+
         val slider=findViewById<ViewPager2>(R.id.slider)
         val tabs=findViewById<TabLayout>(R.id.tabs)
 
@@ -35,10 +41,8 @@ class HistoriaApl : MenuTodos() {
             when(position){
 
                 0->tab.text="Descripcion"
-                1->tab.text="Fotos"
-                2->tab.text="Mapa"
-                3->tab.text="contacto"
-                4->tab.text="Videos"
+                1->tab.text="Informacion"
+                //2->tab.text="Contacto"
             }
 
 

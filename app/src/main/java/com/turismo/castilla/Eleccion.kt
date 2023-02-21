@@ -29,31 +29,99 @@ class Eleccion : MenuTodos() {
             startActivity(lanzar)
         }
         aplaoqh.setOnClickListener{
-            val lanzar2=Intent(this,Turismo::class.java)
-            lanzar2.putExtra("dist",namedistrito)
-            startActivity(lanzar2)
+
+            if(namedistrito =="aplao"){
+                val lanzar2=Intent(this,Turismo::class.java)
+                lanzar2.putExtra("dist",namedistrito)
+                startActivity(lanzar2)
+            }
+            else if(namedistrito =="huancarqui"){
+                val lanzar2=Intent(this,quehuancarqui2::class.java)
+                lanzar2.putExtra("dist",namedistrito)
+                startActivity(lanzar2)
+            }
+            else if(namedistrito =="uraca"){
+                val lanzar2=Intent(this,queuraca2::class.java)
+                lanzar2.putExtra("dist",namedistrito)
+                startActivity(lanzar2)
+            }
+            else{
+                val lanzar2=Intent(this,generalturismo2::class.java)
+                lanzar2.putExtra("dist",namedistrito)
+                startActivity(lanzar2)
+            }
+
+            //val lanzar2=Intent(this,Turismo::class.java)
+            //lanzar2.putExtra("dist",namedistrito)
+            //startActivity(lanzar2)
         }
 
         aplaogast.setOnClickListener{
+
             if(namedistrito =="aplao"){
                 val lanzar3=Intent(this,GastronomiaAplao::class.java)
                 startActivity(lanzar3)
             }else if(namedistrito =="uraca"){
                 val lanzar3=Intent(this,GastroCorire::class.java)
                 startActivity(lanzar3)
+            }else{
+                val lanzar30=Intent(this,generalgastronomia::class.java)
+                startActivity(lanzar30)
             }
+
         }
+
+
+
         aplaohos.setOnClickListener{
-            val lanzar4=Intent(this,Hoteles::class.java)
-            startActivity(lanzar4)
+
+
+            if(namedistrito =="aplao"){
+                val lanzar4=Intent(this,Hoteles::class.java)
+                lanzar4.putExtra("dist",namedistrito)
+                startActivity(lanzar4)
+            }
+            else{
+                val lanzar2=Intent(this,generalhotel2::class.java)
+                lanzar2.putExtra("dist",namedistrito)
+                startActivity(lanzar2)
+            }
+
+
+
+            //val lanzar4=Intent(this,Hoteles::class.java)
+            //lanzar4.putExtra("dist",namedistrito)
+            //startActivity(lanzar4)
+
+
         }
+
+
+
+
         aplaovin.setOnClickListener{
-            val lanzar5=Intent(this,Vinedos::class.java)
-            startActivity(lanzar5)
+
+            if(namedistrito =="aplao"){
+                val lanzar5=Intent(this,Vinedos::class.java)
+                lanzar5.putExtra("dist",namedistrito)
+                startActivity(lanzar5)
+            }
+            else{
+                val lanzar5=Intent(this,generalvinedos::class.java)
+                lanzar5.putExtra("dist",namedistrito)
+                startActivity(lanzar5)
+            }
+
+            //val lanzar5=Intent(this,Vinedos::class.java)
+           //lanzar5.putExtra("dist",namedistrito)
+            //startActivity(lanzar5)
         }
         aplaomov.setOnClickListener{
-            val lanzar6=Intent(this,Pruebas::class.java)
+
+
+            val lanzar6=Intent(this,generalmovilidad::class.java)
             startActivity(lanzar6)
+
         }
 
 

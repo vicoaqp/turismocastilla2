@@ -15,6 +15,8 @@ class Portada : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portada)
 
+
+
         val uri = Uri.parse("android.resource://"+packageName+"/"+R.raw.castilla)
 
         vvfondo= findViewById(R.id.videoview)
@@ -54,11 +56,13 @@ class Portada : AppCompatActivity() {
 
         botongaleria.setOnClickListener {
             val galvar=Intent(this,PortaFotos::class.java)
+            galvar.putExtra("Fotosdis","general")
             startActivity(galvar)
         }
 
         botondis.setOnClickListener {
             val distele=Intent(this,Distritos::class.java)
+
             startActivity(distele)
         }
 
