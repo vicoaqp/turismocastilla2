@@ -17,6 +17,10 @@ class DescriTurismo : MenuTodos() {
         paqueteresta.putString("turismova",vturismo)
         supportFragmentManager.setFragmentResult("fragturismo",paqueteresta)
 
+        val paqueteturismos:Bundle= Bundle()
+        paqueteturismos.putString("turisdescrip",vturismo)
+        supportFragmentManager.setFragmentResult("fturismo",paqueteturismos)
+
 
         val sliderturismo=findViewById<ViewPager2>(R.id.sliderturi)
         val tabsturismo=findViewById<TabLayout>(R.id.tabsturi)

@@ -36,7 +36,7 @@ class Eleccion : MenuTodos() {
                 startActivity(lanzar2)
             }
             else if(namedistrito =="huancarqui"){
-                val lanzar2=Intent(this,quehuancarqui2::class.java)
+                val lanzar2=Intent(this,qhuancarqui::class.java)
                 lanzar2.putExtra("dist",namedistrito)
                 startActivity(lanzar2)
             }
@@ -64,6 +64,9 @@ class Eleccion : MenuTodos() {
             }else if(namedistrito =="uraca"){
                 val lanzar3=Intent(this,GastroCorire::class.java)
                 startActivity(lanzar3)
+            }else if(namedistrito =="huancarqui"){
+                val lanzar3=Intent(this,gastrohuancarqui::class.java)
+                startActivity(lanzar3)
             }else{
                 val lanzar30=Intent(this,generalgastronomia::class.java)
                 startActivity(lanzar30)
@@ -74,12 +77,13 @@ class Eleccion : MenuTodos() {
 
 
         aplaohos.setOnClickListener{
-
-
             if(namedistrito =="aplao"){
                 val lanzar4=Intent(this,Hoteles::class.java)
                 lanzar4.putExtra("dist",namedistrito)
                 startActivity(lanzar4)
+            }else if(namedistrito =="huancarqui"){
+                val lanzar3=Intent(this,hotelhuancarqui::class.java)
+                startActivity(lanzar3)
             }
             else{
                 val lanzar2=Intent(this,generalhotel2::class.java)

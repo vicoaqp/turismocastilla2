@@ -38,15 +38,24 @@ class Portada : AppCompatActivity() {
         val botonyoutube=findViewById<ImageView>(R.id.imageyoutube)
         val botonevento=findViewById<ImageView>(R.id.imageViewevento)
         val botondesa=findViewById<ImageView>(R.id.imagedesav)
+        val botonnoticias=findViewById<ImageView>(R.id.imageViewReco)
 
-        botondesa.setOnClickListener {
-            val btdesas=Intent(this,Desarrollador::class.java)
+
+        botonnoticias.setOnClickListener {
+            val btdesas=Intent(this,noticiascastilla::class.java)
             startActivity(btdesas)
         }
 
+
+
+        botondesa.setOnClickListener {
+            //val btdesas=Intent(this,Desarrollador::class.java)
+            //startActivity(btdesas)
+        }
+
         botonevento.setOnClickListener {
-            val btevento=Intent(this,EventosInfo::class.java)
-            startActivity(btevento)
+            val btdesas=Intent(this,noticiascastilla::class.java)
+            startActivity(btdesas)
         }
 
         botonyoutube.setOnClickListener {

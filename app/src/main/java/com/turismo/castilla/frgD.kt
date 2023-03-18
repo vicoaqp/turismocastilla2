@@ -54,6 +54,8 @@ class frgD : Fragment() {
             }
             startActivity(myUri)
         }
+
+
         boton.bwas.setOnClickListener{
 
             val galvar= Intent(context,PortaFotos::class.java)
@@ -61,6 +63,8 @@ class frgD : Fragment() {
             startActivity(galvar)
 
         }
+
+
         boton.bface.setOnClickListener{
             if (ndistrito == "aplao") {
                 val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/municipiocastilla"))
@@ -106,11 +110,6 @@ class frgD : Fragment() {
                 val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/Municipalidad.Orcopampa"))
                 startActivity(face)
             }
-
-
-
-
-
             //val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/turismoaplao"))
             //startActivity(face)
         }

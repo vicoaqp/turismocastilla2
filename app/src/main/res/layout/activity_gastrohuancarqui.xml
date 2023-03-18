@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".quehuancarqui2">
-
+    tools:context=".gastrohuancarqui">
 
     <ScrollView
         android:layout_width="0dp"
@@ -17,24 +16,43 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imagedesav"
+                android:id="@+id/imageView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:scaleType="fitStart"
-                app:srcCompat="@drawable/lugares" />
+                app:srcCompat="@drawable/huanbannergastro" />
+
 
             <Button
-                android:id="@+id/button_castillo"
+                android:id="@+id/button_huancrinconcito"
                 style="@style/botonesdise"
-                android:background="@drawable/petrglifosb" />
+                android:background="@drawable/huanresthuancarquino" />
+
+            <Button
+                android:id="@+id/button_huansabroso"
+                style="@style/botonesdise"
+                android:background="@drawable/huansabrosorest" />
+
+            <Button
+                android:id="@+id/button_huantarzan"
+                style="@style/botonesdise"
+                android:background="@drawable/huanytarzan" />
+
+
+
+
+
+
 
 
         </LinearLayout>
     </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

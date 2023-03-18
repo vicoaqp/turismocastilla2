@@ -228,7 +228,33 @@ class PortaFotos : AppCompatActivity() {
 
                 }
         }
+        else if(dase =="castillo"){
+            FirebaseFirestore.getInstance().collection("fototcastillo")
+                .get()
+                .addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        val user = documents.toObjects(UserModel::class.java)
+                        binding.mainRecyclerview.adapter= UserAdapter(this,user)
+                    }
+                }
+                .addOnFailureListener{
 
+                }
+        }
+
+        else if(dase =="dinosaurio"){
+            FirebaseFirestore.getInstance().collection("fototdinosaurio")
+                .get()
+                .addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        val user = documents.toObjects(UserModel::class.java)
+                        binding.mainRecyclerview.adapter= UserAdapter(this,user)
+                    }
+                }
+                .addOnFailureListener{
+
+                }
+        }
 
 
         /*FirebaseFirestore.getInstance().collection("fotos")

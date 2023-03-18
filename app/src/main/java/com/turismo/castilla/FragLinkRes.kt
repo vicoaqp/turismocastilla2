@@ -39,10 +39,6 @@ class FragLinkRes : Fragment() {
 
             Log.i("resu","ENTRO AHORAAAA")
 
-
-
-
-
         }
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".quehuancarqui2">
+    tools:context=".qhuancarqui">
 
 
     <ScrollView
@@ -31,10 +31,11 @@
             <Button
                 android:id="@+id/button_castillo"
                 style="@style/botonesdise"
-                android:background="@drawable/petrglifosb" />
+                android:background="@drawable/chancharayb" />
 
 
         </LinearLayout>
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
