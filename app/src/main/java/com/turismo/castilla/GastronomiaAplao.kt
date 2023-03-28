@@ -18,13 +18,9 @@ class GastronomiaAplao : MenuTodos() {
         val bmajesriver=findViewById<Button>(R.id.button_majeriver)
         val brambo=findViewById<Button>(R.id.button_rambo)
         val brocasbambu=findViewById<Button>(R.id.button_rocasbambu)
-        val btuno=findViewById<Button>(R.id.button_tuno)
 
-        btuno.setOnClickListener{
-            val lanzartuno=Intent(this,DescriRestaurante::class.java)
-            lanzartuno.putExtra("resta","tuno")
-            startActivity(lanzartuno)
-        }
+
+
 
         brocasbambu.setOnClickListener{
             val lanzar=Intent(this,DescriRestaurante::class.java)

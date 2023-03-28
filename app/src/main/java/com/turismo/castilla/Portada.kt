@@ -4,21 +4,40 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import android.widget.VideoView
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class Portada : AppCompatActivity() {
     protected lateinit var vvfondo:VideoView
+    var videoapps:String?=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portada)
 
+        //val db : FirebaseFirestore = FirebaseFirestore.getInstance()
+        val db= Firebase.firestore
+
+        db.collection("usuarios")
+            .get()
+            .addOnSuccessListener { resultado ->
+
+                for (document in resultado) {
+                    Log.i("dasess",resultado.toString())
+                    videoapps = document.data.get("nick").toString()
+                    Log.i("valorvideo",videoapps.toString())
+                }
+            }
+
+        //val uri = Uri.parse("android.resource://"+packageName+"/"+R.raw.castilla)
 
 
-        val uri = Uri.parse("android.resource://"+packageName+"/"+R.raw.castilla)
-
+        val uri = Uri.parse(videoapps)
         vvfondo= findViewById(R.id.videoview)
 
         vvfondo.setVideoURI(uri)
@@ -26,12 +45,24 @@ class Portada : AppCompatActivity() {
 
 
         vvfondo.setOnCompletionListener {
-            Toast.makeText(this,"Gracias por mirara el video",Toast.LENGTH_LONG).show()
+            //Toast.makeText(this,"Gracias por mirara el video",Toast.LENGTH_LONG).show()
         }
 
         vvfondo.setOnPreparedListener { mp->
             vvfondo.start()
         }
+
+
+
+
+
+
+
+
+
+
+
+
 
         val botondis=findViewById<ImageView>(R.id.imageDistritos)
         val botongaleria=findViewById<ImageView>(R.id.imageViewgaleria)

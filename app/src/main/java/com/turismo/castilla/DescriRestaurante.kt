@@ -18,6 +18,10 @@ class DescriRestaurante : MenuTodos() {
         paqueteresta.putString("restapa",vrestaura)
         supportFragmentManager.setFragmentResult("fragresta",paqueteresta)
 
+        val paquetenamerest:Bundle= Bundle()
+        paquetenamerest.putString("restprimero",vrestaura)
+        supportFragmentManager.setFragmentResult("restsegundo",paquetenamerest)
+
 
         val sliderrest=findViewById<ViewPager2>(R.id.sliderres)
         val tabsrest=findViewById<TabLayout>(R.id.tabsres)

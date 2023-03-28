@@ -14,88 +14,145 @@ import androidx.fragment.app.FragmentResultListener
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.turismo.castilla.databinding.FragmentFragLinkResBinding
+import com.turismo.castilla.databinding.FragmentFragLinkTuriBinding
 import com.turismo.castilla.databinding.FragmentRestauranteBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FragLinkRes.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class FragLinkRes : Fragment() {
-    lateinit var layout:FragmentFragLinkResBinding
-    private val binding get()=layout
-    var linkf:String?=""
 
-    lateinit var cadenare:String
+    lateinit var layout:FragmentFragLinkResBinding
+    var linkf:String?=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
+        Log.i("dase","entroooo")
 
-            Log.i("resu","ENTRO AHORAAAA")
+       parentFragmentManager.setFragmentResultListener("restsegundo",this,
+         FragmentResultListener{reStr:String, data:Bundle ->
+               linkf=data.getString("restprimero")
+                Log.i("dase",linkf.toString())
+           }
 
-        }
+        )
+
     }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        layout= FragmentFragLinkResBinding.inflate(inflater,container,false)
-        var datolink:String?=""
-        Log.i("resu","VIEW2")
+
+        val boton= FragmentFragLinkResBinding.inflate(layoutInflater)
+
+        boton.galleriares.setOnClickListener{
+
+            val galvar= Intent(context,PortaFotos::class.java)
+            galvar.putExtra("Fotosdis",linkf)
+            startActivity(galvar)
+
+        }
+
+        boton.mapasres.setOnClickListener{
+
+            if (linkf == "rinconcitohuancarqui") {
+                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-16.09204372865129, -72.47436532135633"))
+                startActivity(mapa)
+
+            }
+            else if (linkf == "rokasbambu") {
+                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-16.088099861678273, -72.49173503098635"))
+                startActivity(mapa)
+            }
+            else if (linkf == "rambo") {
+                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-15.992201342907073, -72.47512998433605"))
+                startActivity(mapa)
+            }
+            else if (linkf == "majesriver") {
+                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-15.992902470159002, -72.4750694661794"))
+                startActivity(mapa)
+            }
+            else if (linkf == "fundoyupanqui") {
+                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-15.978449075791202, -72.53338283063333"))
+                startActivity(mapa)
+            }
+            else if (linkf == "casademauro") {
+                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-15.978449075791202, -72.53338283063333"))
+                startActivity(mapa)
+            }
+            else if (linkf == "fundobarra") {
+                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-16.074615455277076, -72.48997892204497"))
+                startActivity(mapa)
+            }
+            else if (linkf == "titanic") {
+                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-16.07763331455655, -72.48233453568012"))
+                startActivity(mapa)
+            }
+            else if (linkf == "ksamia") {
+                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-15.991566574526704, -72.47542393744975"))
+                startActivity(mapa)
+            }
 
 
 
 
+        }
 
-       /* layout.brface.setOnClickListener{
+        boton.faceres.setOnClickListener{
 
-                    val db= Firebase.firestore
-                    db.collection("facebook")
-                        .whereEqualTo("nameface","titanic")
-                        .get()
-                        .addOnSuccessListener { result ->
-                            for (document in result) {
-                                layout.linkrez.text= document.data.get("url").toString()
-                                Log.i("resu","dae"+cadenare.toString())
+            if (linkf == "rinconcitohuancarqui") {
+                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/rinconcitohuancarquino"))
+                startActivity(face)
 
-                            }
-                            //layout.linkrez.text=cadenare
+           }
+            else if (linkf == "rokasbambu") {
+                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/RokasyBambu"))
+                startActivity(face)
+           }
+            else if (linkf == "rambo") {
+                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/cevicheria.rambo.3"))
+                startActivity(face)
+            }
+            else if (linkf == "majesriver") {
+                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/groups/294875110694"))
+                startActivity(face)
+            }
+            else if (linkf == "fundoyupanqui") {
+                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/fundo.yupanqui.73"))
+                startActivity(face)
+            }
+            else if (linkf == "casademauro") {
+                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/LACASADEMAUROTURISMOYAVENTURA"))
+                startActivity(face)
+            }
+            else if (linkf == "fundobarra") {
+                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/profile.php?id=100063548051478"))
+                startActivity(face)
+            }
+            else if (linkf == "titanic") {
+                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/RestaurantTitanicAplao"))
+                startActivity(face)
+            }
+            else if (linkf == "ksamia") {
+                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/Restauranteksamia"))
+                startActivity(face)
+            }
 
 
-                        }
+        }
 
-            val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/LibertadorCastillaAplao"))
-            startActivity(face)
-
-        }*/
-
-        return layout.root
+        return boton.root
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragLinkRes.
-         */
-        // TODO: Rename and change types and number of parameters
+
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             FragLinkRes().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
                 }
             }
     }
