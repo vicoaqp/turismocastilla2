@@ -23,21 +23,21 @@ class Portada : AppCompatActivity() {
         //val db : FirebaseFirestore = FirebaseFirestore.getInstance()
         val db= Firebase.firestore
 
-        db.collection("usuarios")
+        db.collection("vinedos")
             .get()
-            .addOnSuccessListener { resultado ->
-
-                for (document in resultado) {
-                    Log.i("dasess",resultado.toString())
-                    videoapps = document.data.get("nick").toString()
+            .addOnSuccessListener { resultados ->
+                for (document in resultados) {
+                    Log.i("dasess",resultados.toString())
+                    videoapps = document.data.get("celular").toString()
                     Log.i("valorvideo",videoapps.toString())
                 }
             }
 
         //val uri = Uri.parse("android.resource://"+packageName+"/"+R.raw.castilla)
 
-
+        Toast.makeText(this,videoapps.toString(),Toast.LENGTH_LONG).show()
         val uri = Uri.parse(videoapps)
+
         vvfondo= findViewById(R.id.videoview)
 
         vvfondo.setVideoURI(uri)

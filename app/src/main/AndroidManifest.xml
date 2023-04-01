@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Castilla">
         <activity
+            android:name=".GastroAplaoRec"
+            android:exported="false" />
+        <activity
             android:name=".hotelhuancarqui"
             android:exported="false" />
         <activity
