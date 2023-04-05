@@ -24,19 +24,39 @@ private const val ARG_PARAM2 = "param2"
 class Restaurante : Fragment() {
    lateinit var layout:FragmentRestauranteBinding
    private val binding get()= layout
-    var restafr:String?=""
-
+    var rescelular:String?=""
+    var resdescripcion:String?=""
+    var resdias:String?=""
+    var resdireccion:String?=""
+    var reshorario:String?=""
+    var residDistrito:String?=""
+    var resnamerest:String?=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         parentFragmentManager.setFragmentResultListener("fragresta",this,
             FragmentResultListener { reStr: String, data: Bundle ->
-                restafr= data.getString("restapa")
-                Log.i("resu",restafr.toString())
+
+                rescelular= data.getString("Fcelular")
+                Log.i("dasesa",rescelular.toString())
+                resdescripcion= data.getString("Fdescripcion")
+                resdias= data.getString("Fdias")
+                resdireccion= data.getString("Fdireccion")
+                reshorario= data.getString("Fhorario")
+                residDistrito= data.getString("FidDistrito")
+                resnamerest= data.getString("Fnamerest")
+
+                layout.trcelulares.text=rescelular.toString()
+                layout.trdes.text=resdescripcion.toString()
+                layout.trdias.text=resdias.toString()
+                layout.trdireccion.text=resdireccion.toString()
+                layout.trhorarios.text=reshorario.toString()
+
+
                 //layout.tdes.text=ndistrito
 
-                val db= Firebase.firestore
+                /*val db= Firebase.firestore
                 db.collection("restauran")
                     .whereEqualTo("namerest",restafr)
                     .get()
@@ -50,8 +70,13 @@ class Restaurante : Fragment() {
 
                         }
                     }
+
+                 */
+
+
             }
         )
+
 
     }
 

@@ -19,49 +19,48 @@ class Portada : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portada)
+        vvfondo= findViewById(R.id.videoview)
 
         //val db : FirebaseFirestore = FirebaseFirestore.getInstance()
-        val db= Firebase.firestore
+        //val db= Firebase.firestore
 
-        db.collection("vinedos")
+        FirebaseFirestore.getInstance().collection("videoapp")
             .get()
             .addOnSuccessListener { resultados ->
                 for (document in resultados) {
-                    Log.i("dasess",resultados.toString())
-                    videoapps = document.data.get("celular").toString()
-                    Log.i("valorvideo",videoapps.toString())
+                    //Log.i("dasess",resultados.toString())
+                    videoapps = document.data.get("videolink").toString()
+                    //Log.i("valorvideo",videoapps.toString())
+
+                    val uri = Uri.parse(""+videoapps)
+                    vvfondo.setVideoURI(uri)
+                    vvfondo.requestFocus()
+
+                    vvfondo.setOnCompletionListener {
+                        //Toast.makeText(this,"Gracias por mirara el video",Toast.LENGTH_LONG).show()
+                    }
+                    vvfondo.setOnPreparedListener { mp->
+                        vvfondo.start()
+                    }
+
                 }
+            }
+            .addOnFailureListener{
             }
 
         //val uri = Uri.parse("android.resource://"+packageName+"/"+R.raw.castilla)
 
-        Toast.makeText(this,videoapps.toString(),Toast.LENGTH_LONG).show()
-        val uri = Uri.parse(videoapps)
 
-        vvfondo= findViewById(R.id.videoview)
+        //val uri = Uri.parse(videoapps)
+       // vvfondo.setVideoURI(uri)
+       // vvfondo.requestFocus()
 
-        vvfondo.setVideoURI(uri)
-        vvfondo.requestFocus()
-
-
-        vvfondo.setOnCompletionListener {
+       // vvfondo.setOnCompletionListener {
             //Toast.makeText(this,"Gracias por mirara el video",Toast.LENGTH_LONG).show()
-        }
-
-        vvfondo.setOnPreparedListener { mp->
-            vvfondo.start()
-        }
-
-
-
-
-
-
-
-
-
-
-
+       // }
+        //vvfondo.setOnPreparedListener { mp->
+        //    vvfondo.start()
+        //}
 
 
         val botondis=findViewById<ImageView>(R.id.imageDistritos)
@@ -73,15 +72,16 @@ class Portada : AppCompatActivity() {
 
 
         botonnoticias.setOnClickListener {
-            val btdesas=Intent(this,noticiascastilla::class.java)
+            val btdesas=Intent(this,GastroAplaoRec::class.java)
+            btdesas.putExtra("Fotosdis","general")
             startActivity(btdesas)
         }
 
 
 
         botondesa.setOnClickListener {
-            //val btdesas=Intent(this,Desarrollador::class.java)
-            //startActivity(btdesas)
+            val btdesas=Intent(this,PortadaTurismo::class.java)
+            startActivity(btdesas)
         }
 
         botonevento.setOnClickListener {
@@ -102,10 +102,27 @@ class Portada : AppCompatActivity() {
 
         botondis.setOnClickListener {
             val distele=Intent(this,Distritos::class.java)
-
             startActivity(distele)
         }
 
 
     }
+}
+
+private fun linkvideos(dase:String) {
+    //Toast.makeText(this,"ENTROOOOOO", Toast.LENGTH_LONG).show()
+    FirebaseFirestore.getInstance().collection("gastroaplaof")
+        .get()
+        .addOnSuccessListener { resultados ->
+            for (document in resultados) {
+                Log.i("dasess",resultados.toString())
+                var videoapps2 = document.data.get("celular").toString()
+                Log.i("valorvideo",videoapps2.toString())
+            }
+        }
+        .addOnFailureListener{
+
+        }
+
+
 }

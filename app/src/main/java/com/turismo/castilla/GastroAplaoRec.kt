@@ -2,6 +2,7 @@ package com.turismo.castilla
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.turismo.castilla.databinding.ActivityGastroAplaoRecBinding
@@ -15,7 +16,7 @@ class GastroAplaoRec : AppCompatActivity() {
         binding = ActivityGastroAplaoRecBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var namedistrito = intent.extras?.getString("Fotosdis")
+        var namedistrito = intent.extras?.getString("dist")
 
         binding.recyclerGastro.apply {
             layoutManager = LinearLayoutManager(this@GastroAplaoRec)
@@ -26,13 +27,15 @@ class GastroAplaoRec : AppCompatActivity() {
 
     }
     private fun restaplao(dase:String) {
+        Toast.makeText(this,dase.toString(), Toast.LENGTH_LONG).show()
 
-        FirebaseFirestore.getInstance().collection("gastroaplaof")
+        FirebaseFirestore.getInstance().collection("restauran")
+            .whereEqualTo("idDistrito",dase)
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-                    val user = documents.toObjects(UserModel::class.java)
-                    //binding.recyclerGastro.adapter = UserAdapter(this,user)
+                    val user = documents.toObjects(UserGastrono::class.java)
+                    binding.recyclerGastro.adapter = GastroAdapter(this,user)
                 }
             }
             .addOnFailureListener{

@@ -13,6 +13,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.turismo.castilla.databinding.FragmentFragDesHotelBinding
 import com.turismo.castilla.databinding.FragmentFragLinkHotelBinding
+import com.turismo.castilla.databinding.FragmentFragLinkResBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,15 +26,27 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FragLinkHotel : Fragment() {
+
     lateinit var layout: FragmentFragLinkHotelBinding
-    private val Binding get() = layout
-    var lhotelval:String?=""
-    lateinit var link:String
+
+    var rescelular:String?=""
+    var resfacebook:String?=""
+    var resmapa:String?=""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        parentFragmentManager.setFragmentResultListener("fraglinkhotel",this,
+            FragmentResultListener{reStr:String, data:Bundle ->
+
+                rescelular= data.getString("HTcelular")
+                resfacebook= data.getString("HTfacebook")
+                resmapa= data.getString("HTmapa")
+
+            }
+
+        )
 
 
     }
@@ -42,13 +55,34 @@ class FragLinkHotel : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var datol:String?=""
 
-        layout= FragmentFragLinkHotelBinding.inflate(inflater,container,false)
+        val boton= FragmentFragLinkHotelBinding.inflate(layoutInflater)
 
+        boton.galleriahotel.setOnClickListener{
 
+            val galvar= Intent(context,PortaFotos::class.java)
+            //galvar.putExtra("Fotosdis",linkf)
+            startActivity(galvar)
 
-        return layout.root
+        }
+
+        boton.mapp.setOnClickListener{
+            val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:"+resmapa.toString()))
+            startActivity(mapa)
+        }
+
+        boton.facep.setOnClickListener{
+
+            val face=Intent(Intent.ACTION_VIEW,Uri.parse(""+resfacebook.toString()))
+            startActivity(face)
+        }
+        boton.llamadap.setOnClickListener{
+            val myUri= Uri.parse("tel:"+rescelular.toString()).let { numeroTelefonoUri ->
+                Intent(Intent.ACTION_DIAL,numeroTelefonoUri)
+            }
+            startActivity(myUri)
+        }
+        return boton.root
     }
 
     companion object {

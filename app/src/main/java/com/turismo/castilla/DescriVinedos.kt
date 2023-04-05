@@ -11,11 +11,36 @@ class DescriVinedos : MenuTodos() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_descri_vinedos)
 
-        var vvinedos=intent.getStringExtra("vine")
+        var vidVinedos=intent.getStringExtra("idVinedos")
+        var vcelular=intent.getStringExtra("celular")
+        var vdescripcion=intent.getStringExtra("descripcion")
+        var vdias=intent.getStringExtra("dias")
+        var vdireccion=intent.getStringExtra("direccion")
+        var vhorario=intent.getStringExtra("horario")
+        var vnamevinedos=intent.getStringExtra("namevinedos")
+        var vfacebook=intent.getStringExtra("facebook")
+        var vmapa=intent.getStringExtra("mapa")
 
-        val paqueteresta:Bundle= Bundle()
-        paqueteresta.putString("vinedosva",vvinedos)
-        supportFragmentManager.setFragmentResult("fragvinedos",paqueteresta)
+
+
+        val paquetevinedos:Bundle= Bundle()
+        paquetevinedos.putString("vidVinedos",vidVinedos)
+        paquetevinedos.putString("vcelular",vcelular)
+        paquetevinedos.putString("vdescripcion",vdescripcion)
+        paquetevinedos.putString("vdias",vdias)
+        paquetevinedos.putString("vdireccion",vdireccion)
+        paquetevinedos.putString("vhorario",vhorario)
+        paquetevinedos.putString("vnamevinedos",vnamevinedos)
+        paquetevinedos.putString("vfacebook",vfacebook)
+        paquetevinedos.putString("vmapa",vmapa)
+        supportFragmentManager.setFragmentResult("fragvino",paquetevinedos)
+
+
+        val paquelinkv:Bundle= Bundle()
+        paquelinkv.putString("vtcelular",vcelular)
+        paquelinkv.putString("vtfacebook",vfacebook)
+        paquelinkv.putString("vtmapa",vmapa)
+        supportFragmentManager.setFragmentResult("fraglinkvino",paquelinkv)
 
 
         val sliderviendos=findViewById<ViewPager2>(R.id.slidervinedos)

@@ -14,10 +14,6 @@ class myPages(fA:FragmentActivity):FragmentStateAdapter(fA) {
                 val f1=frgA()
                 return f1
             }
-            //1->{
-              //  val f2=frgB()
-                //return f2
-            //}
             else -> {
                 val f2=frgD()
                 return f2

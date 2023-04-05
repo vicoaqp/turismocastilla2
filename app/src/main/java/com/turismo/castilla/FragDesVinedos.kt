@@ -25,31 +25,34 @@ private const val ARG_PARAM2 = "param2"
 class FragDesVinedos : Fragment() {
     lateinit var layout: FragmentFragDesVinedosBinding
     private val Binding get() = layout
-    var vinedosva:String?=""
+    var vincelular:String?=""
+    var vindescripcion:String?=""
+    var vindias:String?=""
+    var vindireccion:String?=""
+    var vinhorario:String?=""
+    var vinidvinedos:String?=""
+    var vinnamevinedos:String?=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        parentFragmentManager.setFragmentResultListener("fragvinedos",this,
+        parentFragmentManager.setFragmentResultListener("fragvino",this,
             FragmentResultListener{ reStr: String, data: Bundle ->
-                vinedosva= data.getString("vinedosva")
-                Log.i("resu",vinedosva.toString())
-                //layout.tdes.text=ndistrito
 
-                val db= Firebase.firestore
-                db.collection("vinedos")
-                    .whereEqualTo("namevinedos",vinedosva)
-                    .get()
-                    .addOnSuccessListener { result ->
-                        for (document in result) {
-                            layout.vinedosdes.text= document.data.get("descripcion").toString()
-                            layout.vinedosdireccion.text=document.data.get("direccion").toString()
-                            layout.vinedosdias.text=document.data.get("dias").toString()
-                            layout.vinedoshorarios.text=document.data.get("horario").toString()
-                            layout.vinedoscelulares.text=document.data.get("celular").toString()
+                vincelular= data.getString("vcelular")
+                vindescripcion= data.getString("vdescripcion")
+                vindias= data.getString("vdias")
+                vindireccion= data.getString("vdireccion")
+                vinhorario= data.getString("vhorario")
+                vinidvinedos= data.getString("vidVinedos")
+                vinnamevinedos= data.getString("vnamevinedos")
 
-                        }
-                    }
+                layout.vinedoscelulares.text=vincelular.toString()
+                layout.vinedosdes.text=vindescripcion.toString()
+                layout.vinedosdias.text=vindias.toString()
+                layout.vinedosdireccion.text=vindireccion.toString()
+                layout.vinedoshorarios.text=vinhorario.toString()
+
             }
         )
 

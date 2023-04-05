@@ -6,39 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".Hoteles">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hotelespp" />
+
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/imageView5">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView5"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerHotel"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/hotelespp" />
+                android:layout_height="match_parent" />
 
-            <Button
-                android:id="@+id/button_buenosaires"
-                style="@style/botonesdise"
-                android:background="@drawable/hbuenosairesaplao" />
-            <Button
-                android:id="@+id/button_casalinda"
-                style="@style/botonesdise"
-                android:background="@drawable/hcasalindaaplao" />
-            <Button
-                android:id="@+id/button_municipal"
-                style="@style/botonesdise"
-                android:background="@drawable/hmunicipalaplao" />
         </LinearLayout>
     </ScrollView>
 

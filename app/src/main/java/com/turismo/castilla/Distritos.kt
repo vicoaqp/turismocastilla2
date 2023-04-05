@@ -32,85 +32,85 @@ class Distritos : MenuTodos() {
 
         btnorcopampa.setOnClickListener{
             val orco= Intent(this,Eleccion::class.java)
-            orco.putExtra("Distrito","orcopampa")
+            orco.putExtra("Distrito","LpcObyvDvenDre1olyJn")
             startActivity(orco)
         }
 
         btnayo.setOnClickListener{
             val ayo= Intent(this,Eleccion::class.java)
-            ayo.putExtra("Distrito","ayo")
+            ayo.putExtra("Distrito","cikcoCgMQghiaZWKkEvu")
             startActivity(ayo)
         }
 
         btntipan.setOnClickListener{
             val tipan= Intent(this,Eleccion::class.java)
-            tipan.putExtra("Distrito","tipan")
+            tipan.putExtra("Distrito","vmG9JczBTRSSJPPA6muk")
             startActivity(tipan)
         }
 
         btnchoco.setOnClickListener{
             val choco= Intent(this,Eleccion::class.java)
-            choco.putExtra("Distrito","choco")
+            choco.putExtra("Distrito","UKh1aNqrJgH4BseEupyG")
             startActivity(choco)
         }
 
         btnchachas.setOnClickListener{
             val chachas= Intent(this,Eleccion::class.java)
-            chachas.putExtra("Distrito","chachas")
+            chachas.putExtra("Distrito","eHCGunMDILDjNjFUR3Vd")
             startActivity(chachas)
         }
 
         btnunon.setOnClickListener{
             val unon= Intent(this,Eleccion::class.java)
-            unon.putExtra("Distrito","unon")
+            unon.putExtra("Distrito","nII9JY5ZzmaOBWqJtWyl")
             startActivity(unon)
         }
 
         btnchilcaymarca.setOnClickListener{
             val chilca= Intent(this,Eleccion::class.java)
-            chilca.putExtra("Distrito","chilcaymarca")
+            chilca.putExtra("Distrito","fcVILQojC53q1hnpueQT")
             startActivity(chilca)
         }
 
         btnandagua.setOnClickListener{
             val andagua= Intent(this,Eleccion::class.java)
-            andagua.putExtra("Distrito","andagua")
+            andagua.putExtra("Distrito","Ztu8W2RcUOqFrUZnNkf4")
             startActivity(andagua)
         }
 
         btnmachahuay.setOnClickListener{
             val machahuay= Intent(this,Eleccion::class.java)
-            machahuay.putExtra("Distrito","machahuay")
+            machahuay.putExtra("Distrito","J3GBEeOUxzP8znrNg7xx")
             startActivity(machahuay)
         }
 
         btnpampacolca.setOnClickListener{
             val pampacolca= Intent(this,Eleccion::class.java)
-            pampacolca.putExtra("Distrito","pampacolca")
+            pampacolca.putExtra("Distrito","DmRmRNEmsSi86lVFjuEp")
             startActivity(pampacolca)
         }
 
         botonapl.setOnClickListener{
             val aplao= Intent(this,Eleccion::class.java)
-            aplao.putExtra("Distrito","aplao")
+            aplao.putExtra("Distrito","uyC1afkIWd23narJPGMP")
             startActivity(aplao)
         }
 
         botonhuan.setOnClickListener{
             val huancar= Intent(this,Eleccion::class.java)
-            huancar.putExtra("Distrito","huancarqui")
+            huancar.putExtra("Distrito","7BYUbi0kDD8EZGRvV5UF")
             startActivity(huancar)
         }
 
         btnuraca.setOnClickListener{
             val uraca= Intent(this,Eleccion::class.java)
-            uraca.putExtra("Distrito","uraca")
+            uraca.putExtra("Distrito","Y4uQ1LLi2Rvrm0pgbc36")
             startActivity(uraca)
         }
 
         btnviraco.setOnClickListener{
             val viraco= Intent(this,Eleccion::class.java)
-            viraco.putExtra("Distrito","viraco")
+            viraco.putExtra("Distrito","85LN38HemVE0bnJUCcMb")
             startActivity(viraco)
         }
 

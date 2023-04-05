@@ -23,15 +23,21 @@ class FragLinkRes : Fragment() {
 
     lateinit var layout:FragmentFragLinkResBinding
     var linkf:String?=""
+    var rescelular:String?=""
+    var resfacebook:String?=""
+    var resmapa:String?=""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("dase","entroooo")
 
-       parentFragmentManager.setFragmentResultListener("restsegundo",this,
+       parentFragmentManager.setFragmentResultListener("fragmresta",this,
          FragmentResultListener{reStr:String, data:Bundle ->
-               linkf=data.getString("restprimero")
-                Log.i("dase",linkf.toString())
+
+             rescelular= data.getString("FRcelular")
+             resfacebook= data.getString("FRfacebook")
+             resmapa= data.getString("FRmapa")
+
            }
 
         )
@@ -56,93 +62,21 @@ class FragLinkRes : Fragment() {
         }
 
         boton.mapasres.setOnClickListener{
-
-            if (linkf == "rinconcitohuancarqui") {
-                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-16.09204372865129, -72.47436532135633"))
-                startActivity(mapa)
-
-            }
-            else if (linkf == "rokasbambu") {
-                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-16.088099861678273, -72.49173503098635"))
-                startActivity(mapa)
-            }
-            else if (linkf == "rambo") {
-                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-15.992201342907073, -72.47512998433605"))
-                startActivity(mapa)
-            }
-            else if (linkf == "majesriver") {
-                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-15.992902470159002, -72.4750694661794"))
-                startActivity(mapa)
-            }
-            else if (linkf == "fundoyupanqui") {
-                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-15.978449075791202, -72.53338283063333"))
-                startActivity(mapa)
-            }
-            else if (linkf == "casademauro") {
-                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-15.978449075791202, -72.53338283063333"))
-                startActivity(mapa)
-            }
-            else if (linkf == "fundobarra") {
-                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-16.074615455277076, -72.48997892204497"))
-                startActivity(mapa)
-            }
-            else if (linkf == "titanic") {
-                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-16.07763331455655, -72.48233453568012"))
-                startActivity(mapa)
-            }
-            else if (linkf == "ksamia") {
-                val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:-15.991566574526704, -72.47542393744975"))
-                startActivity(mapa)
-            }
-
-
-
-
+            val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:"+resmapa.toString()))
+            startActivity(mapa)
         }
 
         boton.faceres.setOnClickListener{
 
-            if (linkf == "rinconcitohuancarqui") {
-                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/rinconcitohuancarquino"))
+                val face=Intent(Intent.ACTION_VIEW,Uri.parse(""+resfacebook.toString()))
                 startActivity(face)
-
-           }
-            else if (linkf == "rokasbambu") {
-                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/RokasyBambu"))
-                startActivity(face)
-           }
-            else if (linkf == "rambo") {
-                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/cevicheria.rambo.3"))
-                startActivity(face)
-            }
-            else if (linkf == "majesriver") {
-                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/groups/294875110694"))
-                startActivity(face)
-            }
-            else if (linkf == "fundoyupanqui") {
-                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/fundo.yupanqui.73"))
-                startActivity(face)
-            }
-            else if (linkf == "casademauro") {
-                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/LACASADEMAUROTURISMOYAVENTURA"))
-                startActivity(face)
-            }
-            else if (linkf == "fundobarra") {
-                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/profile.php?id=100063548051478"))
-                startActivity(face)
-            }
-            else if (linkf == "titanic") {
-                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/RestaurantTitanicAplao"))
-                startActivity(face)
-            }
-            else if (linkf == "ksamia") {
-                val face=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/Restauranteksamia"))
-                startActivity(face)
-            }
-
-
         }
-
+        boton.llamadasres.setOnClickListener{
+            val myUri= Uri.parse("tel:"+rescelular.toString()).let { numeroTelefonoUri ->
+                Intent(Intent.ACTION_DIAL,numeroTelefonoUri)
+            }
+            startActivity(myUri)
+        }
         return boton.root
     }
 

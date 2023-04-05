@@ -1,40 +1,75 @@
 package com.turismo.castilla
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentResultListener
+import com.turismo.castilla.databinding.FragmentFragLinkHotelBinding
+import com.turismo.castilla.databinding.FragmentFragLinkVinedosBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FragLinkVinedos.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FragLinkVinedos : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    lateinit var layout: FragmentFragLinkVinedosBinding
+    var rescelular:String?=""
+    var resfacebook:String?=""
+    var resmapa:String?=""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
+        parentFragmentManager.setFragmentResultListener("fraglinkvino",this,
+            FragmentResultListener{ reStr:String, data:Bundle ->
+
+                rescelular= data.getString("vtcelular")
+                resfacebook= data.getString("vtfacebook")
+                resmapa= data.getString("vtmapa")
+
+            }
+
+        )
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_frag_link_vinedos, container, false)
+
+        val boton= FragmentFragLinkVinedosBinding.inflate(layoutInflater)
+
+
+        boton.galleriavinedo.setOnClickListener{
+
+            val galvar= Intent(context,PortaFotos::class.java)
+            //galvar.putExtra("Fotosdis",linkf)
+            startActivity(galvar)
+
+        }
+
+        boton.mapvinedo.setOnClickListener{
+            val mapa= Intent(Intent.ACTION_VIEW, Uri.parse("geo:"+resmapa.toString()))
+            startActivity(mapa)
+        }
+
+        boton.facevinedo.setOnClickListener{
+
+            val face= Intent(Intent.ACTION_VIEW, Uri.parse(""+resfacebook.toString()))
+            startActivity(face)
+        }
+        boton.llamadavinedo.setOnClickListener{
+            val myUri= Uri.parse("tel:"+rescelular.toString()).let { numeroTelefonoUri ->
+                Intent(Intent.ACTION_DIAL,numeroTelefonoUri)
+            }
+            startActivity(myUri)
+        }
+        return boton.root
+
     }
 
     companion object {
@@ -51,8 +86,7 @@ class FragLinkVinedos : Fragment() {
         fun newInstance(param1: String, param2: String) =
             FragLinkVinedos().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
                 }
             }
     }

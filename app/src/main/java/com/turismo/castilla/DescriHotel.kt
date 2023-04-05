@@ -11,15 +11,35 @@ class DescriHotel : MenuTodos() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_descri_hotel)
 
-        var vhotel=intent.getStringExtra("resta")
+        var vidHotel=intent.getStringExtra("idHotel")
+        var vcelular=intent.getStringExtra("celular")
+        var vdescripcion=intent.getStringExtra("descripcion")
+        var vdias=intent.getStringExtra("dias")
+        var vdireccion=intent.getStringExtra("direccion")
+        var vhorario=intent.getStringExtra("horario")
+        var vnamehotel=intent.getStringExtra("namehotel")
+        var vfacebook=intent.getStringExtra("facebook")
+        var vmapa=intent.getStringExtra("mapa")
 
-        val paqueteresta:Bundle= Bundle()
-        paqueteresta.putString("hotelva",vhotel)
-        supportFragmentManager.setFragmentResult("fraghotel",paqueteresta)
+        val paquetehotel:Bundle= Bundle()
+        paquetehotel.putString("HidHotel",vidHotel)
+        paquetehotel.putString("Hcelular",vcelular)
+        paquetehotel.putString("Hdescripcion",vdescripcion)
+        paquetehotel.putString("Hdias",vdias)
+        paquetehotel.putString("Hdireccion",vdireccion)
+        paquetehotel.putString("Hhorario",vhorario)
+        paquetehotel.putString("Hnamehotel",vnamehotel)
+        paquetehotel.putString("Hfacebook",vfacebook)
+        paquetehotel.putString("Hmapa",vmapa)
+        supportFragmentManager.setFragmentResult("fraghotel",paquetehotel)
 
-        val paquelink:Bundle= Bundle()
-        paquelink.putString("hotellinkva",vhotel)
-        supportFragmentManager.setFragmentResult("fraglinkhotel",paquelink)
+
+
+        val paquelinkh:Bundle= Bundle()
+        paquelinkh.putString("HTcelular",vcelular)
+        paquelinkh.putString("HTfacebook",vfacebook)
+        paquelinkh.putString("HTmapa",vmapa)
+        supportFragmentManager.setFragmentResult("fraglinkhotel",paquelinkh)
 
 
 

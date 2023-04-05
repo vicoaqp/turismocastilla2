@@ -25,31 +25,34 @@ private const val ARG_PARAM2 = "param2"
 class FragDesHotel : Fragment() {
     lateinit var layout:FragmentFragDesHotelBinding
     private val Binding get() = layout
-    var hotelva:String?=""
+    var reshcelular:String?=""
+    var reshdescripcion:String?=""
+    var reshdias:String?=""
+    var reshdireccion:String?=""
+    var reshhorario:String?=""
+    var reshidhotel:String?=""
+    var reshnamehotel:String?=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         parentFragmentManager.setFragmentResultListener("fraghotel",this,
             FragmentResultListener{ reStr: String, data: Bundle ->
-                hotelva= data.getString("hotelva")
-                Log.i("resu",hotelva.toString())
-                //layout.tdes.text=ndistrito
 
-                val db= Firebase.firestore
-                db.collection("hotel")
-                    .whereEqualTo("namehotel",hotelva)
-                    .get()
-                    .addOnSuccessListener { result ->
-                        for (document in result) {
-                            layout.hoteldes.text= document.data.get("descripcion").toString()
-                            layout.hoteldireccion.text=document.data.get("direccion").toString()
-                            layout.hoteldias.text=document.data.get("dias").toString()
-                            layout.hotelhorarios.text=document.data.get("horario").toString()
-                            layout.hotelcelulares.text=document.data.get("celular").toString()
+                reshcelular= data.getString("Hcelular")
+                reshdescripcion= data.getString("Hdescripcion")
+                reshdias= data.getString("Hdias")
+                reshdireccion= data.getString("Hdireccion")
+                reshhorario= data.getString("Hhorario")
+                reshidhotel= data.getString("HidHotel")
+                reshnamehotel= data.getString("Hnamehotel")
 
-                        }
-                    }
+                layout.hotelcelulares.text=reshcelular.toString()
+                layout.hoteldes.text=reshdescripcion.toString()
+                layout.hoteldias.text=reshdias.toString()
+                layout.hoteldireccion.text=reshdireccion.toString()
+                layout.hotelhorarios.text=reshhorario.toString()
+
             }
         )
 
