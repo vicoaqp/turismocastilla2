@@ -1,7 +1,10 @@
 package com.turismo.castilla
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,9 +23,24 @@ class Portada : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portada)
         vvfondo= findViewById(R.id.videoview)
+        val CHANNEL_ID = "mi_canal_id"
 
-        //val db : FirebaseFirestore = FirebaseFirestore.getInstance()
-        //val db= Firebase.firestore
+        // Solicitar permisos de notificación
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // Crear un canal de notificación para Android 8.0 y superior
+            val channel = NotificationChannel(
+                CHANNEL_ID,
+                "Nombre del canal",
+                NotificationManager.IMPORTANCE_HIGH
+            )
+            // Configurar opciones del canal
+            // ...
+
+            // Registrar el canal en el sistema
+            val notificationManager = getSystemService(NotificationManager::class.java)
+            notificationManager.createNotificationChannel(channel)
+        }
+
 
         FirebaseFirestore.getInstance().collection("videoapp")
             .get()

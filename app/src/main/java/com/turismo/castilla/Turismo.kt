@@ -10,7 +10,7 @@ class Turismo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_turismo)
 
-
+        /*
         val bdinosaurio=findViewById<Button>(R.id.button_dinosaurio)
         val bcastillo=findViewById<Button>(R.id.button_castillo)
         val brostro=findViewById<Button>(R.id.button_rostro)
@@ -53,6 +53,10 @@ class Turismo : AppCompatActivity() {
             lanzarcast.putExtra("turi","castillo")
             startActivity(lanzarcast)
         }
+
+         */
+
+
 
     }
 }
