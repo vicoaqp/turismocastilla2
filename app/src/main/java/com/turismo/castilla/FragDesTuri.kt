@@ -25,32 +25,36 @@ private const val ARG_PARAM2 = "param2"
 class FragDesTuri : Fragment() {
     lateinit var layout:FragmentFragDesTuriBinding
     private val Binding get() = layout
-    var turiva:String?=""
+    var reshcelular:String?=""
+    var reshdescripcion:String?=""
+    var reshdias:String?=""
+    var reshdireccion:String?=""
+    var reshhorario:String?=""
+    var reshidhotel:String?=""
+    var reshnamehotel:String?=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
-        parentFragmentManager.setFragmentResultListener("fragturismo",this,
+        parentFragmentManager.setFragmentResultListener("fragturismos",this,
             FragmentResultListener{ reStr: String, data: Bundle ->
-                turiva= data.getString("turismova")
-                Log.i("resu",turiva.toString())
-                //layout.tdes.text=ndistrito
 
-                val db= Firebase.firestore
-                db.collection("turismo")
-                    .whereEqualTo("nameturismo",turiva)
-                    .get()
-                    .addOnSuccessListener { result ->
-                        for (document in result) {
-                            layout.turides.text= document.data.get("descripcion").toString()
-                            layout.turidireccion.text=document.data.get("direccion").toString()
-                            layout.turidias.text=document.data.get("dias").toString()
-                            layout.turihorarios.text=document.data.get("horario").toString()
-                            layout.turicelulares.text=document.data.get("celular").toString()
+                reshcelular= data.getString("tcelular")
+                reshdescripcion= data.getString("tdescripcion")
+                reshdias= data.getString("tdias")
+                reshdireccion= data.getString("tdireccion")
+                reshhorario= data.getString("thorario")
+                reshidhotel= data.getString("tidTurismo")
+                reshnamehotel= data.getString("tnameturismo")
 
-                        }
-                    }
+                layout.turicelulares.text=reshcelular.toString()
+                layout.turides.text=reshdescripcion.toString()
+                layout.turidias.text=reshdias.toString()
+                layout.turidireccion.text=reshdireccion.toString()
+                layout.turihorarios.text=reshhorario.toString()
+
+
             }
         )
 

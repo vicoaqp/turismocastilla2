@@ -11,15 +11,39 @@ class DescriTurismo : MenuTodos() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_descri_turismo)
 
-        var vturismo=intent.getStringExtra("turi")
-
-        val paqueteresta:Bundle= Bundle()
-        paqueteresta.putString("turismova",vturismo)
-        supportFragmentManager.setFragmentResult("fragturismo",paqueteresta)
+        var vidHotel=intent.getStringExtra("idTurismo")
+        var vcelular=intent.getStringExtra("celular")
+        var vdescripcion=intent.getStringExtra("descripcion")
+        var vdias=intent.getStringExtra("dias")
+        var vdireccion=intent.getStringExtra("direccion")
+        var vhorario=intent.getStringExtra("horario")
+        var vnamehotel=intent.getStringExtra("nameturismo")
+        var vfacebook=intent.getStringExtra("facebook")
+        var vmapa=intent.getStringExtra("mapa")
 
         val paqueteturismos:Bundle= Bundle()
-        paqueteturismos.putString("turisdescrip",vturismo)
-        supportFragmentManager.setFragmentResult("fturismo",paqueteturismos)
+        paqueteturismos.putString("tidTurismos",vidHotel)
+        paqueteturismos.putString("tcelular",vcelular)
+        paqueteturismos.putString("tdescripcion",vdescripcion)
+        paqueteturismos.putString("tdias",vdias)
+        paqueteturismos.putString("tdireccion",vdireccion)
+        paqueteturismos.putString("thorario",vhorario)
+        paqueteturismos.putString("tnamehotel",vnamehotel)
+        paqueteturismos.putString("tfacebook",vfacebook)
+        paqueteturismos.putString("tmapa",vmapa)
+        supportFragmentManager.setFragmentResult("fragturismos",paqueteturismos)
+
+
+
+        val paquelinkt:Bundle= Bundle()
+        paquelinkt.putString("trcelular",vcelular)
+        paquelinkt.putString("trfacebook",vfacebook)
+        paquelinkt.putString("trmapa",vmapa)
+        supportFragmentManager.setFragmentResult("fraglinkturismo",paquelinkt)
+
+
+
+
 
 
         val sliderturismo=findViewById<ViewPager2>(R.id.sliderturi)
