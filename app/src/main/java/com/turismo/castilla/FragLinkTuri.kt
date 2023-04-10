@@ -22,7 +22,7 @@ class FragLinkTuri : Fragment() {
     var rescelular:String?=""
     var resfacebook:String?=""
     var resmapa:String?=""
-
+    var ridturismo:String?=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.i("dase","entroooo")
@@ -33,6 +33,7 @@ class FragLinkTuri : Fragment() {
                 rescelular= data.getString("trcelular")
                 resfacebook= data.getString("trfacebook")
                 resmapa= data.getString("trmapa")
+                ridturismo=data.getString("tridturismo")
 
             }
 
@@ -78,7 +79,7 @@ class FragLinkTuri : Fragment() {
 
         boton.galeriaturismo.setOnClickListener{
             val galvar= Intent(context,PortaFotos::class.java)
-            galvar.putExtra("Fotosdis","dase")
+            galvar.putExtra("Fotosdis",ridturismo.toString())
             startActivity(galvar)
         }
 

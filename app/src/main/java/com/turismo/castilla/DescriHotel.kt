@@ -39,6 +39,7 @@ class DescriHotel : MenuTodos() {
         paquelinkh.putString("HTcelular",vcelular)
         paquelinkh.putString("HTfacebook",vfacebook)
         paquelinkh.putString("HTmapa",vmapa)
+        paquelinkh.putString("HTidHotel",vidHotel)
         supportFragmentManager.setFragmentResult("fraglinkhotel",paquelinkh)
 
 

@@ -40,6 +40,7 @@ class DescriVinedos : MenuTodos() {
         paquelinkv.putString("vtcelular",vcelular)
         paquelinkv.putString("vtfacebook",vfacebook)
         paquelinkv.putString("vtmapa",vmapa)
+        paquelinkv.putString("vtidVinedos",vidVinedos)
         supportFragmentManager.setFragmentResult("fraglinkvino",paquelinkv)
 
 

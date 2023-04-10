@@ -29,6 +29,19 @@ class PortaFotos : AppCompatActivity() {
 
     private fun fetchData(dase:String) {
 
+        FirebaseFirestore.getInstance().collection("fotosrestaurante")
+            .whereEqualTo("idfotito",dase)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val user = documents.toObjects(UserModel::class.java)
+                    binding.mainRecyclerview.adapter= UserAdapter(this,user)
+                }
+            }
+            .addOnFailureListener{
+
+            }
+        /*
         if (dase == "aplao") {
             Toast.makeText(this,"aplaosalio",Toast.LENGTH_LONG).show()
             FirebaseFirestore.getInstance().collection("fotoaplao")
@@ -255,6 +268,8 @@ class PortaFotos : AppCompatActivity() {
 
                 }
         }
+
+         */
 
 
         /*FirebaseFirestore.getInstance().collection("fotos")

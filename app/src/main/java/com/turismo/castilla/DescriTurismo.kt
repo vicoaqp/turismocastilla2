@@ -39,6 +39,7 @@ class DescriTurismo : MenuTodos() {
         paquelinkt.putString("trcelular",vcelular)
         paquelinkt.putString("trfacebook",vfacebook)
         paquelinkt.putString("trmapa",vmapa)
+        paquelinkt.putString("tridturismo",vidHotel)
         supportFragmentManager.setFragmentResult("fraglinkturismo",paquelinkt)
 
 

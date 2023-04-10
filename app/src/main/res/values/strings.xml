@@ -27,6 +27,8 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="cuerpodelante">Bienvenido al Aplicativo de turismo Castilla, donde podrás encontrar recomendaciones de comida, lugares para visitar y sus respectivas ubicaciones para tener una increíble experiencia de la Provincia de Castilla. </string>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 

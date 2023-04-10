@@ -19,7 +19,7 @@ class FragLinkVinedos : Fragment() {
     var rescelular:String?=""
     var resfacebook:String?=""
     var resmapa:String?=""
-
+    var residVinedos:String?=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +30,7 @@ class FragLinkVinedos : Fragment() {
                 rescelular= data.getString("vtcelular")
                 resfacebook= data.getString("vtfacebook")
                 resmapa= data.getString("vtmapa")
+                residVinedos=data.getString("vtidVinedos")
 
             }
 
@@ -47,7 +48,7 @@ class FragLinkVinedos : Fragment() {
         boton.galleriavinedo.setOnClickListener{
 
             val galvar= Intent(context,PortaFotos::class.java)
-            //galvar.putExtra("Fotosdis",linkf)
+            galvar.putExtra("Fotosdis",residVinedos.toString())
             startActivity(galvar)
 
         }

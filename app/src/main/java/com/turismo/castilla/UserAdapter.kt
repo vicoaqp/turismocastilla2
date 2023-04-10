@@ -26,16 +26,16 @@ class UserAdapter(private val context: PortaFotos, private val users: List<UserM
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val user =users[position]
-        holder.userName.text = user.userName
+        //holder.userName.text = user.userName
         Glide.with(context)
-            .load(user.userImage)
+            .load(user.imgrestaurante)
             .into(holder.userImage)
 
     }
 
 }
     class UserViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
-        val userName: TextView = itemView.findViewById(R.id.textView_username)
+        //val userName: TextView = itemView.findViewById(R.id.textView_username)
         val userImage: ImageView =itemView.findViewById(R.id.imageView_user)
 
     }

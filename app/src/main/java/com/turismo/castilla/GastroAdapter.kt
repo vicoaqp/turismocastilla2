@@ -36,6 +36,7 @@ class GastroAdapter(private var context: GastroAplaoRec, private val usersgas: L
             val lanzar2= Intent(mContext,DescriRestaurante::class.java)
 
             lanzar2.putExtra("idDistrito",user.idDistrito)
+            lanzar2.putExtra("idRestaurante",user.idRestaurante)
             lanzar2.putExtra("celular",user.celular)
             lanzar2.putExtra("descripcion",user.descripcion)
             lanzar2.putExtra("dias",user.dias)

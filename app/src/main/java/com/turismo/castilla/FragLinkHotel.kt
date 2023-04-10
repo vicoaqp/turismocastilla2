@@ -32,6 +32,7 @@ class FragLinkHotel : Fragment() {
     var rescelular:String?=""
     var resfacebook:String?=""
     var resmapa:String?=""
+    var residHotel:String?=""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +44,7 @@ class FragLinkHotel : Fragment() {
                 rescelular= data.getString("HTcelular")
                 resfacebook= data.getString("HTfacebook")
                 resmapa= data.getString("HTmapa")
+                residHotel=data.getString("HTidHotel")
 
             }
 
@@ -59,11 +61,9 @@ class FragLinkHotel : Fragment() {
         val boton= FragmentFragLinkHotelBinding.inflate(layoutInflater)
 
         boton.galleriahotel.setOnClickListener{
-
             val galvar= Intent(context,PortaFotos::class.java)
-            //galvar.putExtra("Fotosdis",linkf)
+            galvar.putExtra("Fotosdis",residHotel.toString())
             startActivity(galvar)
-
         }
 
         boton.mapp.setOnClickListener{

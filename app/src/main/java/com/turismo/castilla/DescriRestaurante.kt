@@ -22,6 +22,7 @@ class DescriRestaurante : MenuTodos() {
         var vnamerest=intent.getStringExtra("namerest")
         var vfacebook=intent.getStringExtra("facebook")
         var vmapa=intent.getStringExtra("mapa")
+        var vidRestaurante=intent.getStringExtra("idRestaurante")
        // Log.i("variable",vrestaura.toString())
 
         val paqueterestaurante:Bundle= Bundle()
@@ -40,6 +41,8 @@ class DescriRestaurante : MenuTodos() {
         paquetenamerest.putString("FRcelular",vcelular)
         paquetenamerest.putString("FRfacebook",vfacebook)
         paquetenamerest.putString("FRmapa",vmapa)
+        paquetenamerest.putString("FRidRestaurante",vidRestaurante)
+
         supportFragmentManager.setFragmentResult("fragmresta",paquetenamerest)
 
 

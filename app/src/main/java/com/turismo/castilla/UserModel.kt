@@ -1,8 +1,8 @@
 package com.turismo.castilla
 
 class UserModel (
-    val userName: String,
-    val userImage: String
+    val idfotito: String,
+    val imgrestaurante: String
         ){
         constructor():this(
             "",

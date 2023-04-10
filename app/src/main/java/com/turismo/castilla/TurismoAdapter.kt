@@ -39,6 +39,7 @@ class TurismoAdapter(private var context: Turismo, private val usersturi: List<U
             lanzar2.putExtra("nameturismo",user.nameturismo)
             lanzar2.putExtra("facebook",user.facebook)
             lanzar2.putExtra("mapa",user.mapa)
+            lanzar2.putExtra("idDistrito",user.idDistrito)
 
             mContext.startActivity(lanzar2)
 

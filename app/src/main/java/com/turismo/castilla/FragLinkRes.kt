@@ -26,6 +26,7 @@ class FragLinkRes : Fragment() {
     var rescelular:String?=""
     var resfacebook:String?=""
     var resmapa:String?=""
+    var residRestaurante:String?=""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +38,7 @@ class FragLinkRes : Fragment() {
              rescelular= data.getString("FRcelular")
              resfacebook= data.getString("FRfacebook")
              resmapa= data.getString("FRmapa")
+             residRestaurante=data.getString("FRidRestaurante")
 
            }
 
@@ -56,7 +58,7 @@ class FragLinkRes : Fragment() {
         boton.galleriares.setOnClickListener{
 
             val galvar= Intent(context,PortaFotos::class.java)
-            galvar.putExtra("Fotosdis",linkf)
+            galvar.putExtra("Fotosdis",residRestaurante)
             startActivity(galvar)
 
         }

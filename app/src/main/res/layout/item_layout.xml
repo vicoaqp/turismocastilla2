@@ -34,7 +34,6 @@
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="TextView"
             android:textColor="#2C2A2A"
             android:textSize="20sp"
             android:textStyle="normal"
