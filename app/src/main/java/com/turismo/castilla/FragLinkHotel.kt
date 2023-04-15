@@ -60,12 +60,6 @@ class FragLinkHotel : Fragment() {
 
         val boton= FragmentFragLinkHotelBinding.inflate(layoutInflater)
 
-        boton.galleriahotel.setOnClickListener{
-            val galvar= Intent(context,PortaFotos::class.java)
-            galvar.putExtra("Fotosdis",residHotel.toString())
-            startActivity(galvar)
-        }
-
         boton.mapp.setOnClickListener{
             val mapa=Intent(Intent.ACTION_VIEW,Uri.parse("geo:"+resmapa.toString()))
             startActivity(mapa)

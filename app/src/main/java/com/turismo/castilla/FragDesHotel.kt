@@ -2,15 +2,21 @@ package com.turismo.castilla
 
 import android.os.Bundle
 import android.util.Log
+import android.view.ContextThemeWrapper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.FragmentResultListener
+import com.custom.sliderimage.logic.SliderImage
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.turismo.castilla.databinding.FragmentFragDesHotelBinding
 import com.turismo.castilla.databinding.FragmentFragDesTuriBinding
+import org.imaginativeworld.whynotimagecarousel.ImageCarousel
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
+import kotlin.math.log
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,8 +38,15 @@ class FragDesHotel : Fragment() {
     var reshhorario:String?=""
     var reshidhotel:String?=""
     var reshnamehotel:String?=""
+    var img1:String?=""
+    var img2:String?=""
+    var img3:String?=""
+    var img4:String?=""
+    val list = mutableListOf<CarouselItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
 
         parentFragmentManager.setFragmentResultListener("fraghotel",this,
@@ -46,12 +59,27 @@ class FragDesHotel : Fragment() {
                 reshhorario= data.getString("Hhorario")
                 reshidhotel= data.getString("HidHotel")
                 reshnamehotel= data.getString("Hnamehotel")
+                img1= data.getString("img1")
+                img2= data.getString("img2")
+                img3= data.getString("img3")
+                img4= data.getString("img4")
+
+
 
                 layout.hotelcelulares.text=reshcelular.toString()
                 layout.hoteldes.text=reshdescripcion.toString()
                 layout.hoteldias.text=reshdias.toString()
                 layout.hoteldireccion.text=reshdireccion.toString()
                 layout.hotelhorarios.text=reshhorario.toString()
+
+                try{
+                    list.add(CarouselItem(imageUrl = img1.toString()) )
+
+                    layout.carousel.setData(list)
+                }catch(ex: Exception){
+                    //Log.e("mensajeerror",ex.message.toString() )
+                    Toast.makeText(context,ex.message.toString(),Toast.LENGTH_LONG).show()
+                }
 
             }
         )

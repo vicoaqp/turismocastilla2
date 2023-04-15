@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.view.isGone
+import androidx.core.view.isInvisible
 
 class Eleccion : MenuTodos() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,10 +21,13 @@ class Eleccion : MenuTodos() {
         val aplaohos=findViewById<Button>(R.id.button_hospedaje)
         val aplaogast=findViewById<Button>(R.id.button_gastronomia)
         val aplaovin=findViewById<Button>(R.id.button_vinedos)
-        val aplaomov=findViewById<Button>(R.id.button_movilidad)
-
 
         //DISTRITO
+
+        //if(namedistrito=""){
+          //  aplaovin.isInvisible
+        // }
+
         aplaoh.setOnClickListener{
             val lanzar=Intent(this,HistoriaApl::class.java)
             lanzar.putExtra("dist",namedistrito)
@@ -55,10 +60,6 @@ class Eleccion : MenuTodos() {
             val lanzar5=Intent(this,Vinedos::class.java)
             lanzar5.putExtra("dist",namedistrito)
             startActivity(lanzar5)
-        }
-        aplaomov.setOnClickListener{
-            val lanzar6=Intent(this,generalmovilidad::class.java)
-            startActivity(lanzar6)
         }
 
 

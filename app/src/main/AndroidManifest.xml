@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Castilla">
         <activity
+            android:name=".mapas"
+            android:exported="false" />
+        <activity
             android:name=".PortadaTurismo"
             android:exported="false" />
         <activity
@@ -150,10 +153,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-
     </application>
-
-
 
 </manifest>

@@ -20,6 +20,11 @@ class DescriHotel : MenuTodos() {
         var vnamehotel=intent.getStringExtra("namehotel")
         var vfacebook=intent.getStringExtra("facebook")
         var vmapa=intent.getStringExtra("mapa")
+        var img1=intent.getStringExtra("img1")
+        var img2=intent.getStringExtra("img2")
+        var img3=intent.getStringExtra("img3")
+        var img4=intent.getStringExtra("img4")
+
 
         val paquetehotel:Bundle= Bundle()
         paquetehotel.putString("HidHotel",vidHotel)
@@ -31,6 +36,10 @@ class DescriHotel : MenuTodos() {
         paquetehotel.putString("Hnamehotel",vnamehotel)
         paquetehotel.putString("Hfacebook",vfacebook)
         paquetehotel.putString("Hmapa",vmapa)
+        paquetehotel.putString("img1",img1)
+        paquetehotel.putString("img2",img2)
+        paquetehotel.putString("img3",img3)
+        paquetehotel.putString("img4",img4)
         supportFragmentManager.setFragmentResult("fraghotel",paquetehotel)
 
 

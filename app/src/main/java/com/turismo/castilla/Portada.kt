@@ -90,9 +90,8 @@ class Portada : AppCompatActivity() {
 
 
         botonnoticias.setOnClickListener {
-            //val btdesas=Intent(this,GastroAplaoRec::class.java)
-            //btdesas.putExtra("Fotosdis","general")
-            //startActivity(btdesas)
+            val btdesas=Intent(this,mapas::class.java)
+            startActivity(btdesas)
         }
 
 

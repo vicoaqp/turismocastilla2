@@ -39,6 +39,10 @@ class HotelAdapter(private var context: Hoteles, private val usershotel: List<Us
             lanzar2.putExtra("namehotel",user.namehotel)
             lanzar2.putExtra("facebook",user.facebook)
             lanzar2.putExtra("mapa",user.mapa)
+            lanzar2.putExtra("img1",user.img1)
+            lanzar2.putExtra("img2",user.img2)
+            lanzar2.putExtra("img3",user.img3)
+            lanzar2.putExtra("img4",user.img4)
 
             mContext.startActivity(lanzar2)
 
