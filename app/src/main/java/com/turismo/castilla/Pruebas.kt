@@ -9,93 +9,47 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.squareup.picasso.Picasso
 import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageListener
 import org.w3c.dom.Text
 
 
-class Pruebas : AppCompatActivity() {
+class Pruebas : AppCompatActivity(), OnMapReadyCallback {
 
-    var sampleImages = arrayOf(
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_3.jpg",
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_1.jpg",
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_2.jpg"
-    )
-
+    private lateinit var map:GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pruebas)
 
-        var vidHotel=intent.getStringExtra("idHotel")
-        var vcelular=intent.getStringExtra("celular")
-        var vdescripcion=intent.getStringExtra("descripcion")
-        var vdias=intent.getStringExtra("dias")
-        var vdireccion=intent.getStringExtra("direccion")
-        var vhorario=intent.getStringExtra("horario")
-        var vnamehotel=intent.getStringExtra("namehotel")
-        var vfacebook=intent.getStringExtra("facebook")
-        var vmapa=intent.getStringExtra("mapa")
-        var img1=intent.getStringExtra("img1")
-        var img2=intent.getStringExtra("img2")
-        var img3=intent.getStringExtra("img3")
-        var img4=intent.getStringExtra("img4")
+        createMapFragment()
 
-        Log.i("imagenesdos",img1.toString())
+    }
+    private fun createMapFragment() {
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.fragmentMap) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+    }
 
-        val textodes = findViewById<TextView>(R.id.hoteldes)
-        val textodir = findViewById<TextView>(R.id.hoteldireccion)
-        val textocel = findViewById<TextView>(R.id.hotelcelulares)
-        val textodias = findViewById<TextView>(R.id.hoteldias)
-        val textohora= findViewById<TextView>(R.id.hotelhorarios)
-        val btnface = findViewById<Button>(R.id.buttonfacebook)
-        val btnmapa = findViewById<Button>(R.id.buttonmap)
-        val btnllamada = findViewById<Button>(R.id.buttonllamada)
-
-
-
-        textodes.text=vdescripcion.toString()
-        textodir.text=vdireccion.toString()
-        textocel.text=vcelular.toString()
-        textodias.text=vdias.toString()
-        textohora.text=vhorario.toString()
-
-        btnmapa.setOnClickListener{
-            val mapa= Intent(Intent.ACTION_VIEW, Uri.parse("geo:"+vmapa.toString()))
-            startActivity(mapa)
-        }
-
-        btnface.setOnClickListener{
-            val face= Intent(Intent.ACTION_VIEW, Uri.parse(""+vfacebook.toString()))
-            startActivity(face)
-        }
-        btnllamada.setOnClickListener{
-            val myUri= Uri.parse("tel:"+vcelular.toString()).let { numeroTelefonoUri ->
-                Intent(Intent.ACTION_DIAL,numeroTelefonoUri)
-            }
-            startActivity(myUri)
-        }
-
-       sampleImages = arrayOf(
-            img1.toString(),
-           img2.toString(),
-           img3.toString()
+    override fun onMapReady(googleMap: GoogleMap) {
+        map = googleMap
+        createMarker()
+    }
+    private fun createMarker() {
+        val favoritePlace = LatLng(28.044195,-16.5363842)
+        map.addMarker(MarkerOptions().position(favoritePlace).title("Mi playa favorita!"))
+        map.animateCamera(
+            CameraUpdateFactory.newLatLngZoom(favoritePlace, 18f),
+            4000,
+            null
         )
-
-        val carouselView = findViewById(R.id.carouselView) as CarouselView
-        carouselView.setPageCount(sampleImages.size)
-        carouselView.setImageListener(imageListener)
-
     }
-
-    var imageListener: ImageListener = object : ImageListener {
-        override fun setImageForPosition(position: Int, imageView: ImageView) {
-            // You can use Glide or Picasso here
-            //imageView.setImageResource(sampleImages[position])
-            Picasso.get().load(sampleImages[position]).into(imageView)
-        }
-    }
-
 
 }
