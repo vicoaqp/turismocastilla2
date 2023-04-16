@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Castilla">
         <activity
+            android:name=".Info_Hoteles"
+            android:exported="false" />
+        <activity
             android:name=".mapas"
             android:exported="false" />
         <activity

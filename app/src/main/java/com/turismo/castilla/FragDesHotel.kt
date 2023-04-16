@@ -9,13 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.FragmentResultListener
-import com.custom.sliderimage.logic.SliderImage
+
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.turismo.castilla.databinding.FragmentFragDesHotelBinding
 import com.turismo.castilla.databinding.FragmentFragDesTuriBinding
-import org.imaginativeworld.whynotimagecarousel.ImageCarousel
-import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
+
 import kotlin.math.log
 
 // TODO: Rename parameter arguments, choose names that match
@@ -42,7 +41,6 @@ class FragDesHotel : Fragment() {
     var img2:String?=""
     var img3:String?=""
     var img4:String?=""
-    val list = mutableListOf<CarouselItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -72,14 +70,7 @@ class FragDesHotel : Fragment() {
                 layout.hoteldireccion.text=reshdireccion.toString()
                 layout.hotelhorarios.text=reshhorario.toString()
 
-                try{
-                    list.add(CarouselItem(imageUrl = img1.toString()) )
 
-                    layout.carousel.setData(list)
-                }catch(ex: Exception){
-                    //Log.e("mensajeerror",ex.message.toString() )
-                    Toast.makeText(context,ex.message.toString(),Toast.LENGTH_LONG).show()
-                }
 
             }
         )

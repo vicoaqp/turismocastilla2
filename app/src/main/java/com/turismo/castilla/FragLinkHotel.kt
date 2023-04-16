@@ -66,7 +66,6 @@ class FragLinkHotel : Fragment() {
         }
 
         boton.facep.setOnClickListener{
-
             val face=Intent(Intent.ACTION_VIEW,Uri.parse(""+resfacebook.toString()))
             startActivity(face)
         }

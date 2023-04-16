@@ -2,20 +2,17 @@ package com.turismo.castilla
 
 import android.content.Intent
 import android.net.Uri
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager2.widget.ViewPager2
 import com.squareup.picasso.Picasso
 import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageListener
-import org.w3c.dom.Text
 
-
-class Pruebas : AppCompatActivity() {
+class Info_Hoteles : AppCompatActivity() {
 
     var sampleImages = arrayOf(
         "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_3.jpg",
@@ -23,10 +20,9 @@ class Pruebas : AppCompatActivity() {
         "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_2.jpg"
     )
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pruebas)
+        setContentView(R.layout.activity_info_hoteles)
 
         var vidHotel=intent.getStringExtra("idHotel")
         var vcelular=intent.getStringExtra("celular")
@@ -77,10 +73,10 @@ class Pruebas : AppCompatActivity() {
             startActivity(myUri)
         }
 
-       sampleImages = arrayOf(
+        sampleImages = arrayOf(
             img1.toString(),
-           img2.toString(),
-           img3.toString()
+            img2.toString(),
+            img3.toString()
         )
 
         val carouselView = findViewById(R.id.carouselView) as CarouselView
@@ -88,7 +84,6 @@ class Pruebas : AppCompatActivity() {
         carouselView.setImageListener(imageListener)
 
     }
-
     var imageListener: ImageListener = object : ImageListener {
         override fun setImageForPosition(position: Int, imageView: ImageView) {
             // You can use Glide or Picasso here
@@ -96,6 +91,7 @@ class Pruebas : AppCompatActivity() {
             Picasso.get().load(sampleImages[position]).into(imageView)
         }
     }
+
 
 
 }

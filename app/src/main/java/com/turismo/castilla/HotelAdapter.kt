@@ -28,7 +28,8 @@ class HotelAdapter(private var context: Hoteles, private val usershotel: List<Us
 
         holder.FotoHotel.setOnClickListener{
             //Log.e("distritova",user.idDistrito)
-            val lanzar2= Intent(mContext,DescriHotel::class.java)
+            //val lanzar2= Intent(mContext,DescriHotel::class.java)
+            val lanzar2= Intent(mContext,Info_Hoteles::class.java)
 
             lanzar2.putExtra("idHotel",user.idhoteles)
             lanzar2.putExtra("celular",user.celular)

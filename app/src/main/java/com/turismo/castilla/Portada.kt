@@ -90,7 +90,7 @@ class Portada : AppCompatActivity() {
 
 
         botonnoticias.setOnClickListener {
-            val btdesas=Intent(this,mapas::class.java)
+            val btdesas=Intent(this,Pruebas::class.java)
             startActivity(btdesas)
         }
 
