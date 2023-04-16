@@ -10,6 +10,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.FragmentResultListener
 import com.custom.sliderimage.logic.SliderImage
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.turismo.castilla.databinding.FragmentFragDesHotelBinding
@@ -42,7 +45,7 @@ class FragDesHotel : Fragment() {
     var img2:String?=""
     var img3:String?=""
     var img4:String?=""
-    val list = mutableListOf<CarouselItem>()
+    var imageSlider: ImageSlider? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -71,16 +74,25 @@ class FragDesHotel : Fragment() {
                 layout.hoteldias.text=reshdias.toString()
                 layout.hoteldireccion.text=reshdireccion.toString()
                 layout.hotelhorarios.text=reshhorario.toString()
-
-                try{
-                    list.add(CarouselItem(imageUrl = img1.toString()) )
-
-                    layout.carousel.setData(list)
-                }catch(ex: Exception){
-                    //Log.e("mensajeerror",ex.message.toString() )
-                    Toast.makeText(context,ex.message.toString(),Toast.LENGTH_LONG).show()
+                val imageList = ArrayList<SlideModel>()
+                if (img1.isNullOrEmpty()){
+                    img1 = R.drawable.aplao1.toString()
                 }
+                if (img2.isNullOrEmpty()){
+                    img2 = R.drawable.aplao2.toString()
+                }
+                if (img3.isNullOrEmpty()){
+                    img3 = R.drawable.aplao3.toString()
+                }
+                if (img4.isNullOrEmpty()){
+                    img4 = R.drawable.aplao4.toString()
+                }
+                imageList.add(SlideModel(img1, ScaleTypes.CENTER_CROP))
+                imageList.add(SlideModel(img2, ScaleTypes.CENTER_CROP))
+                imageList.add(SlideModel(img3, ScaleTypes.CENTER_CROP))
+                imageList.add(SlideModel(img4, ScaleTypes.CENTER_CROP))
 
+                layout.imageSlider?.setImageList(imageList)
             }
         )
 
