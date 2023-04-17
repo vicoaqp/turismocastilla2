@@ -19,9 +19,11 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="377dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
         android:text="@string/tecniconame"
         android:textAlignment="center"
         android:textColor="#ffffff"
@@ -35,6 +37,7 @@
         android:id="@+id/textView2"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Rumbo a la Transformacion"
         android:textAlignment="center"
         android:textColor="#FEDD06"
@@ -49,7 +52,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +84,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="30dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,22 +93,22 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/icofacebook" />
 
         <ImageView
             android:id="@+id/imageView9"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/icogmail" />
 
         <ImageView
             android:id="@+id/imageView10"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/icowhatsapp" />
 

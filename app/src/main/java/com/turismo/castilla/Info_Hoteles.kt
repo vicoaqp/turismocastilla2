@@ -33,6 +33,7 @@ class Info_Hoteles : AppCompatActivity() {
         var vnamehotel=intent.getStringExtra("namehotel")
         var vfacebook=intent.getStringExtra("facebook")
         var vmapa=intent.getStringExtra("mapa")
+        var mapas2=intent.getStringExtra("mapa2")
         var img1=intent.getStringExtra("img1")
         var img2=intent.getStringExtra("img2")
         var img3=intent.getStringExtra("img3")
@@ -58,8 +59,12 @@ class Info_Hoteles : AppCompatActivity() {
         textohora.text=vhorario.toString()
 
         btnmapa.setOnClickListener{
-            val mapa= Intent(Intent.ACTION_VIEW, Uri.parse("geo:"+vmapa.toString()))
-            startActivity(mapa)
+            val lanzar3=Intent(this,Pruebas::class.java)
+            lanzar3.putExtra("mapa",vmapa.toString())
+            lanzar3.putExtra("mapa2",mapas2.toString())
+            lanzar3.putExtra("namehotel",vnamehotel.toString())
+            lanzar3.putExtra("imagen1",img1.toString())
+            startActivity(lanzar3)
         }
 
         btnface.setOnClickListener{
