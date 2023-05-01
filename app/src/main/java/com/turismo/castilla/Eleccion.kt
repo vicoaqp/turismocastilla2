@@ -3,6 +3,7 @@ package com.turismo.castilla
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.view.isGone
@@ -13,20 +14,21 @@ class Eleccion : MenuTodos() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_eleccion)
 
-        var namedistrito=intent.extras?.getString("Distrito")
-        Toast.makeText(this,namedistrito.toString(),Toast.LENGTH_LONG).show()
+        var namedistrito = intent.extras?.getString("Distrito")
+        var codigodist = intent.extras?.getString("codigo")
+        Toast.makeText(this, namedistrito.toString(), Toast.LENGTH_LONG).show()
 
-        val aplaoh=findViewById<Button>(R.id.button_historia)
-        val aplaoqh=findViewById<Button>(R.id.button_quehacer)
-        val aplaohos=findViewById<Button>(R.id.button_hospedaje)
-        val aplaogast=findViewById<Button>(R.id.button_gastronomia)
-        val aplaovin=findViewById<Button>(R.id.button_vinedos)
+        val aplaoh = findViewById<Button>(R.id.button_historia)
+        val aplaoqh = findViewById<Button>(R.id.button_quehacer)
+        val aplaohos = findViewById<Button>(R.id.button_hospedaje)
+        val aplaogast = findViewById<Button>(R.id.button_gastronomia)
+        val aplaovin = findViewById<Button>(R.id.button_vinedos)
 
-        //DISTRITO
 
-        //if(namedistrito=""){
-          //  aplaovin.isInvisible
-        // }
+        if (codigodist == "novino") {
+            aplaovin.visibility=View.INVISIBLE
+        }
+
 
         aplaoh.setOnClickListener{
             val lanzar=Intent(this,HistoriaApl::class.java)

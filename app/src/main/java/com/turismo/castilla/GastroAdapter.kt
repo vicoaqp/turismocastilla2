@@ -33,7 +33,7 @@ class GastroAdapter(private var context: GastroAplaoRec, private val usersgas: L
 
         holder.FotoEvento.setOnClickListener{
             //Log.e("distritova",user.idDistrito)
-            val lanzar2= Intent(mContext,DescriRestaurante::class.java)
+            val lanzar2= Intent(mContext,info_restaurantes::class.java)
 
             lanzar2.putExtra("idDistrito",user.idDistrito)
             lanzar2.putExtra("idRestaurante",user.idRestaurante)
@@ -45,6 +45,11 @@ class GastroAdapter(private var context: GastroAplaoRec, private val usersgas: L
             lanzar2.putExtra("namerest",user.namerest)
             lanzar2.putExtra("facebook",user.facebook)
             lanzar2.putExtra("mapa",user.mapa)
+            lanzar2.putExtra("mapa2",user.mapa2)
+            lanzar2.putExtra("img1",user.img1)
+            lanzar2.putExtra("img2",user.img2)
+            lanzar2.putExtra("img3",user.img3)
+            lanzar2.putExtra("img4",user.img4)
 
             mContext.startActivity(lanzar2)
 

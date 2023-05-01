@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Info_Hoteles">
+    tools:context=".info_restaurantes">
+
 
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carouselView"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         app:fillColor="#FFFFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +44,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <TextView
-                android:id="@+id/hoteldes"
+                android:id="@+id/restdes"
                 style="@style/labeldezcripcion"
                 android:ellipsize="end"
                 android:justificationMode="inter_word"
@@ -58,7 +59,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tdes" />
 
             <TextView
-                android:id="@+id/hoteldireccion"
+                android:id="@+id/restdireccion"
                 style="@style/labeldezcripcion"
                 app:layout_constraintTop_toBottomOf="@+id/textdireccion" />
 
@@ -70,7 +71,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tdireccion" />
 
             <TextView
-                android:id="@+id/hotelhorarios"
+                android:id="@+id/resthorarios"
                 style="@style/labeldezcripcion"
                 app:layout_constraintTop_toBottomOf="@+id/textalcalde" />
 
@@ -82,7 +83,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/trhorarios" />
 
             <TextView
-                android:id="@+id/hoteldias"
+                android:id="@+id/restdias"
                 style="@style/labeldezcripcion"
                 app:layout_constraintTop_toBottomOf="@+id/textdatencion" />
 
@@ -94,7 +95,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/trdias" />
 
             <TextView
-                android:id="@+id/hotelcelulares"
+                android:id="@+id/restcelulares"
                 style="@style/labeldezcripcion"
                 app:layout_constraintTop_toBottomOf="@+id/texttitulocelulares" />
 
@@ -142,7 +143,6 @@
                 android:background="@drawable/llamadahotel" />
         </LinearLayout>
     </HorizontalScrollView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

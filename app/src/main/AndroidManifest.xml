@@ -11,6 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Castilla">
+        <activity
+            android:name=".calendario_castilla"
+            android:exported="false" />
+        <activity
+            android:name=".documentos"
+            android:exported="false" />
+        <activity
+            android:name=".info_vinedos"
+            android:exported="false" />
+        <activity
+            android:name=".info_restaurantes"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

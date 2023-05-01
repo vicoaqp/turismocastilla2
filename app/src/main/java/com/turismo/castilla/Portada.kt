@@ -86,15 +86,14 @@ class Portada : AppCompatActivity() {
         val botonyoutube=findViewById<ImageView>(R.id.imageyoutube)
         val botonevento=findViewById<ImageView>(R.id.imageViewevento)
         val botondesa=findViewById<ImageView>(R.id.imagedesav)
-        val botonnoticias=findViewById<ImageView>(R.id.imageViewReco)
+        val botoncalendario=findViewById<ImageView>(R.id.imageViewCalenda)
+        val botondescarga=findViewById<ImageView>(R.id.imageViewdescarga)
 
 
-        botonnoticias.setOnClickListener {
-            val btdesas=Intent(this,Pruebas::class.java)
+        botoncalendario.setOnClickListener {
+            val btdesas=Intent(this,calendario_castilla::class.java)
             startActivity(btdesas)
         }
-
-
 
         botondesa.setOnClickListener {
             val btdesas=Intent(this,Desarrollador::class.java)
@@ -120,6 +119,10 @@ class Portada : AppCompatActivity() {
         botondis.setOnClickListener {
             val distele=Intent(this,Distritos::class.java)
             startActivity(distele)
+        }
+        botondescarga.setOnClickListener {
+            val descaga=Intent(this,documentos::class.java)
+            startActivity(descaga)
         }
 
 

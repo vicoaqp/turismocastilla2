@@ -19,11 +19,12 @@ class Vinedos : AppCompatActivity() {
         binding = ActivityVinedosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         var namedistrito = intent.extras?.getString("dist")
+
 
         binding.recyclervinedos.apply {
             layoutManager = LinearLayoutManager(this@Vinedos)
-
         }
         vinedosaplao(namedistrito.toString())
 

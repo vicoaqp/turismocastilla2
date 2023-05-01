@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Info_Hoteles">
+    tools:context=".info_vinedos">
 
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carouselView"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         app:fillColor="#FFFFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +43,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <TextView
-                android:id="@+id/hoteldes"
+                android:id="@+id/vindes"
                 style="@style/labeldezcripcion"
                 android:ellipsize="end"
                 android:justificationMode="inter_word"
@@ -58,7 +58,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tdes" />
 
             <TextView
-                android:id="@+id/hoteldireccion"
+                android:id="@+id/vindireccion"
                 style="@style/labeldezcripcion"
                 app:layout_constraintTop_toBottomOf="@+id/textdireccion" />
 
@@ -70,7 +70,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tdireccion" />
 
             <TextView
-                android:id="@+id/hotelhorarios"
+                android:id="@+id/vinhorarios"
                 style="@style/labeldezcripcion"
                 app:layout_constraintTop_toBottomOf="@+id/textalcalde" />
 
@@ -82,7 +82,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/trhorarios" />
 
             <TextView
-                android:id="@+id/hoteldias"
+                android:id="@+id/vindias"
                 style="@style/labeldezcripcion"
                 app:layout_constraintTop_toBottomOf="@+id/textdatencion" />
 
@@ -94,7 +94,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/trdias" />
 
             <TextView
-                android:id="@+id/hotelcelulares"
+                android:id="@+id/vincelulares"
                 style="@style/labeldezcripcion"
                 app:layout_constraintTop_toBottomOf="@+id/texttitulocelulares" />
 
@@ -119,14 +119,14 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/buttonmaprest"
+                android:id="@+id/buttonmapvin"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/mapa" />
 
             <Button
-                android:id="@+id/buttonfacebookrest"
+                android:id="@+id/buttonfacebookvin"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
@@ -134,7 +134,7 @@
                 android:background="@drawable/icofacebook" />
 
             <Button
-                android:id="@+id/buttonllamadarest"
+                android:id="@+id/buttonllamadavin"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
