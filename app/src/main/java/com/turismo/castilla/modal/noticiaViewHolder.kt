@@ -11,7 +11,7 @@ class noticiaViewHolder(view: View): RecyclerView.ViewHolder(view) {
         binding.tvTitle.setText(titulo)
         binding.tvDescripcion.setText(descripcion)
         binding.tvFecha.setText(fecha)
-        Picasso.get().load("http://api.municipalidadprovincialcastilla.com/${img}").into(binding.ivImage)
+        Picasso.get().load("http://municipalidadprovincialcastilla.com/public/${img}").into(binding.ivImage)
 
     }
 }

@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.squareup.picasso.Picasso
 import com.turismo.castilla.databinding.ActivityDetalleNoticiasBinding
 import com.turismo.castilla.databinding.ActivityNoticiascastillaBinding
@@ -35,14 +37,13 @@ class detalle_noticias : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        Toast.makeText(this, "DETALLELISTA 95 ${ comentarioList.toString() }", Toast.LENGTH_SHORT).show()
         adapter = comentariosAdapter(baseContext, comentarioList)
         binding.rvComentarios.layoutManager = LinearLayoutManager(this)
         binding.rvComentarios.adapter = adapter
     }
 
     private fun getRetrofit(): Retrofit {
-        return Retrofit.Builder().baseUrl("http://api.municipalidadprovincialcastilla.com/api/").addConverterFactory(
+        return Retrofit.Builder().baseUrl("http://municipalidadprovincialcastilla.com/public/api/").addConverterFactory(
             GsonConverterFactory.create()).build()
     }
 
@@ -50,12 +51,12 @@ class detalle_noticias : AppCompatActivity() {
             CoroutineScope(Dispatchers.IO).launch {
                 val call = getRetrofit().create(APIService::class.java).getComentarios(idNoticia)
                 val comentarios = call.body()
+                Log.e("DETALLENOTICIA", "Mensaje $call")
                 runOnUiThread{
                     if (call.isSuccessful) {
                         val comentariosModel = comentarios?.data ?: emptyList()
                         comentarioList.clear()
                         comentarioList.addAll(comentariosModel)
-                        Log.e("COMENTARISTALIST", comentarioList.toString())
                         adapter.notifyDataSetChanged()
                     }else{
                         showError()
@@ -63,7 +64,6 @@ class detalle_noticias : AppCompatActivity() {
                 }
 
             }
-
     }
 
     private fun showError() {
@@ -72,15 +72,19 @@ class detalle_noticias : AppCompatActivity() {
 
     private fun cargarDatos() {
 
-        var idUser = intent.getStringExtra("idUser")
+        var idUser = intent.getIntExtra("idUser", 1)
         var nameUser = intent.getStringExtra("nameUser")
         var imgUser = intent.getStringExtra("imgUser")
 
         var bodyNoticia = intent.getStringExtra("bodyNoticia")
-        var estadoNoticia = intent.getStringExtra("estadoNoticia")
+        var estadoNoticia = intent.getBooleanExtra("estadoNoticia", true)
         var imgNoticia = intent.getStringExtra("imgNoticia")
+        var img_1 = intent.getStringExtra("img_1")
+        var img_2 = intent.getStringExtra("img_2")
+        var img_3 = intent.getStringExtra("img_3")
+        var img_4 = intent.getStringExtra("img_4")
         var prioridadNoticia = intent.getStringExtra("prioridadNoticia")
-        var idCategoria = intent.getStringExtra("idCategoria")
+        var idCategoria = intent.getIntExtra("idCategoria", 1)
         var created_at = intent.getStringExtra("created_at")
         var updated_at = intent.getStringExtra("updated_at")
         var tituloNoticia = intent.getStringExtra("tituloNoticia")
@@ -88,8 +92,22 @@ class detalle_noticias : AppCompatActivity() {
         binding.tvFecha.setText(created_at)
         binding.tvTitulo.setText(tituloNoticia)
         binding.tvDescripcion.setText(bodyNoticia)
-        Picasso.get().load("http://api.municipalidadprovincialcastilla.com/${imgNoticia}").into(binding.ivImage)
 
+        val imageList = ArrayList<SlideModel>()
+        imageList.add(SlideModel("http://municipalidadprovincialcastilla.com/public/${imgNoticia}", ScaleTypes.CENTER_CROP))
+        if (!img_1.isNullOrEmpty()) {
+            imageList.add(SlideModel("http://municipalidadprovincialcastilla.com/public/${img_1}", ScaleTypes.CENTER_CROP))
+        }
+        if (!img_2.isNullOrEmpty()) {
+            imageList.add(SlideModel("http://municipalidadprovincialcastilla.com/public/${img_2}", ScaleTypes.CENTER_CROP))
+        }
+        if (!img_3.isNullOrEmpty()) {
+            imageList.add(SlideModel("http://municipalidadprovincialcastilla.com/public/${img_3}", ScaleTypes.CENTER_CROP))
+        }
+        if (!img_4.isNullOrEmpty()) {
+            imageList.add(SlideModel("http://municipalidadprovincialcastilla.com/public/${img_4}", ScaleTypes.CENTER_CROP))
+        }
+        binding.imageslider?.setImageList(imageList)
     }
 
 }

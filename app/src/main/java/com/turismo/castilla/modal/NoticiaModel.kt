@@ -17,6 +17,14 @@ data class NoticiaModel(
     var noticia_estado: Boolean,
     @SerializedName("img")
     var noticia_img: String,
+    @SerializedName("img_1")
+    var img_1: String,
+    @SerializedName("img_2")
+    var img_2: String,
+    @SerializedName("img_3")
+    var img_3: String,
+    @SerializedName("img_4")
+    var img_4: String,
     @SerializedName("prioridad")
     var noticia_prioridad: String,
     @SerializedName("categoria_id")

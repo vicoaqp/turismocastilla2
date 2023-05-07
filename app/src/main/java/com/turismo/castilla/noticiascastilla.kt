@@ -47,7 +47,7 @@ class noticiascastilla : AppCompatActivity() {
     }
 
     private fun getRetrofit(): Retrofit {
-        return Retrofit.Builder().baseUrl("http://api.municipalidadprovincialcastilla.com/api/").addConverterFactory(GsonConverterFactory.create()).build()
+        return Retrofit.Builder().baseUrl("http://municipalidadprovincialcastilla.com/public/api/").addConverterFactory(GsonConverterFactory.create()).build()
     }
 
     private fun getNoticias() {
