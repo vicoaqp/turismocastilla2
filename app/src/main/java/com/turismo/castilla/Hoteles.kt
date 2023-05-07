@@ -25,14 +25,10 @@ class Hoteles : MenuTodos() {
             layoutManager = LinearLayoutManager(this@Hoteles)
 
         }
-        hotelaplao(namedistrito.toString(),"hotel","idDistrito",binding.recyclerHotel)
-        hotelaplao(namedistrito.toString(),"hotel","idDistrito",binding.recyclerHotel)
-        hotelaplao(namedistrito.toString(),"hotel","idDistrito",binding.recyclerHotel)
-        hotelaplao(namedistrito.toString(),"hotel","idDistrito",binding.recyclerHotel)
-        hotelaplao(namedistrito.toString(),"hotel","idDistrito",binding.recyclerHotel)
-        hotelaplao(namedistrito.toString(),"hotel","idDistrito",binding.recyclerHotel)
+        hotelaplao(namedistrito.toString())
 
     }
+    /*
     private fun hotelaplao(dase:String,categoria:String, parametrodebusquedad:String,recyclerView: RecyclerView) {
         Toast.makeText(this,dase.toString(), Toast.LENGTH_LONG).show()
 
@@ -49,7 +45,8 @@ class Hoteles : MenuTodos() {
 
             }
     }
-    /*
+         */
+
     private fun hotelaplao(dase:String) {
         Toast.makeText(this,dase.toString(), Toast.LENGTH_LONG).show()
 
@@ -66,8 +63,6 @@ class Hoteles : MenuTodos() {
 
             }
     }
-
-     */
 
 
 
