@@ -9,7 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.FragmentResultListener
-
+import com.custom.sliderimage.logic.SliderImage
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.turismo.castilla.databinding.FragmentFragDesHotelBinding
@@ -42,6 +45,7 @@ class FragDesHotel : Fragment() {
     var img3:String?=""
     var img4:String?=""
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
@@ -70,8 +74,7 @@ class FragDesHotel : Fragment() {
                 layout.hoteldireccion.text=reshdireccion.toString()
                 layout.hotelhorarios.text=reshhorario.toString()
 
-
-
+                layout.imageSlider?.setImageList(imageList)
             }
         )
 
