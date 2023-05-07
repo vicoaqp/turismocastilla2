@@ -9,10 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.FragmentResultListener
-import com.custom.sliderimage.logic.SliderImage
-import com.denzcoskun.imageslider.ImageSlider
-import com.denzcoskun.imageslider.constants.ScaleTypes
-import com.denzcoskun.imageslider.models.SlideModel
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.turismo.castilla.databinding.FragmentFragDesHotelBinding
@@ -51,32 +47,33 @@ class FragDesHotel : Fragment() {
 
         super.onCreate(savedInstanceState)
 
-        parentFragmentManager.setFragmentResultListener("fraghotel",this,
-            FragmentResultListener{ reStr: String, data: Bundle ->
 
-                reshcelular= data.getString("Hcelular")
-                reshdescripcion= data.getString("Hdescripcion")
-                reshdias= data.getString("Hdias")
-                reshdireccion= data.getString("Hdireccion")
-                reshhorario= data.getString("Hhorario")
-                reshidhotel= data.getString("HidHotel")
-                reshnamehotel= data.getString("Hnamehotel")
-                img1= data.getString("img1")
-                img2= data.getString("img2")
-                img3= data.getString("img3")
-                img4= data.getString("img4")
+        //parentFragmentManager.setFragmentResultListener("fraghotel",this,
+          //  FragmentResultListener{ reStr: String, data: Bundle ->
+
+            //    reshcelular= data.getString("Hcelular")
+              //  reshdescripcion= data.getString("Hdescripcion")
+                //reshdias= data.getString("Hdias")
+                //reshdireccion= data.getString("Hdireccion")
+                //reshhorario= data.getString("Hhorario")
+                //reshidhotel= data.getString("HidHotel")
+                //reshnamehotel= data.getString("Hnamehotel")
+                //img1= data.getString("img1")
+                //img2= data.getString("img2")
+                //img3= data.getString("img3")
+                //img4= data.getString("img4")
 
 
 
-                layout.hotelcelulares.text=reshcelular.toString()
-                layout.hoteldes.text=reshdescripcion.toString()
-                layout.hoteldias.text=reshdias.toString()
-                layout.hoteldireccion.text=reshdireccion.toString()
-                layout.hotelhorarios.text=reshhorario.toString()
+               // layout.hotelcelulares.text=reshcelular.toString()
+               // layout.hoteldes.text=reshdescripcion.toString()
+             //   layout.hoteldias.text=reshdias.toString()
+             //   layout.hoteldireccion.text=reshdireccion.toString()
+             //   layout.hotelhorarios.text=reshhorario.toString()
 
-                layout.imageSlider?.setImageList(imageList)
-            }
-        )
+               // layout.imageSlider?.setImageList(imageList)
+            //}
+        //)
 
 
 

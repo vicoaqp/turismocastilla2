@@ -70,25 +70,16 @@
 
             <TextView
                 android:id="@+id/tvTitulo"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
+                android:gravity="center"
                 android:text="Titulo."
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="#263238"
                 app:fontFamily="sans-serif-medium"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvFecha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:text="22/04/2023"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                android:textColor="#666666"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View
@@ -121,14 +112,27 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDescripcion" />
 
+            <TextView
+                android:id="@+id/tvFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="22/04/2023"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="#666666"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescripcion" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvComentarios"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/viewComentario" />
+                app:layout_constraintTop_toBottomOf="@id/viewComentario"
+                app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
