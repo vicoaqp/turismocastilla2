@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".info_vinedos">
+
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/carouselView"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        app:fillColor="#FFFFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:pageColor="#00000000"
+        app:radius="6dp"
+        app:slideInterval="3000"
+        app:strokeColor="#FF777777"
+        app:strokeWidth="1dp" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carouselView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/texthdescripcion"
+                style="@style/labeltitulo"
+                android:text="@string/txtdezcripcion"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/vindes"
+                style="@style/labeldezcripcion"
+                android:ellipsize="end"
+                android:justificationMode="inter_word"
+
+                app:layout_constraintTop_toBottomOf="@+id/textdescripcion" />
+
+            <TextView
+                android:id="@+id/texthdireccion"
+                style="@style/labeltitulo"
+                android:text="@string/txtdireccion"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintTop_toBottomOf="@+id/tdes" />
+
+            <TextView
+                android:id="@+id/vindireccion"
+                style="@style/labeldezcripcion"
+                app:layout_constraintTop_toBottomOf="@+id/textdireccion" />
+
+            <TextView
+                android:id="@+id/texthfalcalde"
+                style="@style/labeltitulo"
+                android:text="@string/txthorarios"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintTop_toBottomOf="@+id/tdireccion" />
+
+            <TextView
+                android:id="@+id/vinhorarios"
+                style="@style/labeldezcripcion"
+                app:layout_constraintTop_toBottomOf="@+id/textalcalde" />
+
+            <TextView
+                android:id="@+id/texthdatencion"
+                style="@style/labeltitulo"
+                android:text="@string/txtdiasatencion"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintTop_toBottomOf="@+id/trhorarios" />
+
+            <TextView
+                android:id="@+id/vindias"
+                style="@style/labeldezcripcion"
+                app:layout_constraintTop_toBottomOf="@+id/textdatencion" />
+
+            <TextView
+                android:id="@+id/texthtitulocelulares"
+                style="@style/labeltitulo"
+                android:text="@string/txtcelulares"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintTop_toBottomOf="@+id/trdias" />
+
+            <TextView
+                android:id="@+id/vincelulares"
+                style="@style/labeldezcripcion"
+                app:layout_constraintTop_toBottomOf="@+id/texttitulocelulares" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.787">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonmapvin"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/mapa" />
+
+            <Button
+                android:id="@+id/buttonfacebookvin"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/icofacebook" />
+
+            <Button
+                android:id="@+id/buttonllamadavin"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/llamadahotel" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

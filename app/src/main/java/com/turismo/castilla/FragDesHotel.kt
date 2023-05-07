@@ -17,8 +17,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.turismo.castilla.databinding.FragmentFragDesHotelBinding
 import com.turismo.castilla.databinding.FragmentFragDesTuriBinding
-import org.imaginativeworld.whynotimagecarousel.ImageCarousel
-import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
+
 import kotlin.math.log
 
 // TODO: Rename parameter arguments, choose names that match
@@ -45,7 +44,7 @@ class FragDesHotel : Fragment() {
     var img2:String?=""
     var img3:String?=""
     var img4:String?=""
-    var imageSlider: ImageSlider? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -74,23 +73,6 @@ class FragDesHotel : Fragment() {
                 layout.hoteldias.text=reshdias.toString()
                 layout.hoteldireccion.text=reshdireccion.toString()
                 layout.hotelhorarios.text=reshhorario.toString()
-                val imageList = ArrayList<SlideModel>()
-                if (img1.isNullOrEmpty()){
-                    img1 = R.drawable.aplao1.toString()
-                }
-                if (img2.isNullOrEmpty()){
-                    img2 = R.drawable.aplao2.toString()
-                }
-                if (img3.isNullOrEmpty()){
-                    img3 = R.drawable.aplao3.toString()
-                }
-                if (img4.isNullOrEmpty()){
-                    img4 = R.drawable.aplao4.toString()
-                }
-                imageList.add(SlideModel(img1, ScaleTypes.CENTER_CROP))
-                imageList.add(SlideModel(img2, ScaleTypes.CENTER_CROP))
-                imageList.add(SlideModel(img3, ScaleTypes.CENTER_CROP))
-                imageList.add(SlideModel(img4, ScaleTypes.CENTER_CROP))
 
                 layout.imageSlider?.setImageList(imageList)
             }

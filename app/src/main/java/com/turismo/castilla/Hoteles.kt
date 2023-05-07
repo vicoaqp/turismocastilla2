@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.turismo.castilla.databinding.ActivityHotelesBinding
 
@@ -27,6 +28,25 @@ class Hoteles : MenuTodos() {
         hotelaplao(namedistrito.toString())
 
     }
+    /*
+    private fun hotelaplao(dase:String,categoria:String, parametrodebusquedad:String,recyclerView: RecyclerView) {
+        Toast.makeText(this,dase.toString(), Toast.LENGTH_LONG).show()
+
+        FirebaseFirestore.getInstance().collection(categoria)
+            .whereEqualTo(parametrodebusquedad,dase)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val user = documents.toObjects(UsersHoteles::class.java)
+                    recyclerView.adapter = HotelAdapter(this,user)
+                }
+            }
+            .addOnFailureListener{
+
+            }
+    }
+         */
+
     private fun hotelaplao(dase:String) {
         Toast.makeText(this,dase.toString(), Toast.LENGTH_LONG).show()
 
