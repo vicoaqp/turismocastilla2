@@ -69,8 +69,10 @@
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_historia_apl.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_hoteles.xml" value="0.33" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_hotelhuancarqui.xml" value="0.3066123188405797" />
+        <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_info_distritos.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_info_hoteles.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_info_restaurantes.xml" value="0.29483695652173914" />
+        <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_info_turismo.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_info_vinedos.xml" value="0.2871376811594203" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_local_distrito.xml" value="0.36141304347826086" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_local_info.xml" value="0.36141304347826086" />
@@ -107,7 +109,7 @@
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_link_res.xml" value="0.36141304347826086" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_link_turi.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frag_link_vinedos.xml" value="0.36141304347826086" />
-        <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frg_a.xml" value="0.23505434782608695" />
+        <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frg_a.xml" value="0.33" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frg_b.xml" value="0.3632246376811594" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frg_c.xml" value="0.3632246376811594" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/fragment_frg_d.xml" value="0.3632246376811594" />

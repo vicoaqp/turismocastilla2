@@ -31,7 +31,7 @@ class Eleccion : MenuTodos() {
 
 
         aplaoh.setOnClickListener{
-            val lanzar=Intent(this,HistoriaApl::class.java)
+            val lanzar=Intent(this,info_distritos::class.java)
             lanzar.putExtra("dist",namedistrito)
             startActivity(lanzar)
         }

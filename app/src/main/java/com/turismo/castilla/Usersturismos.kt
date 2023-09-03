@@ -11,11 +11,21 @@ class Usersturismos (
     val nameturismo: String,
     val facebook: String,
     val mapa: String,
+    val mapa2: String,
+    val img1:String,
+    val img2: String,
+    val img3: String,
+    val img4: String,
     val idDistrito: String
 
 
 ){
     constructor():this(
+        "",
+        "",
+        "",
+        "",
+        "",
         "",
         "",
         "",

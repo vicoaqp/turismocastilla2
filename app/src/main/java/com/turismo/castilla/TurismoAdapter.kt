@@ -28,7 +28,7 @@ class TurismoAdapter(private var context: Turismo, private val usersturi: List<U
 
         holder.FotoTurismo.setOnClickListener{
             //Log.e("distritova",user.idDistrito)
-            val lanzar2= Intent(mContext,DescriTurismo::class.java)
+            val lanzar2= Intent(mContext,info_turismo::class.java)
 
             lanzar2.putExtra("idTurismo",user.idTurismo)
             lanzar2.putExtra("celular",user.celular)
@@ -39,6 +39,11 @@ class TurismoAdapter(private var context: Turismo, private val usersturi: List<U
             lanzar2.putExtra("nameturismo",user.nameturismo)
             lanzar2.putExtra("facebook",user.facebook)
             lanzar2.putExtra("mapa",user.mapa)
+            lanzar2.putExtra("mapa2",user.mapa2)
+            lanzar2.putExtra("img1",user.img1)
+            lanzar2.putExtra("img2",user.img2)
+            lanzar2.putExtra("img3",user.img3)
+            lanzar2.putExtra("img4",user.img4)
             lanzar2.putExtra("idDistrito",user.idDistrito)
 
             mContext.startActivity(lanzar2)
