@@ -5,14 +5,14 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.turismo.castilla"
         minSdk 26
-        targetSdk 31
-        versionCode 13
-        versionName "1.9"
+        targetSdk 33
+        versionCode 15
+        versionName "2.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
