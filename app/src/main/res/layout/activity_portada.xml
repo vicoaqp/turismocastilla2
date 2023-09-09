@@ -163,6 +163,12 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             app:srcCompat="@drawable/descargaturismo" />
+                        <ImageView
+                            android:id="@+id/imageViewradio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/radioonlines" />
 
                     </LinearLayout>
                     <LinearLayout

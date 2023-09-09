@@ -88,7 +88,12 @@ class Portada : AppCompatActivity() {
         val botondesa=findViewById<ImageView>(R.id.imagedesav)
         val botoncalendario=findViewById<ImageView>(R.id.imageViewCalenda)
         val botondescarga=findViewById<ImageView>(R.id.imageViewdescarga)
+        val botonradio=findViewById<ImageView>(R.id.imageViewradio)
 
+        botonradio.setOnClickListener {
+            val btdesas=Intent(this,RadioCastilla::class.java)
+            startActivity(btdesas)
+        }
 
         botoncalendario.setOnClickListener {
             val btdesas=Intent(this,RadioCastilla::class.java)
