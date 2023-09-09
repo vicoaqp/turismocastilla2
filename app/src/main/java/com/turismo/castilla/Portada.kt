@@ -91,7 +91,7 @@ class Portada : AppCompatActivity() {
 
 
         botoncalendario.setOnClickListener {
-            val btdesas=Intent(this,calendario_castilla::class.java)
+            val btdesas=Intent(this,RadioCastilla::class.java)
             startActivity(btdesas)
         }
 
