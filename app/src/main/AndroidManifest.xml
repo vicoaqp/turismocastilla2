@@ -14,6 +14,18 @@
         android:theme="@style/Theme.Castilla"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".InfoCalendario"
+            android:exported="false" />
+        <activity
+            android:name=".eleccionmes"
+            android:exported="false" />
+        <activity
+            android:name=".CalendarioMeses"
+            android:exported="false" />
+        <activity
+            android:name=".CalendarioCastilla"
+            android:exported="false" />
+        <activity
             android:name=".RadioCastilla"
             android:exported="false" />
         <activity

@@ -36,6 +36,8 @@ class RadioCastilla : AppCompatActivity() {
             player.prepare()
             player.playWhenReady = true
 
+
+
         }
 
         botonpause.setOnClickListener {

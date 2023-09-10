@@ -55,6 +55,7 @@ class Distritos : MenuTodos() {
             val choco= Intent(this,Eleccion::class.java)
             choco.putExtra("Distrito","UKh1aNqrJgH4BseEupyG")
             choco.putExtra("codigo","novino")
+            choco.putExtra("codigos","pocainformacion")
             startActivity(choco)
         }
 

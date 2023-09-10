@@ -22,26 +22,26 @@ class calendario_castilla : AppCompatActivity() {
             layoutManager= LinearLayoutManager(this@calendario_castilla)
         }
 
-        calendario("enero",binding.recyrclearenero)
+        //calendario("enero",binding.recyrclearenero)
 
 
 
 
     }
-    private fun calendario(dase:String,recyclerView: RecyclerView) {
-        Toast.makeText(this,dase.toString(), Toast.LENGTH_LONG).show()
+   // private fun calendario(dase:String,recyclerView: RecyclerView) {
+    //    Toast.makeText(this,dase.toString(), Toast.LENGTH_LONG).show()
 
-        FirebaseFirestore.getInstance().collection("calendarioturistico")
-            .whereEqualTo("idmes",dase)
-            .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val user = documents.toObjects(UsersCalendario::class.java)
-                    recyclerView.adapter = CalendarioAdapter(this,user)
-                }
-            }
-            .addOnFailureListener{
+    //    FirebaseFirestore.getInstance().collection("calendarioturistico")
+     //       .whereEqualTo("idmes",dase)
+     //       .get()
+     //       .addOnSuccessListener { documents ->
+     //           for (document in documents) {
+     //               val user = documents.toObjects(UsersCalendario::class.java)
+     //               recyclerView.adapter = CalendarioAdapter(this,user)
+       //         }
+      //      }
+        //    .addOnFailureListener{
 
-            }
-    }
+        //    }
+   // }
 }

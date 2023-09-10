@@ -25,6 +25,7 @@ class Hoteles : MenuTodos() {
             layoutManager = LinearLayoutManager(this@Hoteles)
 
         }
+
         hotelaplao(namedistrito.toString())
 
     }

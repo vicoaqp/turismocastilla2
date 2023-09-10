@@ -16,6 +16,7 @@ class Eleccion : MenuTodos() {
 
         var namedistrito = intent.extras?.getString("Distrito")
         var codigodist = intent.extras?.getString("codigo")
+        var codigochoco=intent.extras?.getString("codigos")
         Toast.makeText(this, namedistrito.toString(), Toast.LENGTH_LONG).show()
 
         val aplaoh = findViewById<Button>(R.id.button_historia)
@@ -28,7 +29,10 @@ class Eleccion : MenuTodos() {
         if (codigodist == "novino") {
             aplaovin.visibility=View.INVISIBLE
         }
-
+        if(codigochoco=="pocainformacion"){
+            aplaohos.visibility=View.INVISIBLE
+            aplaogast.visibility=View.INVISIBLE
+        }
 
         aplaoh.setOnClickListener{
             val lanzar=Intent(this,info_distritos::class.java)

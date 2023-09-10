@@ -85,10 +85,10 @@ class Portada : AppCompatActivity() {
         val botongaleria=findViewById<ImageView>(R.id.imageViewgaleria)
         val botonyoutube=findViewById<ImageView>(R.id.imageyoutube)
         val botonevento=findViewById<ImageView>(R.id.imageViewevento)
-        val botondesa=findViewById<ImageView>(R.id.imagedesav)
+        val botondesa=findViewById<ImageView>(R.id.imageViewcontacto)
         val botoncalendario=findViewById<ImageView>(R.id.imageViewCalenda)
         val botondescarga=findViewById<ImageView>(R.id.imageViewdescarga)
-        val botonradio=findViewById<ImageView>(R.id.imageViewradio)
+        val botonradio=findViewById<ImageView>(R.id.imageViewradioonline)
 
         botonradio.setOnClickListener {
             val btdesas=Intent(this,RadioCastilla::class.java)
@@ -96,7 +96,7 @@ class Portada : AppCompatActivity() {
         }
 
         botoncalendario.setOnClickListener {
-            val btdesas=Intent(this,RadioCastilla::class.java)
+            val btdesas=Intent(this,CalendarioMeses::class.java)
             startActivity(btdesas)
         }
 
