@@ -112,11 +112,13 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageyoutube"
+                            android:id="@+id/imageViewCalenda"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/iconoyoutube" />
+                            app:srcCompat="@drawable/calendariocastilla" />
+
+
 
                         <ImageView
                             android:id="@+id/imageViewevento"
@@ -134,11 +136,11 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageViewCalenda"
+                            android:id="@+id/imageViewdescarga"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/calendariocastilla" />
+                            app:srcCompat="@drawable/descargaturismo" />
 
                         <ImageView
                             android:id="@+id/imageViewradioonline"
@@ -157,12 +159,7 @@
                         android:layout_marginTop="15dp"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/imageViewdescarga"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/descargaturismo" />
+
                         <ImageView
                             android:id="@+id/imageViewcontacto"
                             android:layout_width="wrap_content"

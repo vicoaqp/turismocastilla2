@@ -83,7 +83,7 @@ class Portada : AppCompatActivity() {
 
         val botondis=findViewById<ImageView>(R.id.imageDistritos)
         val botongaleria=findViewById<ImageView>(R.id.imageViewgaleria)
-        val botonyoutube=findViewById<ImageView>(R.id.imageyoutube)
+        //val botonyoutube=findViewById<ImageView>(R.id.imageyoutube)
         val botonevento=findViewById<ImageView>(R.id.imageViewevento)
         val botondesa=findViewById<ImageView>(R.id.imageViewcontacto)
         val botoncalendario=findViewById<ImageView>(R.id.imageViewCalenda)
@@ -110,10 +110,10 @@ class Portada : AppCompatActivity() {
             startActivity(btdesas)
         }
 
-        botonyoutube.setOnClickListener {
-            val youvar=Intent(this,Youtube::class.java)
-            startActivity(youvar)
-        }
+       // botonyoutube.setOnClickListener {
+        //    val youvar=Intent(this,Youtube::class.java)
+       //     startActivity(youvar)
+       // }
 
         botongaleria.setOnClickListener {
             val galvar=Intent(this,PortaFotos::class.java)
@@ -126,8 +126,9 @@ class Portada : AppCompatActivity() {
             startActivity(distele)
         }
         botondescarga.setOnClickListener {
-            val descaga=Intent(this,documentos::class.java)
-            startActivity(descaga)
+            val descarga=Intent(this,documentos::class.java)
+            descarga.putExtra("codigodoc","docu")
+            startActivity(descarga)
         }
 
 
