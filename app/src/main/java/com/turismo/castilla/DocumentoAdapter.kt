@@ -31,7 +31,7 @@ class DocumentoAdapter(private var context:documentos, private val usersDocument
         holder.FotoHotel.setOnClickListener{
 
             val documentoenvio= Intent(Intent.ACTION_VIEW, Uri.parse(user.urldoc))
-            //startActivity(documentoenvio)
+            mContext.startActivity(documentoenvio)
 
         }
     }

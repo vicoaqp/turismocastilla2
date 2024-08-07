@@ -1,11 +1,13 @@
 package com.turismo.castilla
 
 class UserModel (
-    val idfotito: String,
-    val imgrestaurante: String
-        ){
-        constructor():this(
-            "",
-            ""
-        )
+   val idfoto:String,
+    val imgturismo:String,
+    val turismo:String)
+{
+    constructor():this(
+        "",
+        "",
+        ""
+    )
 }

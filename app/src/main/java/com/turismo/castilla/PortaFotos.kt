@@ -29,8 +29,8 @@ class PortaFotos : AppCompatActivity() {
 
     private fun fetchData(dase:String) {
 
-        FirebaseFirestore.getInstance().collection("fotosrestaurante")
-            .whereEqualTo("idfotito",dase)
+        FirebaseFirestore.getInstance().collection("fotosturismo")
+            .whereEqualTo("turismo",dase)
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {

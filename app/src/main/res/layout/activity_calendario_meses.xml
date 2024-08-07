@@ -28,7 +28,7 @@
                     android:layout_width="0dp"
                     android:layout_height="26dp"
                     android:gravity="center"
-                    android:text="CALENDARIO PROVINCIA DE CASTILLA"
+                    android:text="CALENDARIO DE LA PROVINCIA DE CASTILLA"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="5dp"
                     android:gravity="center"
-                    android:text="@string/cuerpodelante"
+                    android:text="@string/calendariodes"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -246,7 +246,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/saludocastilla"
-                    app:srcCompat="@drawable/andaguaportada" />
+                    app:srcCompat="@drawable/volcan2" />
 
                 <TextView
                     android:id="@+id/cuerpoandagua"
@@ -274,7 +274,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cuerpoandagua"
-                    app:srcCompat="@drawable/puenteportada" />
+                    app:srcCompat="@drawable/volcan1" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

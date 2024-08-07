@@ -28,7 +28,7 @@ class UserAdapter(private val context: PortaFotos, private val users: List<UserM
         val user =users[position]
         //holder.userName.text = user.userName
         Glide.with(context)
-            .load(user.imgrestaurante)
+            .load(user.imgturismo)
             .into(holder.userImage)
 
     }

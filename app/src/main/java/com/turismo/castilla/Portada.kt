@@ -117,7 +117,7 @@ class Portada : AppCompatActivity() {
 
         botongaleria.setOnClickListener {
             val galvar=Intent(this,PortaFotos::class.java)
-            galvar.putExtra("Fotosdis","general")
+            galvar.putExtra("Fotosdis","aplao")
             startActivity(galvar)
         }
 

@@ -97,7 +97,7 @@
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_quehuancarqui2.xml" value="0.3066123188405797" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_queuraca.xml" value="0.3066123188405797" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_queuraca2.xml" value="0.3066123188405797" />
-        <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_radio_castilla.xml" value="0.24173424828446663" />
+        <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_radio_castilla.xml" value="0.33" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_turismo.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_vinedos.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/virus/AndroidStudioProjects/Castilla/app/src/main/res/layout/activity_youtube.xml" value="0.33" />
@@ -137,7 +137,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

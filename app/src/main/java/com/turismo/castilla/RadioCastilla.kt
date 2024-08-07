@@ -18,7 +18,7 @@ import com.google.api.Distribution
 
 class RadioCastilla : AppCompatActivity() {
 
-
+    private var player:ExoPlayer?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_radio_castilla)
@@ -28,27 +28,24 @@ class RadioCastilla : AppCompatActivity() {
 
         botonplay.setOnClickListener {
 
-            val player=ExoPlayer.Builder(this).build()
+            player =ExoPlayer.Builder(this).build()
             val defaultHttpDataSourceFactory = DefaultHttpDataSource.Factory()
             val mediaItem =MediaItem.fromUri("https://stream.zeno.fm/uixbyq7btsutv")
             val mediaSource = ProgressiveMediaSource.Factory(defaultHttpDataSourceFactory).createMediaSource(mediaItem)
-            player.setMediaSource(mediaSource)
-            player.prepare()
-            player.playWhenReady = true
-
-
-
+            player?.setMediaSource(mediaSource)
+            player?.prepare()
+            player?.playWhenReady = true
         }
 
         botonpause.setOnClickListener {
 
-            val player=ExoPlayer.Builder(this).build()
+            //val player=ExoPlayer.Builder(this).build()
            // val defaultHttpDataSourceFactory = DefaultHttpDataSource.Factory()
            // val mediaItem =MediaItem.fromUri("https://stream.zeno.fm/uixbyq7btsutv")
            // val mediaSource = ProgressiveMediaSource.Factory(defaultHttpDataSourceFactory).createMediaSource(mediaItem)
            // player.setMediaSource(mediaSource)
-            player.pause()
-           player.playWhenReady = false
+            player?.stop()
+           player?.playWhenReady = false
         }
 
        // setupPlayer()
