@@ -37,7 +37,7 @@ class CalendarioAdapter(private var context: eleccionmes, private val userscalen
            // lanzar2.putExtra("celular",user.celular)
             lanzar2.putExtra("descripcion",user.descripcion)
             lanzar2.putExtra("dia",user.dia)
-           // lanzar2.putExtra("direccion",user.direccion)
+            lanzar2.putExtra("direccion",user.direccion)
            // lanzar2.putExtra("horario",user.horario)
             lanzar2.putExtra("nombreevento",user.nombreevento)
             //lanzar2.putExtra("facebook",user.facebook)

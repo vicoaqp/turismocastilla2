@@ -14,6 +14,7 @@ import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageListener
 
 class info_distritos : AppCompatActivity() {
+
     var sampleImages = arrayOf(
         "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_3.jpg",
         "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_1.jpg",
@@ -125,6 +126,7 @@ class info_distritos : AppCompatActivity() {
         )
 
         val carouselView = findViewById(R.id.carouselView) as CarouselView
+
         carouselView.setPageCount(sampleImages.size)
         carouselView.setImageListener(imageListener)
 

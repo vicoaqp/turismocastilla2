@@ -99,14 +99,14 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/buttonmaprest"
+                android:id="@+id/buttonmapcalen"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/mapa" />
 
             <Button
-                android:id="@+id/buttonfacebookrest"
+                android:id="@+id/buttonfacebookcalen"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
@@ -114,7 +114,7 @@
                 android:background="@drawable/icofacebook" />
 
             <Button
-                android:id="@+id/buttonllamadarest"
+                android:id="@+id/buttonllamadacalen"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"

@@ -29,14 +29,6 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:scaleType="fitStart"
-            app:srcCompat="@drawable/escudomunicipio" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

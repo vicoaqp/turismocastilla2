@@ -84,20 +84,28 @@ class Portada : AppCompatActivity() {
         val botondis=findViewById<ImageView>(R.id.imageDistritos)
         val botongaleria=findViewById<ImageView>(R.id.imageViewgaleria)
         //val botonyoutube=findViewById<ImageView>(R.id.imageyoutube)
-        val botonevento=findViewById<ImageView>(R.id.imageViewevento)
+        //val botonevento=findViewById<ImageView>(R.id.imageViewevento)
         val botondesa=findViewById<ImageView>(R.id.imageViewcontacto)
         val botoncalendario=findViewById<ImageView>(R.id.imageViewCalenda)
         val botondescarga=findViewById<ImageView>(R.id.imageViewdescarga)
         val botonradio=findViewById<ImageView>(R.id.imageViewradioonline)
 
+        val botonnegocios=findViewById<ImageView>(R.id.imageViewnegocios)
+
         botonradio.setOnClickListener {
             val btdesas=Intent(this,RadioCastilla::class.java)
             startActivity(btdesas)
         }
+        botonnegocios.setOnClickListener {
+            val btnegocios=Intent(this,Distritos::class.java)
+            btnegocios.putExtra("NEGOCIOS","vnegocio")
+            startActivity(btnegocios)
+        }
 
         botoncalendario.setOnClickListener {
-            val btdesas=Intent(this,CalendarioMeses::class.java)
-            startActivity(btdesas)
+            val btcalendario=Intent(this,CalendarioMeses::class.java)
+
+            startActivity(btcalendario)
         }
 
         botondesa.setOnClickListener {
@@ -105,10 +113,10 @@ class Portada : AppCompatActivity() {
             startActivity(btdesas)
         }
 
-        botonevento.setOnClickListener {
-            val btdesas=Intent(this,noticiascastilla::class.java)
-            startActivity(btdesas)
-        }
+        //botonevento.setOnClickListener {
+          //  val btdesas=Intent(this,noticiascastilla::class.java)
+            // startActivity(btdesas)
+        //}
 
        // botonyoutube.setOnClickListener {
         //    val youvar=Intent(this,Youtube::class.java)

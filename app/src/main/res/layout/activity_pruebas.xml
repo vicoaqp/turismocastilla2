@@ -10,11 +10,8 @@
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="377dp"
-        android:layout_height="479dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"

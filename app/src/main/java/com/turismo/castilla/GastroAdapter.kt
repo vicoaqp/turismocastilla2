@@ -58,9 +58,9 @@ class GastroAdapter(private var context: GastroAplaoRec, private val usersgas: L
 
     }
 
-    override fun getItemCount(): Int {
-        return usersgas.size
-    }
+        override fun getItemCount(): Int {
+            return usersgas.size
+        }
 
 
 }

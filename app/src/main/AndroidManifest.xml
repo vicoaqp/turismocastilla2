@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.turismo.castilla">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,6 +13,15 @@
         android:theme="@style/Theme.Castilla"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".NeFarmacia"
+            android:exported="false" />
+        <activity
+            android:name=".InfoNegocios"
+            android:exported="false" />
+        <activity
+            android:name=".Negocios"
+            android:exported="false" />
+        <activity
             android:name=".InfoCalendario"
             android:exported="false" />
         <activity
@@ -22,9 +30,7 @@
         <activity
             android:name=".CalendarioMeses"
             android:exported="false" />
-        <activity
-            android:name=".CalendarioCastilla"
-            android:exported="false" />
+
         <activity
             android:name=".RadioCastilla"
             android:exported="false" />
@@ -43,9 +49,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".calendario_castilla"
-            android:exported="false" />
         <activity
             android:name=".documentos"
             android:exported="false" />

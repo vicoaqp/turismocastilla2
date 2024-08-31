@@ -78,7 +78,8 @@
                     android:layout_marginTop="10dp"
                     android:background="#DDDDDD"
                     android:orientation="vertical"
-                    app:layout_constraintTop_toBottomOf="@id/eleccionapp">
+                    app:layout_constraintTop_toBottomOf="@id/eleccionapp"
+                    >
 
                     <LinearLayout
                         android:id="@+id/linearLayout"
@@ -121,11 +122,11 @@
 
 
                         <ImageView
-                            android:id="@+id/imageViewevento"
+                            android:id="@+id/imageViewnegocios"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/noticiascastilla" />
+                            app:srcCompat="@drawable/negoapp" />
 
                     </LinearLayout>
 
@@ -160,6 +161,7 @@
                         android:orientation="horizontal">
 
 
+
                         <ImageView
                             android:id="@+id/imageViewcontacto"
                             android:layout_width="wrap_content"
@@ -186,11 +188,38 @@
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:text="Castilla te espera"
-                    android:textSize="16sp"
+                    android:textColorLink="#020202"
+                    android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/contenidovirtual" />
+
+                <ImageView
+                    android:id="@+id/imageBoticario"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/appboticario"
+                    app:layout_constraintTop_toBottomOf="@id/saludocastilla"
+                    />
+
+                <ImageView
+                    android:id="@+id/imagerutapisco"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imageBoticario"
+                    app:srcCompat="@drawable/piscobanner"
+                   />
 
                 <ImageView
                     android:id="@+id/imageandagua"
@@ -201,7 +230,7 @@
                     android:scaleType="fitStart"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/saludocastilla"
+                    app:layout_constraintTop_toBottomOf="@id/imagerutapisco"
                     app:srcCompat="@drawable/andaguaportada" />
 
                 <TextView
