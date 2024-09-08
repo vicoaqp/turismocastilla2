@@ -1,5 +1,6 @@
 package com.turismo.castilla
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -8,10 +9,10 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
-import com.synnapps.carouselview.CarouselView
-import com.synnapps.carouselview.ImageListener
+
 
 class info_distritos : AppCompatActivity() {
 
@@ -33,6 +34,7 @@ class info_distritos : AppCompatActivity() {
     var dvcelular:String?=null
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -46,6 +48,8 @@ class info_distritos : AppCompatActivity() {
         val btnface = findViewById<Button>(R.id.buttonfacebookdist)
         val btnmapa = findViewById<Button>(R.id.buttonmapdist)
         val btnllamada = findViewById<Button>(R.id.buttonllamadadist)
+
+        val imagencabecera = findViewById<ImageView>(R.id.imageViewcabecera)
 
 
 
@@ -71,6 +75,7 @@ class info_distritos : AppCompatActivity() {
                     dvcelular = document.data.get("celular").toString()
                     dvfacebook = document.data.get("facebook").toString()
 
+                    Glide.with(this).load(dimg1).into(imagencabecera)
                     restaplao(dimg1.toString())
                    // Toast.makeText(this, img1.toString(), Toast.LENGTH_LONG).show()
 
@@ -79,6 +84,8 @@ class info_distritos : AppCompatActivity() {
             }
             .addOnFailureListener{
             }
+
+
 
         btnmapa.setOnClickListener{
             val lanzar3= Intent(this,Pruebas::class.java)
@@ -108,9 +115,9 @@ class info_distritos : AppCompatActivity() {
            dimg4.toString()
         )
 
-        val carouselView = findViewById(R.id.carouselView) as CarouselView
-        carouselView.setPageCount(sampleImages.size)
-        carouselView.setImageListener(imageListener)
+        //val carouselView = findViewById(R.id.carouselView) as CarouselView
+        //carouselView.setPageCount(sampleImages.size)
+        //carouselView.setImageListener(imageListener)
     }
 
 
@@ -125,13 +132,13 @@ class info_distritos : AppCompatActivity() {
             dimg4.toString()
         )
 
-        val carouselView = findViewById(R.id.carouselView) as CarouselView
+        //val carouselView = findViewById(R.id.carouselView) as CarouselView
 
-        carouselView.setPageCount(sampleImages.size)
-        carouselView.setImageListener(imageListener)
+        //carouselView.setPageCount(sampleImages.size)
+        //carouselView.setImageListener(imageListener)
 
     }
-
+    /*
     var imageListener: ImageListener = object : ImageListener {
         override fun setImageForPosition(position: Int, imageView: ImageView) {
             // You can use Glide or Picasso here
@@ -139,4 +146,6 @@ class info_distritos : AppCompatActivity() {
             Picasso.get().load(sampleImages[position]).into(imageView)
         }
     }
+    */
+
 }

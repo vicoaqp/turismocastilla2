@@ -42,6 +42,7 @@ class Pruebas : AppCompatActivity() {
             val  location1 = LatLng(mapacorde.toString().toDouble(), mapacorde2.toString().toDouble())
             googleMap.addMarker(MarkerOptions().position(location1).title(nombre.toString()))
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location1,18f))
+            googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID)
 
         })
 

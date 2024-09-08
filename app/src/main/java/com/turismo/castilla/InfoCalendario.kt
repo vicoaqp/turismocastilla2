@@ -6,9 +6,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
-import com.synnapps.carouselview.CarouselView
-import com.synnapps.carouselview.ImageListener
+
 
 class InfoCalendario : AppCompatActivity() {
     var sampleImages = arrayOf(
@@ -50,11 +50,16 @@ class InfoCalendario : AppCompatActivity() {
         val btnmapac = findViewById<Button>(R.id.buttonmapcalen)
         val btnllamadac = findViewById<Button>(R.id.buttonllamadacalen)
 
+        val imagencabecera = findViewById<ImageView>(R.id.imageViewcabecera)
+        Glide.with(this).load(img1).into(imagencabecera)
+
         textodes.text=vdescripcion.toString()
         textodir.text=vdireccion.toString()
         //textocel.text=vcelular.toString()
         textodias.text=vdias.toString()
         //textohora.text=vhorario.toString()
+
+
 
 
         sampleImages = arrayOf(
@@ -65,18 +70,20 @@ class InfoCalendario : AppCompatActivity() {
 
         )
 
-        val carouselView = findViewById(R.id.carouselView) as CarouselView
-        carouselView.setPageCount(sampleImages.size)
-        carouselView.setImageListener(imageListener)
+
+
+      //  val carouselView = findViewById(R.id.carouselView) as CarouselView
+      //  carouselView.setPageCount(sampleImages.size)
+     //   carouselView.setImageListener(imageListener)
 
 
     }
-    var imageListener: ImageListener = object : ImageListener {
-        override fun setImageForPosition(position: Int, imageView: ImageView) {
+    //var imageListener: ImageListener = object : ImageListener {
+   //     override fun setImageForPosition(position: Int, imageView: ImageView) {
             // You can use Glide or Picasso here
             //imageView.setImageResource(sampleImages[position])
-            Picasso.get().load(sampleImages[position]).into(imageView)
-        }
-    }
+    //        Picasso.get().load(sampleImages[position]).into(imageView)
+    //    }
+    //}
 
 }

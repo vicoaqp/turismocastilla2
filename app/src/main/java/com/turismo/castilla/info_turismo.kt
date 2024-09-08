@@ -1,15 +1,18 @@
 package com.turismo.castilla
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.media.Image
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
-import com.synnapps.carouselview.CarouselView
-import com.synnapps.carouselview.ImageListener
+//import com.synnapps.carouselview.CarouselView
+//import com.synnapps.carouselview.ImageListener
 
 class info_turismo : AppCompatActivity() {
     var sampleImages = arrayOf(
@@ -18,6 +21,7 @@ class info_turismo : AppCompatActivity() {
         "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_2.jpg",
         "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_2.jpg"
     )
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info_turismo)
@@ -46,6 +50,11 @@ class info_turismo : AppCompatActivity() {
         val btnface = findViewById<Button>(R.id.buttonfacebookturipri)
         val btnmapa = findViewById<Button>(R.id.buttonmapturipri)
         val btnllamada = findViewById<Button>(R.id.buttonllamadaturipri)
+
+        val imagencabecera = findViewById<ImageView>(R.id.imageViewcabecera)
+
+        Glide.with(this).load(img1).into(imagencabecera)
+
 
         textodes.text=vdescripcion.toString()
         textodir.text=vdireccion.toString()
@@ -80,19 +89,35 @@ class info_turismo : AppCompatActivity() {
             img4.toString()
 
         )
+     //   val carouselView = findViewById<CarouselView>(R.id.imagendesplo)
 
-        val carouselView = findViewById(R.id.carouselView) as CarouselView
-        carouselView.setPageCount(sampleImages.size)
-        carouselView.setImageListener(imageListener)
+       // carouselView.apply {
+       //     size = sampleImages.size
+        //    resource = R.layout.item_carousel
+       //     autoPlay = true
+        //    indicatorAnimationType = IndicatorAnimationType.THIN_WORM
+       //     carouselOffset = OffsetType.CENTER
+        //    setCarouselViewListener { view, position ->
+                // Example here is setting up a full image carousel
+         //       val imageView = view.findViewById<ImageView>(R.id.imageView)
+       //         imageView.setImageDrawable(resources.getDrawable(sampleImages[position]))
+       //     }
+            // After you finish setting up, show the CarouselView
+          //  show()
+        //}
+
+        //val carouselView = findViewById(R.id.carouselView) as CarouselView
+        //carouselView.setPageCount(sampleImages.size)
+        //carouselView.setImageListener(imageListener)
 
 
     }
-    var imageListener: ImageListener = object : ImageListener {
-        override fun setImageForPosition(position: Int, imageView: ImageView) {
+    //var imageListener: ImageListener = object : ImageListener {
+    //    override fun setImageForPosition(position: Int, imageView: ImageView) {
             // You can use Glide or Picasso here
             //imageView.setImageResource(sampleImages[position])
-            Picasso.get().load(sampleImages[position]).into(imageView)
-        }
-    }
+   //         Picasso.get().load(sampleImages[position]).into(imageView)
+   //     }
+   // }
 
 }

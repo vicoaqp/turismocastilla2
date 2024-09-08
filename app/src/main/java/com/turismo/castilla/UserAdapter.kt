@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import io.grpc.Context
 import kotlin.contracts.Returns
 
 class UserAdapter(private val context: PortaFotos, private val users: List<UserModel>): RecyclerView.Adapter<UserViewHolder>() {

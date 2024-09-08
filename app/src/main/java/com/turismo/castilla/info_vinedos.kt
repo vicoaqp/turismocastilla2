@@ -1,5 +1,6 @@
 package com.turismo.castilla
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -8,9 +9,9 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
-import com.synnapps.carouselview.CarouselView
-import com.synnapps.carouselview.ImageListener
+
 
 class info_vinedos : AppCompatActivity() {
     var sampleImages = arrayOf(
@@ -20,6 +21,7 @@ class info_vinedos : AppCompatActivity() {
         "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_2.jpg"
     )
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info_vinedos)
@@ -50,6 +52,8 @@ class info_vinedos : AppCompatActivity() {
         val btnmapa = findViewById<Button>(R.id.buttonmapvin)
         val btnllamada = findViewById<Button>(R.id.buttonllamadavin)
 
+        val imagencabecera = findViewById<ImageView>(R.id.imageViewcabecera)
+        Glide.with(this).load(img1).into(imagencabecera)
 
 
         textodes.text=vdescripcion.toString()
@@ -86,12 +90,13 @@ class info_vinedos : AppCompatActivity() {
 
         )
 
-        val carouselView = findViewById(R.id.carouselView) as CarouselView
-        carouselView.setPageCount(sampleImages.size)
-        carouselView.setImageListener(imageListener)
+        //val carouselView = findViewById(R.id.carouselView) as CarouselView
+        //carouselView.setPageCount(sampleImages.size)
+       // carouselView.setImageListener(imageListener)
 
 
     }
+    /*
     var imageListener: ImageListener = object : ImageListener {
         override fun setImageForPosition(position: Int, imageView: ImageView) {
             // You can use Glide or Picasso here
@@ -99,4 +104,6 @@ class info_vinedos : AppCompatActivity() {
             Picasso.get().load(sampleImages[position]).into(imageView)
         }
     }
+
+     */
 }
