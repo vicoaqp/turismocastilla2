@@ -8,8 +8,8 @@
 
     <VideoView
         android:id="@+id/videoviewturismo"
-        android:layout_width="313dp"
-        android:layout_height="312dp"
+        android:layout_width="410dp"
+        android:layout_height="489dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
