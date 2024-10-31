@@ -71,6 +71,8 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cuerpo" />
 
+                <!-- Sección iconos con ConstraintLayout -->
+
                 <LinearLayout
                     android:id="@+id/contenidovirtual"
                     android:layout_width="0dp"
