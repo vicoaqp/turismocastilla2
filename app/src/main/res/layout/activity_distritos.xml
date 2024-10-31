@@ -21,72 +21,72 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button_fundobarra"
+                android:id="@+id/button_dAplao"
                 style="@style/botonesdise"
                 android:background="@drawable/aplaopripng" />
 
             <Button
-                android:id="@+id/button_casmauro"
+                android:id="@+id/button_dHuancarqui"
                 style="@style/botonesdise"
                 android:background="@drawable/huancarquipng" />
 
             <Button
-                android:id="@+id/button_yupanqui"
+                android:id="@+id/button_dUraca"
                 style="@style/botonesdise"
                 android:background="@drawable/uracapng" />
 
             <Button
-                android:id="@+id/button_kasamia"
+                android:id="@+id/button_dViraco"
                 style="@style/botonesdise"
                 android:background="@drawable/viracopng" />
 
             <Button
-                android:id="@+id/button_majeriver"
+                android:id="@+id/button_dPampacolca"
                 style="@style/botonesdise"
                 android:background="@drawable/pampacolcapripng" />
 
             <Button
-                android:id="@+id/button_rambo"
+                android:id="@+id/button_dMachahuay"
                 style="@style/botonesdise"
                 android:background="@drawable/machahuaypng" />
 
             <Button
-                android:id="@+id/button_rocasbambu"
+                android:id="@+id/button_dAndagua"
                 style="@style/botonesdise"
                 android:background="@drawable/andaguapng" />
 
             <Button
-                android:id="@+id/button_titanic"
+                android:id="@+id/button_dChilcaymarca"
                 style="@style/botonesdise"
                 android:background="@drawable/chilcaymarcapng" />
 
             <Button
-                android:id="@+id/button_unon"
+                android:id="@+id/button_dUnon"
                 style="@style/botonesdise"
                 android:background="@drawable/unonpng" />
 
             <Button
-                android:id="@+id/button_choco"
+                android:id="@+id/button_dChoco"
                 style="@style/botonesdise"
                 android:background="@drawable/chocopng" />
 
             <Button
-                android:id="@+id/button_chachas"
+                android:id="@+id/button_dChachas"
                 style="@style/botonesdise"
                 android:background="@drawable/chachaspng" />
 
             <Button
-                android:id="@+id/button_tipan"
+                android:id="@+id/button_dTipan"
                 style="@style/botonesdise"
                 android:background="@drawable/tipanpripng" />
 
             <Button
-                android:id="@+id/button_ayo"
+                android:id="@+id/button_dAyo"
                 style="@style/botonesdise"
                 android:background="@drawable/ayopripng" />
 
             <Button
-                android:id="@+id/button_orcopampa"
+                android:id="@+id/button_dOrcopampa"
                 style="@style/botonesdise"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/orcopampapng" />

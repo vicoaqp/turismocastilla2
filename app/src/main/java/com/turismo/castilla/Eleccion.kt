@@ -14,62 +14,47 @@ class Eleccion : MenuTodos() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_eleccion)
 
-        var namedistrito = intent.extras?.getString("Distrito")
-        var codigodist = intent.extras?.getString("codigo")
-        var codigochoco=intent.extras?.getString("codigos")
-        Toast.makeText(this, namedistrito.toString(), Toast.LENGTH_LONG).show()
+        // Obtener datos del Intent
+        val nombreDistrito = intent.extras?.getString("Distrito") ?: "Distrito Desconocido"
+        val codigoDist = intent.extras?.getString("codigo")
+        val codigoChoco = intent.extras?.getString("codigos")
 
-        val aplaoh = findViewById<Button>(R.id.button_historia)
-        val aplaoqh = findViewById<Button>(R.id.button_quehacer)
-        val aplaohos = findViewById<Button>(R.id.button_hospedaje)
-        val aplaogast = findViewById<Button>(R.id.button_gastronomia)
-        val aplaovin = findViewById<Button>(R.id.button_vinedos)
+        // Mostrar el nombre del distrito
+        Toast.makeText(this, nombreDistrito, Toast.LENGTH_LONG).show()
 
+        // Inicializar botones
+        val btnHistoria = findViewById<Button>(R.id.button_historia)
+        val btnQueHacer = findViewById<Button>(R.id.button_quehacer)
+        val btnHospedaje = findViewById<Button>(R.id.button_hospedaje)
+        val btnGastronomia = findViewById<Button>(R.id.button_gastronomia)
+        val btnVinedos = findViewById<Button>(R.id.button_vinedos)
 
-        if (codigodist == "novino") {
-            aplaovin.visibility=View.INVISIBLE
+        // Configurar visibilidad de botones
+        configurarVisibilidadBotones(codigoDist, codigoChoco, btnVinedos, btnHospedaje, btnGastronomia)
+
+        // Configurar listeners de botones
+        btnHistoria.setOnClickListener { iniciarActividad(info_distritos::class.java, nombreDistrito) }
+        btnQueHacer.setOnClickListener { iniciarActividad(Turismo::class.java, nombreDistrito) }
+        btnGastronomia.setOnClickListener { iniciarActividad(GastroAplaoRec::class.java, nombreDistrito) }
+        btnHospedaje.setOnClickListener { iniciarActividad(Hoteles::class.java, nombreDistrito) }
+        btnVinedos.setOnClickListener { iniciarActividad(Vinedos::class.java, nombreDistrito) }
+    }
+
+    // Función para configurar la visibilidad de los botones
+    private fun configurarVisibilidadBotones(codigoDist: String?, codigoChoco: String?, btnVinedos: Button, btnHospedaje: Button, btnGastronomia: Button) {
+        if (codigoDist == "novino") {
+            btnVinedos.visibility = View.INVISIBLE
         }
-        if(codigochoco=="pocainformacion"){
-            aplaohos.visibility=View.INVISIBLE
-            aplaogast.visibility=View.INVISIBLE
+        if (codigoChoco == "pocainformacion") {
+            btnHospedaje.visibility = View.INVISIBLE
+            btnGastronomia.visibility = View.INVISIBLE
         }
+    }
 
-        aplaoh.setOnClickListener{
-            val lanzar=Intent(this,info_distritos::class.java)
-            lanzar.putExtra("dist",namedistrito)
-            startActivity(lanzar)
-        }
-        aplaoqh.setOnClickListener{
-
-            val lanzar2=Intent(this,Turismo::class.java)
-            lanzar2.putExtra("dist",namedistrito)
-            startActivity(lanzar2)
-
-        }
-
-        aplaogast.setOnClickListener{
-
-            val lanzar3=Intent(this,GastroAplaoRec::class.java)
-            lanzar3.putExtra("dist",namedistrito)
-            startActivity(lanzar3)
-
-        }
-
-        aplaohos.setOnClickListener{
-            val lanzar4=Intent(this,Hoteles::class.java)
-            lanzar4.putExtra("dist",namedistrito)
-            startActivity(lanzar4)
-
-        }
-
-        aplaovin.setOnClickListener{
-            val lanzar5=Intent(this,Vinedos::class.java)
-            lanzar5.putExtra("dist",namedistrito)
-            startActivity(lanzar5)
-        }
-
-
-
-
+    // Función para iniciar actividades
+    private fun <T> iniciarActividad(actividad: Class<T>, nombreDistrito: String) {
+        val intent = Intent(this, actividad)
+        intent.putExtra("dist", nombreDistrito)
+        startActivity(intent)
     }
 }
