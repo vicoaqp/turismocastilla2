@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,31 +9,28 @@
 
     <ImageView
         android:id="@+id/imageViewcabecera"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:adjustViewBounds="true"
-        android:scaleType="fitStart"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewcabecera">
+        app:layout_constraintTop_toBottomOf="@id/imageViewcabecera">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-
 
             <TextView
                 android:id="@+id/texthdescripcion"
@@ -44,102 +42,88 @@
                 android:id="@+id/distridescripcion"
                 style="@style/labeldezcripcion"
                 android:ellipsize="end"
-                android:justificationMode="inter_word"
-
-                app:layout_constraintTop_toBottomOf="@+id/textdescripcion" />
+                android:justificationMode="inter_word" />
 
             <TextView
                 android:id="@+id/texthdireccion"
                 style="@style/labeltitulo"
                 android:text="@string/txtdireccion"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintTop_toBottomOf="@+id/tdes" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <TextView
                 android:id="@+id/distridireccion"
-                style="@style/labeldezcripcion"
-                app:layout_constraintTop_toBottomOf="@+id/textdireccion" />
+                style="@style/labeldezcripcion" />
 
             <TextView
                 android:id="@+id/texthfalcalde"
                 style="@style/labeltitulo"
                 android:text="@string/titualcalde"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintTop_toBottomOf="@+id/tdireccion" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <TextView
                 android:id="@+id/distrialcalde"
-                style="@style/labeldezcripcion"
-                app:layout_constraintTop_toBottomOf="@+id/textalcalde" />
+                style="@style/labeldezcripcion" />
 
             <TextView
                 android:id="@+id/textaneoss"
                 style="@style/labeltitulo"
                 android:text="@string/txtanexos"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintTop_toBottomOf="@+id/trhorarios" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <TextView
                 android:id="@+id/distrianexos"
-                style="@style/labeldezcripcion"
-                app:layout_constraintTop_toBottomOf="@+id/textdatencion" />
+                style="@style/labeldezcripcion" />
 
             <TextView
                 android:id="@+id/texthtitulocelulares"
                 style="@style/labeltitulo"
                 android:text="@string/txtfestividades"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintTop_toBottomOf="@+id/trdias" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <TextView
                 android:id="@+id/distrifestividades"
-                style="@style/labeldezcripcion"
-                app:layout_constraintTop_toBottomOf="@+id/texttitulocelulares" />
+                style="@style/labeldezcripcion" />
 
         </LinearLayout>
     </ScrollView>
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView4"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.787">
+        app:layout_constraintTop_toBottomOf="@id/scrollView2">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/buttonmapdist"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/mapa" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
-            <Button
-                android:id="@+id/buttonfacebookdist"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/icofacebook" />
+                <Button
+                    android:id="@+id/buttonfacebookdist"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/icofacebook" />
 
-            <Button
-                android:id="@+id/buttonllamadadist"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/llamadahotel" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/buttonllamadadist"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/llamadahotel" />
+
+                <Button
+                    android:id="@+id/buttonmapdist"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/mapa" />
+            </LinearLayout>
+
     </HorizontalScrollView>
 
 

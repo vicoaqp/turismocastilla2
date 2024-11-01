@@ -8,6 +8,16 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="IconStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
     <style name="botonesdise">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">130dp</item>
@@ -34,7 +44,6 @@
         <item name="android:layout_marginEnd">16dp</item>
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:textSize">15dp</item>
-
     </style>
 
     <style name="contenedorez">
@@ -53,5 +62,28 @@
 
     <style name="Theme.Castilla.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
+    <style name="LabelTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="LabelDescription">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="ButtonIcon">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+    </style>
 
 </resources>

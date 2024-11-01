@@ -8,6 +8,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import android.widget.VideoView
@@ -16,147 +17,117 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class Portada : AppCompatActivity() {
-    protected lateinit var vvfondo:VideoView
-    var videoapps:String?=""
+
+    private lateinit var vvfondo: VideoView
+    private var videoapps: String? = null
+    private val channelId = "mi_canal_id"
+
+    private lateinit var btnPause: Button // Agregar referencia al botón de pausa
+    private var isVideoPaused = false // Variable para rastrear el estado del video
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portada)
-        vvfondo= findViewById(R.id.videoview)
-        val CHANNEL_ID = "mi_canal_id"
 
-        // Solicitar permisos de notificación
+        vvfondo = findViewById(R.id.videoview)
+        btnPause = findViewById(R.id.btnPause) // Inicializar el botón de pausa
+
+        setupNotificationChannel()
+        loadVideoFromFirebase()
+        setupButtonListeners()
+    }
+
+    // Configuración del canal de notificaciones
+    private fun setupNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            // Crear un canal de notificación para Android 8.0 y superior
             val channel = NotificationChannel(
-                CHANNEL_ID,
-                "Nombre del canal",
+                channelId,
+                "Canal de Notificaciones",
                 NotificationManager.IMPORTANCE_HIGH
-            )
-            // Configurar opciones del canal
-            // ...
-
-            // Registrar el canal en el sistema
+            ).apply {
+                description = "Canal para notificaciones de la app"
+            }
             val notificationManager = getSystemService(NotificationManager::class.java)
-            notificationManager.createNotificationChannel(channel)
+            notificationManager?.createNotificationChannel(channel)
         }
+    }
 
-
+    // Carga de video desde Firebase
+    private fun loadVideoFromFirebase() {
         FirebaseFirestore.getInstance().collection("videoapp")
             .get()
-            .addOnSuccessListener { resultados ->
-                for (document in resultados) {
-                    //Log.i("dasess",resultados.toString())
-                    videoapps = document.data.get("videolink").toString()
-                    //Log.i("valorvideo",videoapps.toString())
-
-                    val uri = Uri.parse(""+videoapps)
-                    vvfondo.setVideoURI(uri)
-                    vvfondo.requestFocus()
-
-                    vvfondo.setOnCompletionListener {
-                        //Toast.makeText(this,"Gracias por mirara el video",Toast.LENGTH_LONG).show()
-                    }
-                    vvfondo.setOnPreparedListener { mp->
-                        vvfondo.start()
-                    }
-
+            .addOnSuccessListener { results ->
+                results.firstOrNull()?.let { document ->
+                    videoapps = document.data["videolink"]?.toString()
+                    playVideo(videoapps)
                 }
             }
-            .addOnFailureListener{
+            .addOnFailureListener {
+                Log.e("Portada", "Error al cargar video desde Firebase", it)
             }
-
-        //val uri = Uri.parse("android.resource://"+packageName+"/"+R.raw.castilla)
-
-
-        //val uri = Uri.parse(videoapps)
-       // vvfondo.setVideoURI(uri)
-       // vvfondo.requestFocus()
-
-       // vvfondo.setOnCompletionListener {
-            //Toast.makeText(this,"Gracias por mirara el video",Toast.LENGTH_LONG).show()
-       // }
-        //vvfondo.setOnPreparedListener { mp->
-        //    vvfondo.start()
-        //}
-
-
-        val botondis=findViewById<ImageView>(R.id.imageDistritos)
-        val botongaleria=findViewById<ImageView>(R.id.imageViewgaleria)
-        //val botonyoutube=findViewById<ImageView>(R.id.imageyoutube)
-        //val botonevento=findViewById<ImageView>(R.id.imageViewevento)
-        val botondesa=findViewById<ImageView>(R.id.imageViewcontacto)
-        val botoncalendario=findViewById<ImageView>(R.id.imageViewCalenda)
-        val botondescarga=findViewById<ImageView>(R.id.imageViewdescarga)
-        val botonradio=findViewById<ImageView>(R.id.imageViewradioonline)
-
-        val botonnegocios=findViewById<ImageView>(R.id.imageViewnegocios)
-
-        botonradio.setOnClickListener {
-            val btdesas=Intent(this,RadioCastilla::class.java)
-            startActivity(btdesas)
-        }
-        botonnegocios.setOnClickListener {
-            val btnegocios=Intent(this,Distritos::class.java)
-            btnegocios.putExtra("NEGOCIOS","vnegocio")
-            startActivity(btnegocios)
-        }
-
-        botoncalendario.setOnClickListener {
-            val btcalendario=Intent(this,CalendarioMeses::class.java)
-
-            startActivity(btcalendario)
-        }
-
-        botondesa.setOnClickListener {
-            val btdesas=Intent(this,Desarrollador::class.java)
-            startActivity(btdesas)
-        }
-
-        //botonevento.setOnClickListener {
-          //  val btdesas=Intent(this,noticiascastilla::class.java)
-            // startActivity(btdesas)
-        //}
-
-       // botonyoutube.setOnClickListener {
-        //    val youvar=Intent(this,Youtube::class.java)
-       //     startActivity(youvar)
-       // }
-
-        botongaleria.setOnClickListener {
-            val galvar=Intent(this,PortaFotos::class.java)
-            galvar.putExtra("Fotosdis","aplao")
-            startActivity(galvar)
-        }
-
-        botondis.setOnClickListener {
-            val distele=Intent(this,Distritos::class.java)
-            startActivity(distele)
-        }
-        botondescarga.setOnClickListener {
-            val descarga=Intent(this,documentos::class.java)
-            descarga.putExtra("codigodoc","docu")
-            startActivity(descarga)
-        }
-
-
     }
-}
 
-private fun linkvideos(dase:String) {
-    //Toast.makeText(this,"ENTROOOOOO", Toast.LENGTH_LONG).show()
-    FirebaseFirestore.getInstance().collection("gastroaplaof")
-        .get()
-        .addOnSuccessListener { resultados ->
-            for (document in resultados) {
-                Log.i("dasess",resultados.toString())
-                var videoapps2 = document.data.get("celular").toString()
-                Log.i("valorvideo",videoapps2.toString())
+    // Reproduce el video si el enlace no es nulo
+    private fun playVideo(videoUrl: String?) {
+        videoUrl?.let {
+            val uri = Uri.parse(it)
+            vvfondo.setVideoURI(uri)
+            vvfondo.setOnPreparedListener { vvfondo.start() }
+            vvfondo.setOnCompletionListener {
+                Toast.makeText(this, "Gracias por ver el video", Toast.LENGTH_SHORT).show()
             }
+            setupPauseButton() // Configura el botón de pausa
+        } ?: run {
+            Toast.makeText(this, "No se pudo cargar el video", Toast.LENGTH_SHORT).show()
         }
-        .addOnFailureListener{
+    }
 
+    // Configura el botón de pausa
+    private fun setupPauseButton() {
+        btnPause.setOnClickListener {
+            if (isVideoPaused) {
+                vvfondo.start() // Reanudar video
+                btnPause.text = "Pausar el Video" // Cambiar texto a "Pausar"
+            } else {
+                vvfondo.pause() // Pausar video
+                btnPause.text = "Reanudar" // Cambiar texto a "Reanudar"
+            }
+            isVideoPaused = !isVideoPaused // Alternar estado
         }
+    }
 
+    // Configuración de listeners para botones
+    private fun setupButtonListeners() {
+        setButtonListener(R.id.imageDistritos, Distritos::class.java)
+        setButtonListener(R.id.imageViewgaleria, PortaFotos::class.java, "Fotosdis", "aplao")
+        setButtonListener(R.id.imageViewcontacto, Desarrollador::class.java)
+        setButtonListener(R.id.imageViewCalenda, CalendarioMeses::class.java)
+        setButtonListener(R.id.imageViewdescarga, documentos::class.java, "codigodoc", "docu")
+        setButtonListener(R.id.imageViewradioonline, RadioCastilla::class.java)
+        setButtonListener(R.id.imageViewnegocios, Distritos::class.java, "NEGOCIOS", "vnegocio")
+    }
 
+    // Método para asignar listeners a los botones
+    private fun <T> setButtonListener(buttonId: Int, activityClass: Class<T>, extraKey: String? = null, extraValue: String? = null) {
+        findViewById<ImageView>(buttonId).setOnClickListener {
+            val intent = Intent(this, activityClass)
+            extraKey?.let { intent.putExtra(it, extraValue) }
+            startActivity(intent)
+        }
+    }
+
+    // Ejemplo de enlace de videos desde Firebase (sin usar aquí pero como ejemplo adicional)
+    private fun linkVideos(collection: String) {
+        FirebaseFirestore.getInstance().collection(collection)
+            .get()
+            .addOnSuccessListener { results ->
+                for (document in results) {
+                    val videoData = document.data["celular"]?.toString()
+                    Log.i("linkVideos", "Video: $videoData")
+                }
+            }
+            .addOnFailureListener {
+                Log.e("linkVideos", "Error al obtener videos", it)
+            }
+    }
 }
