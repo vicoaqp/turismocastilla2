@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Castilla"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".InfoGeneral"
+            android:exported="false" />
+        <activity
             android:name=".NeFarmacia"
             android:exported="false" />
         <activity
@@ -30,7 +33,6 @@
         <activity
             android:name=".CalendarioMeses"
             android:exported="false" />
-
         <activity
             android:name=".RadioCastilla"
             android:exported="false" />
