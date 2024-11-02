@@ -29,24 +29,8 @@ class Hoteles : MenuTodos() {
         hotelaplao(namedistrito.toString())
 
     }
-    /*
-    private fun hotelaplao(dase:String,categoria:String, parametrodebusquedad:String,recyclerView: RecyclerView) {
-        Toast.makeText(this,dase.toString(), Toast.LENGTH_LONG).show()
 
-        FirebaseFirestore.getInstance().collection(categoria)
-            .whereEqualTo(parametrodebusquedad,dase)
-            .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val user = documents.toObjects(UsersHoteles::class.java)
-                    recyclerView.adapter = HotelAdapter(this,user)
-                }
-            }
-            .addOnFailureListener{
 
-            }
-    }
-         */
 
     private fun hotelaplao(dase:String) {
         Toast.makeText(this,dase.toString(), Toast.LENGTH_LONG).show()

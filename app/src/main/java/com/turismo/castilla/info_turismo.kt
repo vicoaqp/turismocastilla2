@@ -2,122 +2,105 @@ package com.turismo.castilla
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.media.Image
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
 import com.squareup.picasso.Picasso
-//import com.synnapps.carouselview.CarouselView
-//import com.synnapps.carouselview.ImageListener
+import com.bumptech.glide.request.target.Target
 
 class info_turismo : AppCompatActivity() {
-    var sampleImages = arrayOf(
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_3.jpg",
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_1.jpg",
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_2.jpg",
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_2.jpg"
-    )
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info_turismo)
 
-        var vidHotel=intent.getStringExtra("idTurismo")
-        var vcelular=intent.getStringExtra("celular")
-        var vdescripcion=intent.getStringExtra("descripcion")
-        var vdias=intent.getStringExtra("dias")
-        var vdireccion=intent.getStringExtra("direccion")
-        var vhorario=intent.getStringExtra("horario")
-        var vnamehotel=intent.getStringExtra("nameturismo")
-        var vfacebook=intent.getStringExtra("facebook")
-        var vmapa=intent.getStringExtra("mapa")
-        var mapas2=intent.getStringExtra("mapa2")
-        var img1=intent.getStringExtra("img1")
-        var img2=intent.getStringExtra("img2")
-        var img3=intent.getStringExtra("img3")
-        var img4=intent.getStringExtra("img4")
-
+        val vdescripcion = intent.getStringExtra("descripcion")
+        val vdireccion = intent.getStringExtra("direccion")
+        val vcelular = intent.getStringExtra("celular")
+        val vdias = intent.getStringExtra("dias")
+        val vhorario = intent.getStringExtra("horario")
+        val vfacebook = intent.getStringExtra("facebook")
+        val vmapa = intent.getStringExtra("mapa")
+        val mapas2 = intent.getStringExtra("mapa2")
+        val img1 = intent.getStringExtra("img1")
 
         val textodes = findViewById<TextView>(R.id.turiprides)
         val textodir = findViewById<TextView>(R.id.turipridireccion)
         val textocel = findViewById<TextView>(R.id.turipricelulares)
         val textodias = findViewById<TextView>(R.id.turipridias)
-        val textohora= findViewById<TextView>(R.id.turiprihorarios)
+        val textohora = findViewById<TextView>(R.id.turiprihorarios)
         val btnface = findViewById<Button>(R.id.buttonfacebookturipri)
         val btnmapa = findViewById<Button>(R.id.buttonmapturipri)
         val btnllamada = findViewById<Button>(R.id.buttonllamadaturipri)
-
         val imagencabecera = findViewById<ImageView>(R.id.imageViewcabecera)
+        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
 
-        Glide.with(this).load(img1).into(imagencabecera)
+        // Mostrar el ProgressBar al iniciar la carga
+        progressBar.visibility = View.VISIBLE
+
+        Glide.with(this)
+            .load(img1)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .listener(object : RequestListener<Drawable> {
+                override fun onLoadFailed(
+                    e: GlideException?,
+                    model: Any?,
+                    target: Target<Drawable>?,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    progressBar.visibility = View.GONE
+                    return false
+                }
+
+                override fun onResourceReady(
+                    resource: Drawable?,
+                    model: Any?,
+                    target: Target<Drawable>?,
+                    dataSource: com.bumptech.glide.load.DataSource?,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    progressBar.visibility = View.GONE
+                    return false
+                }
+            })
+            .into(imagencabecera)
 
 
-        textodes.text=vdescripcion.toString()
-        textodir.text=vdireccion.toString()
-        textocel.text=vcelular.toString()
-        textodias.text=vdias.toString()
-        textohora.text=vhorario.toString()
+        textodes.text = vdescripcion ?: "Descripción no disponible"
+        textodir.text = vdireccion ?: "Dirección no disponible"
+        textocel.text = vcelular ?: "Teléfono no disponible"
+        textodias.text = vdias ?: "Días no disponible"
+        textohora.text = vhorario ?: "Horario no disponible"
 
-        btnmapa.setOnClickListener{
-            val lanzar3= Intent(this,Pruebas::class.java)
-            lanzar3.putExtra("mapa",vmapa.toString())
-            lanzar3.putExtra("mapa2",mapas2.toString())
-            lanzar3.putExtra("namehotel",vnamehotel.toString())
-            lanzar3.putExtra("imagen1",img1.toString())
-            startActivity(lanzar3)
-        }
 
-        btnface.setOnClickListener{
-            val face= Intent(Intent.ACTION_VIEW, Uri.parse(""+vfacebook.toString()))
+        btnface.setOnClickListener {
+            val face = Intent(Intent.ACTION_VIEW, Uri.parse(vfacebook))
             startActivity(face)
         }
-        btnllamada.setOnClickListener{
-            val myUri= Uri.parse("tel:"+vcelular.toString()).let { numeroTelefonoUri ->
-                Intent(Intent.ACTION_DIAL,numeroTelefonoUri)
+        btnmapa.setOnClickListener {
+            val intentMapa = Intent(this, Pruebas::class.java).apply {
+                putExtra("mapa", vmapa)
+                putExtra("mapa2", mapas2)
+                putExtra("imagen1", img1)
+                putExtra("namehotel", "Turismo")
             }
-            startActivity(myUri)
+            startActivity(intentMapa)
         }
-
-        sampleImages = arrayOf(
-            img1.toString(),
-            img2.toString(),
-            img3.toString(),
-            img4.toString()
-
-        )
-     //   val carouselView = findViewById<CarouselView>(R.id.imagendesplo)
-
-       // carouselView.apply {
-       //     size = sampleImages.size
-        //    resource = R.layout.item_carousel
-       //     autoPlay = true
-        //    indicatorAnimationType = IndicatorAnimationType.THIN_WORM
-       //     carouselOffset = OffsetType.CENTER
-        //    setCarouselViewListener { view, position ->
-                // Example here is setting up a full image carousel
-         //       val imageView = view.findViewById<ImageView>(R.id.imageView)
-       //         imageView.setImageDrawable(resources.getDrawable(sampleImages[position]))
-       //     }
-            // After you finish setting up, show the CarouselView
-          //  show()
-        //}
-
-        //val carouselView = findViewById(R.id.carouselView) as CarouselView
-        //carouselView.setPageCount(sampleImages.size)
-        //carouselView.setImageListener(imageListener)
-
-
+        btnllamada.setOnClickListener {
+            val intentLlamada = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$vcelular"))
+            startActivity(intentLlamada)
+        }
     }
-    //var imageListener: ImageListener = object : ImageListener {
-    //    override fun setImageForPosition(position: Int, imageView: ImageView) {
-            // You can use Glide or Picasso here
-            //imageView.setImageResource(sampleImages[position])
-   //         Picasso.get().load(sampleImages[position]).into(imageView)
-   //     }
-   // }
-
 }

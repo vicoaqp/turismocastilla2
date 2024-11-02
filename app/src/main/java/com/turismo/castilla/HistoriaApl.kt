@@ -1,13 +1,8 @@
 package com.turismo.castilla
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.firestore.FirebaseFirestore
-import myPages
 
 class HistoriaApl : MenuTodos() {
     override fun onCreate(savedInstanceState: Bundle?) {

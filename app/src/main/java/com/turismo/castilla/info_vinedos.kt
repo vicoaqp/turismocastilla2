@@ -14,12 +14,7 @@ import com.squareup.picasso.Picasso
 
 
 class info_vinedos : AppCompatActivity() {
-    var sampleImages = arrayOf(
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_3.jpg",
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_1.jpg",
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_2.jpg",
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_2.jpg"
-    )
+
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,28 +77,7 @@ class info_vinedos : AppCompatActivity() {
             startActivity(myUri)
         }
 
-        sampleImages = arrayOf(
-            img1.toString(),
-            img2.toString(),
-            img3.toString(),
-            img4.toString()
-
-        )
-
-        //val carouselView = findViewById(R.id.carouselView) as CarouselView
-        //carouselView.setPageCount(sampleImages.size)
-       // carouselView.setImageListener(imageListener)
-
 
     }
-    /*
-    var imageListener: ImageListener = object : ImageListener {
-        override fun setImageForPosition(position: Int, imageView: ImageView) {
-            // You can use Glide or Picasso here
-            //imageView.setImageResource(sampleImages[position])
-            Picasso.get().load(sampleImages[position]).into(imageView)
-        }
-    }
 
-     */
 }

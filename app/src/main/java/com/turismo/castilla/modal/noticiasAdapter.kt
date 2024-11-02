@@ -2,14 +2,10 @@ package com.turismo.castilla.modal
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.turismo.castilla.DescriRestaurante
 import com.turismo.castilla.R
-import com.turismo.castilla.databinding.ActivityDetalleNoticiasBinding
 import com.turismo.castilla.detalle_noticias
 
 class noticiasAdapter(private val context: Context, private val noticias: List<NoticiaModel>): RecyclerView.Adapter<noticiaViewHolder>() {

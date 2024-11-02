@@ -14,143 +14,66 @@ import com.turismo.castilla.databinding.ActivityNeFarmaciaBinding
 
 class NeFarmacia : AppCompatActivity() {
     private lateinit var binding: ActivityNeFarmaciaBinding
+    private lateinit var imagegeneralcambio: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityNeFarmaciaBinding.inflate(layoutInflater)
+        binding = ActivityNeFarmaciaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Inicializar la variable con el ImageView del binding
+        imagegeneralcambio = binding.imagegeneralne
 
-        val imagegeneralcambio = findViewById<ImageView>(R.id.imagegeneralne)
-        var negocate = intent.extras?.getString("categorianegocio")
-        var neDistrito = intent.extras?.getString("Distrito")
+        // Obtener los datos del intent
+        val negocate = intent.extras?.getString("categorianegocio")
+        val neDistrito = intent.extras?.getString("Distrito")
 
-        if (negocate =="farmacia"){
-            imagegeneralcambio.setImageResource(R.drawable.backfarmacias)
-        } else if(negocate =="abarrotes"){
-            imagegeneralcambio.setImageResource(R.drawable.backabarrotes)
-        }else if(negocate =="emporios"){
-            imagegeneralcambio.setImageResource(R.drawable.backcarnicerias)
-        }else if(negocate =="dulceria"){
-            imagegeneralcambio.setImageResource(R.drawable.backdulcerias)
-        }else if(negocate =="floreria"){
-            imagegeneralcambio.setImageResource(R.drawable.backfloreria)
-        }else if(negocate =="heladerias"){
-            imagegeneralcambio.setImageResource(R.drawable.backheladerias)
-        }else if(negocate =="panaderias"){
-            imagegeneralcambio.setImageResource(R.drawable.backpanaderias)
-        }else {
-            imagegeneralcambio.setImageResource(R.drawable.backtamales)
-        }
+        // Map para las categorías y sus respectivas imágenes
+        val imagenesCategorias = mapOf(
+            "farmacia" to R.drawable.backfarmacias,
+            "abarrotes" to R.drawable.backabarrotes,
+            "emporios" to R.drawable.backcarnicerias,
+            "dulceria" to R.drawable.backdulcerias,
+            "floreria" to R.drawable.backfloreria,
+            "heladerias" to R.drawable.backheladerias,
+            "panaderias" to R.drawable.backpanaderias,
+            "tamales" to R.drawable.backtamales // imagen por defecto
+        )
 
-        binding.recyclerFarmacia.apply {
-            layoutManager = LinearLayoutManager(this@NeFarmacia)
+        // Establecer la imagen correspondiente
+        imagegeneralcambio.setImageResource(imagenesCategorias[negocate] ?: R.drawable.backtamales)
 
-        }
+        // Configurar el RecyclerView
+        binding.recyclerFarmacia.layoutManager = LinearLayoutManager(this)
 
-        elegirnegocio(neDistrito.toString(),negocate.toString())
-
-    }
-    private fun elegirnegocio(dase:String,negocio:String) {
-
-        if (negocio =="farmacia"){
-            FirebaseFirestore.getInstance().collection("negociofarmacia")
-                .whereEqualTo("idDistrito",dase)
-                .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
-                        val user = documents.toObjects(UserGastrono::class.java)
-                        binding.recyclerFarmacia.adapter = negociosadapter(this,user)
-                    }
-                }
-                .addOnFailureListener{
-                }
-        } else if(negocio =="abarrotes"){
-            FirebaseFirestore.getInstance().collection("negocioabarrotes")
-                .whereEqualTo("idDistrito",dase)
-                .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
-                        val user = documents.toObjects(UserGastrono::class.java)
-                        binding.recyclerFarmacia.adapter = negociosadapter(this,user)
-                    }
-                }
-                .addOnFailureListener{
-                }
-        }else if(negocio =="emporios"){
-            FirebaseFirestore.getInstance().collection("negociocarnicerias")
-                .whereEqualTo("idDistrito",dase)
-                .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
-                        val user = documents.toObjects(UserGastrono::class.java)
-                        binding.recyclerFarmacia.adapter = negociosadapter(this,user)
-                    }
-                }
-                .addOnFailureListener{
-                }
-        }else if(negocio =="dulceria"){
-            FirebaseFirestore.getInstance().collection("negociodulceria")
-                .whereEqualTo("idDistrito",dase)
-                .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
-                        val user = documents.toObjects(UserGastrono::class.java)
-                        binding.recyclerFarmacia.adapter = negociosadapter(this,user)
-                    }
-                }
-                .addOnFailureListener{
-                }
-        }else if(negocio =="floreria"){
-            FirebaseFirestore.getInstance().collection("negociofloreria")
-                .whereEqualTo("idDistrito",dase)
-                .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
-                        val user = documents.toObjects(UserGastrono::class.java)
-                        binding.recyclerFarmacia.adapter = negociosadapter(this,user)
-                    }
-                }
-                .addOnFailureListener{
-                }
-        }else if(negocio =="heladerias"){
-            FirebaseFirestore.getInstance().collection("negocioheladerias")
-                .whereEqualTo("idDistrito",dase)
-                .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
-                        val user = documents.toObjects(UserGastrono::class.java)
-                        binding.recyclerFarmacia.adapter = negociosadapter(this,user)
-                    }
-                }
-                .addOnFailureListener{
-                }
-        }else if(negocio =="panaderias"){
-            FirebaseFirestore.getInstance().collection("negociopanaderias")
-                .whereEqualTo("idDistrito",dase)
-                .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
-                        val user = documents.toObjects(UserGastrono::class.java)
-                        binding.recyclerFarmacia.adapter = negociosadapter(this,user)
-                    }
-                }
-                .addOnFailureListener{
-                }
-        }else {
-            FirebaseFirestore.getInstance().collection("negociotamales")
-                .whereEqualTo("idDistrito",dase)
-                .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
-                        val user = documents.toObjects(UserGastrono::class.java)
-                        binding.recyclerFarmacia.adapter = negociosadapter(this,user)
-                    }
-                }
-                .addOnFailureListener{
-                }
-        }
-
-
+        // Llamar a la función para elegir el negocio
+        neDistrito?.let { elegirNegocio(it, negocate ?: "") }
     }
 
+    private fun elegirNegocio(distrito: String, negocio: String) {
+        // Mapeo de categorías a las colecciones de Firebase
+        val colecciones = mapOf(
+            "farmacia" to "negociofarmacia",
+            "abarrotes" to "negocioabarrotes",
+            "emporios" to "negociocarnicerias",
+            "dulceria" to "negociodulceria",
+            "floreria" to "negociofloreria",
+            "heladerias" to "negocioheladerias",
+            "panaderias" to "negociopanaderias",
+            "tamales" to "negociotamales"
+        )
+
+        // Obtener la colección correspondiente a la categoría
+        val coleccion = colecciones[negocio] ?: "negociotamales" // colección por defecto
+
+        FirebaseFirestore.getInstance().collection(coleccion)
+            .whereEqualTo("idDistrito", distrito)
+            .get()
+            .addOnSuccessListener { documents ->
+                val userList = documents.toObjects(UserGastrono::class.java)
+                binding.recyclerFarmacia.adapter = negociosadapter(this, userList)
+            }
+            .addOnFailureListener {
+                // Manejo de errores aquí (por ejemplo, mostrar un mensaje al usuario)
+            }
+    }
 }

@@ -16,12 +16,6 @@ import com.squareup.picasso.Picasso
 
 class info_distritos : AppCompatActivity() {
 
-    var sampleImages = arrayOf(
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_3.jpg",
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_1.jpg",
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_2.jpg",
-        "https://raw.githubusercontent.com/sayyam/carouselview/master/sample/src/main/res/drawable/image_2.jpg"
-    )
 
     var dvmapa:String?=null
     var dmapas2:String?=null
@@ -76,8 +70,7 @@ class info_distritos : AppCompatActivity() {
                     dvfacebook = document.data.get("facebook").toString()
 
                     Glide.with(this).load(dimg1).into(imagencabecera)
-                    restaplao(dimg1.toString())
-                   // Toast.makeText(this, img1.toString(), Toast.LENGTH_LONG).show()
+
 
 
                 }
@@ -108,44 +101,8 @@ class info_distritos : AppCompatActivity() {
         }
 
 
-        sampleImages = arrayOf(
-           dimg1.toString(),
-            dimg2.toString(),
-            dimg3.toString(),
-           dimg4.toString()
-        )
-
-        //val carouselView = findViewById(R.id.carouselView) as CarouselView
-        //carouselView.setPageCount(sampleImages.size)
-        //carouselView.setImageListener(imageListener)
     }
 
 
-    private fun restaplao(dase:String) {
-
-        //Toast.makeText(this,dase.toString(), Toast.LENGTH_LONG).show()
-
-        sampleImages = arrayOf(
-            dimg1.toString(),
-            dimg2.toString(),
-            dimg3.toString(),
-            dimg4.toString()
-        )
-
-        //val carouselView = findViewById(R.id.carouselView) as CarouselView
-
-        //carouselView.setPageCount(sampleImages.size)
-        //carouselView.setImageListener(imageListener)
-
-    }
-    /*
-    var imageListener: ImageListener = object : ImageListener {
-        override fun setImageForPosition(position: Int, imageView: ImageView) {
-            // You can use Glide or Picasso here
-            //imageView.setImageResource(sampleImages[position])
-            Picasso.get().load(sampleImages[position]).into(imageView)
-        }
-    }
-    */
 
 }

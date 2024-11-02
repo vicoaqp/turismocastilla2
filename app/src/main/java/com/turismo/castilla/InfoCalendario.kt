@@ -46,9 +46,9 @@ class InfoCalendario : AppCompatActivity() {
         val textodias = findViewById<TextView>(R.id.calendariodias)
         //val textohora= findViewById<TextView>(R.id.turiprihorarios)
 
-        val btnfacec = findViewById<Button>(R.id.buttonfacebookcalen)
+
         val btnmapac = findViewById<Button>(R.id.buttonmapcalen)
-        val btnllamadac = findViewById<Button>(R.id.buttonllamadacalen)
+
 
         val imagencabecera = findViewById<ImageView>(R.id.imageViewcabecera)
         Glide.with(this).load(img1).into(imagencabecera)

@@ -18,47 +18,50 @@ import com.google.api.Distribution
 
 class RadioCastilla : AppCompatActivity() {
 
-    private var player:ExoPlayer?=null
+    private var player: ExoPlayer? = null
+    private val streamUrl = "https://stream.zeno.fm/uixbyq7btsutv"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_radio_castilla)
 
-        val botonplay=findViewById<Button>(R.id.button_play)
-        val botonpause=findViewById<Button>(R.id.button_pausa)
+        val botonPlay = findViewById<Button>(R.id.button_play)
+        val botonPause = findViewById<Button>(R.id.button_pausa)
 
-        botonplay.setOnClickListener {
+        // Inicializar el reproductor
+        initializePlayer()
 
-            player =ExoPlayer.Builder(this).build()
-            val defaultHttpDataSourceFactory = DefaultHttpDataSource.Factory()
-            val mediaItem =MediaItem.fromUri("https://stream.zeno.fm/uixbyq7btsutv")
-            val mediaSource = ProgressiveMediaSource.Factory(defaultHttpDataSourceFactory).createMediaSource(mediaItem)
-            player?.setMediaSource(mediaSource)
-            player?.prepare()
-            player?.playWhenReady = true
+        botonPlay.setOnClickListener {
+            player?.playWhenReady = true // Reproducir
         }
 
-        botonpause.setOnClickListener {
-
-            //val player=ExoPlayer.Builder(this).build()
-           // val defaultHttpDataSourceFactory = DefaultHttpDataSource.Factory()
-           // val mediaItem =MediaItem.fromUri("https://stream.zeno.fm/uixbyq7btsutv")
-           // val mediaSource = ProgressiveMediaSource.Factory(defaultHttpDataSourceFactory).createMediaSource(mediaItem)
-           // player.setMediaSource(mediaSource)
-            player?.stop()
-           player?.playWhenReady = false
+        botonPause.setOnClickListener {
+            player?.playWhenReady = false // Pausar
         }
-
-       // setupPlayer()
-
     }
 
-    private fun setupPlayer(){
-        val player=ExoPlayer.Builder(this).build()
-        val defaultHttpDataSourceFactory = DefaultHttpDataSource.Factory()
-        val mediaItem =MediaItem.fromUri("https://stream.zeno.fm/uixbyq7btsutv")
-        val mediaSource = ProgressiveMediaSource.Factory(defaultHttpDataSourceFactory).createMediaSource(mediaItem)
-        player.setMediaSource(mediaSource)
-        player.prepare()
-        player.playWhenReady = true
+    private fun initializePlayer() {
+        player = ExoPlayer.Builder(this).build().apply {
+            val defaultHttpDataSourceFactory = DefaultHttpDataSource.Factory()
+            val mediaItem = MediaItem.fromUri(streamUrl)
+            val mediaSource = ProgressiveMediaSource.Factory(defaultHttpDataSourceFactory).createMediaSource(mediaItem)
+            setMediaSource(mediaSource)
+            prepare()
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        releasePlayer()
+    }
+
+    private fun releasePlayer() {
+        player?.release()
+        player = null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        releasePlayer() // Asegurarse de liberar recursos al destruir la actividad
     }
 }
