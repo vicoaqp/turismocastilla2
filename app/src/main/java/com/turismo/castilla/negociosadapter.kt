@@ -16,7 +16,7 @@ class negociosadapter(private var context: NeFarmacia, private val userscal: Lis
         mContext = parent.context as NeFarmacia
         return UserViewHolder25(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.rgastro_aplao,parent,false)
+                .inflate(R.layout.turismot_aplao,parent,false)
         )
     }
     override fun onBindViewHolder(holder: UserViewHolder25, position: Int) {

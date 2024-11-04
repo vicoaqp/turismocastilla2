@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.turismo.castilla.databinding.ActivityDatosTurismoBinding
-import com.turismo.castilla.databinding.ActivityTurismoBinding
+
 
 class DatosTurismo : AppCompatActivity() {
 
