@@ -37,7 +37,7 @@
             android:padding="8dp">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerTurismo"
+                android:id="@+id/recyclerdTurismo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"

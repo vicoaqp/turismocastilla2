@@ -14,70 +14,94 @@ import com.bumptech.glide.Glide
 
 class InfoGeneral : AppCompatActivity() {
 
+    companion object {
+        const val EXTRA_ID = "idgeneral"
+        const val EXTRA_CELULAR = "celularg"
+        const val EXTRA_DESCRIPCION = "descripciong"
+        const val EXTRA_DIAS = "diasg"
+        const val EXTRA_DIRECCION = "direcciong"
+        const val EXTRA_HORARIO = "horariog"
+        const val EXTRA_NAME = "nameg"
+        const val EXTRA_FACEBOOK = "facebookg"
+        const val EXTRA_MAPA = "mapag"
+        const val EXTRA_MAPA2 = "mapag2"
+        const val EXTRA_IMG1 = "img1"
+        const val EXTRA_IMG2 = "img2"
+        const val EXTRA_IMG3 = "img3"
+        const val EXTRA_IMG4 = "img4"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_info_general)
 
+        // Recoger datos del Intent con valores predeterminados
+        val vgnameid = intent.getStringExtra(EXTRA_ID) ?: ""
+        val vgcelular = intent.getStringExtra(EXTRA_CELULAR) ?: ""
+        val vgdescripcion = intent.getStringExtra(EXTRA_DESCRIPCION) ?: ""
+        val vgdias = intent.getStringExtra(EXTRA_DIAS) ?: ""
+        val vgdireccion = intent.getStringExtra(EXTRA_DIRECCION) ?: ""
+        val vghorario = intent.getStringExtra(EXTRA_HORARIO) ?: ""
+        val vnamegeneral = intent.getStringExtra(EXTRA_NAME) ?: ""
+        val vgfacebook = intent.getStringExtra(EXTRA_FACEBOOK) ?: ""
+        val vgmapa = intent.getStringExtra(EXTRA_MAPA) ?: ""
+        val vgmapas2 = intent.getStringExtra(EXTRA_MAPA2) ?: ""
+        val img1 = intent.getStringExtra(EXTRA_IMG1) ?: ""
+        val img2 = intent.getStringExtra(EXTRA_IMG2) ?: ""
+        val img3 = intent.getStringExtra(EXTRA_IMG3) ?: ""
+        val img4 = intent.getStringExtra(EXTRA_IMG4) ?: ""
 
+        // Configurar las vistas
+        setupViews(vgdescripcion, vgdireccion, vgcelular, vgdias, vghorario, img1)
 
-        var vgnameid=intent.getStringExtra("idgeneral")
-        var vgcelular=intent.getStringExtra("celularg")
-        var vgdescripcion=intent.getStringExtra("descripciong")
-        var vgdias=intent.getStringExtra("diasg")
-        var vgdireccion=intent.getStringExtra("direcciong")
-        var vghorario=intent.getStringExtra("horariog")
-        var vnamegeneral=intent.getStringExtra("nameg")
-        var vgfacebook=intent.getStringExtra("facebookg")
-        var vgmapa=intent.getStringExtra("mapag")
-        var vgmapas2=intent.getStringExtra("mapag2")
-        var img1=intent.getStringExtra("img1")
-        var img2=intent.getStringExtra("img2")
-        var img3=intent.getStringExtra("img3")
-        var img4=intent.getStringExtra("img4")
+        // Configurar los botones
+        setupButtons(vgfacebook, vgcelular, vgmapa, vgmapas2, vnamegeneral, img1)
+    }
 
-
-        val textodes = findViewById<TextView>(R.id.gdes)
-        val textodir = findViewById<TextView>(R.id.gdireccion)
-        val textocel = findViewById<TextView>(R.id.gcelulares)
-        val textodias = findViewById<TextView>(R.id.gdias)
-        val textohora= findViewById<TextView>(R.id.ghorarios)
-        val btnface = findViewById<Button>(R.id.buttonfacebookg)
-        val btnmapa = findViewById<Button>(R.id.buttonmapg)
-        val btnllamada = findViewById<Button>(R.id.buttonllamadag)
-
+    private fun setupViews(
+        descripcion: String,
+        direccion: String,
+        celular: String,
+        dias: String,
+        horario: String,
+        img1: String
+    ) {
+        findViewById<TextView>(R.id.gdes).text = descripcion
+        findViewById<TextView>(R.id.gdireccion).text = direccion
+        findViewById<TextView>(R.id.gcelulares).text = celular
+        findViewById<TextView>(R.id.gdias).text = dias
+        findViewById<TextView>(R.id.ghorarios).text = horario
 
         val imagencabecera = findViewById<ImageView>(R.id.imageViewcabecera)
         Glide.with(this).load(img1).into(imagencabecera)
-
-        textodes.text=vgdescripcion.toString()
-        textodir.text=vgdireccion.toString()
-        textocel.text=vgcelular.toString()
-        textodias.text=vgdias.toString()
-        textohora.text=vghorario.toString()
-
-        btnmapa.setOnClickListener{
-            val lanzar3= Intent(this,Pruebas::class.java)
-            lanzar3.putExtra("mapa",vgmapa.toString())
-            lanzar3.putExtra("mapa2",vgmapas2.toString())
-            lanzar3.putExtra("namehotel",vnamegeneral.toString())
-            lanzar3.putExtra("imagen1",img1.toString())
-            startActivity(lanzar3)
-        }
-
-        btnface.setOnClickListener{
-            val face= Intent(Intent.ACTION_VIEW, Uri.parse(""+vgfacebook.toString()))
-            startActivity(face)
-        }
-        btnllamada.setOnClickListener{
-            val myUri= Uri.parse("tel:"+vgcelular.toString()).let { numeroTelefonoUri ->
-                Intent(Intent.ACTION_DIAL,numeroTelefonoUri)
-            }
-            startActivity(myUri)
-        }
-
     }
 
+    private fun setupButtons(
+        facebookUrl: String,
+        celular: String,
+        mapaUrl: String,
+        mapa2Url: String,
+        name: String,
+        img1: String
+    ) {
+        findViewById<Button>(R.id.buttonmapg).setOnClickListener {
+            val intentMap = Intent(this, Pruebas::class.java).apply {
+                putExtra("mapa", mapaUrl)
+                putExtra("mapa2", mapa2Url)
+                putExtra("namehotel", name)
+                putExtra("imagen1", img1)
+            }
+            startActivity(intentMap)
+        }
 
+        findViewById<Button>(R.id.buttonfacebookg).setOnClickListener {
+            val intentFacebook = Intent(Intent.ACTION_VIEW, Uri.parse(facebookUrl))
+            startActivity(intentFacebook)
+        }
+
+        findViewById<Button>(R.id.buttonllamadag).setOnClickListener {
+            val intentCall = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$celular"))
+            startActivity(intentCall)
+        }
+    }
 }

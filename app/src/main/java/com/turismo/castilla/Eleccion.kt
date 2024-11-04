@@ -32,12 +32,21 @@ class Eleccion : MenuTodos() {
         // Configurar visibilidad de botones
         configurarVisibilidadBotones(codigoDist, codigoChoco, btnVinedos, btnHospedaje, btnGastronomia)
 
-        // Configurar listeners de botones
-        btnHistoria.setOnClickListener { iniciarActividad(info_distritos::class.java, nombreDistrito) }
-        btnQueHacer.setOnClickListener { iniciarActividad(Turismo::class.java, nombreDistrito) }
-        btnGastronomia.setOnClickListener { iniciarActividad(GastroAplaoRec::class.java, nombreDistrito) }
-        btnHospedaje.setOnClickListener { iniciarActividad(Hoteles::class.java, nombreDistrito) }
-        btnVinedos.setOnClickListener { iniciarActividad(Vinedos::class.java, nombreDistrito) }
+
+        btnHistoria.setOnClickListener { iniciarActividad(info_distritos::class.java, nombreDistrito, "historia") }
+
+        btnQueHacer.setOnClickListener {
+            iniciarActividad(DatosTurismo::class.java, nombreDistrito, "turismo")
+        }
+        btnGastronomia.setOnClickListener {
+            iniciarActividad(DatosTurismo::class.java, nombreDistrito, "gastronomia")
+        }
+        btnHospedaje.setOnClickListener {
+            iniciarActividad(DatosTurismo::class.java, nombreDistrito, "hoteles")
+        }
+        btnVinedos.setOnClickListener {
+            iniciarActividad(DatosTurismo::class.java, nombreDistrito, "vinedos")
+        }
     }
 
     // Función para configurar la visibilidad de los botones
@@ -52,9 +61,10 @@ class Eleccion : MenuTodos() {
     }
 
     // Función para iniciar actividades
-    private fun <T> iniciarActividad(actividad: Class<T>, nombreDistrito: String) {
+    private fun <T> iniciarActividad(actividad: Class<T>, nombreDistrito: String, eleccion: String) {
         val intent = Intent(this, actividad)
         intent.putExtra("dist", nombreDistrito)
+        intent.putExtra("eleccion", eleccion) // Pasar el dato "elección"
         startActivity(intent)
     }
 }

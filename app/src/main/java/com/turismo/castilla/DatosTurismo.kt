@@ -2,20 +2,25 @@ package com.turismo.castilla
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
+import com.turismo.castilla.databinding.ActivityDatosTurismoBinding
 import com.turismo.castilla.databinding.ActivityTurismoBinding
 
-class Turismo : AppCompatActivity() {
-    private lateinit var binding: ActivityTurismoBinding
+class DatosTurismo : AppCompatActivity() {
+
+    private lateinit var binding: ActivityDatosTurismoBinding
     private lateinit var imagegeneralcambio: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityTurismoBinding.inflate(layoutInflater)
+        binding = ActivityDatosTurismoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         imagegeneralcambio = binding.imagedesav
@@ -35,7 +40,7 @@ class Turismo : AppCompatActivity() {
 
 
 
-        binding.recyclerTurismo.layoutManager = LinearLayoutManager(this)
+        binding.recyclerdTurismo.layoutManager = LinearLayoutManager(this)
 
         namedistrito?.let { elegirNegocio(it, nameeleccion ?: "") }
 
@@ -49,43 +54,48 @@ class Turismo : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/4FR5zExQK7NWqJXt7"))
             startActivity(intent)
         }
+
+
     }
 
     private fun elegirNegocio(distrito: String, eleccion: String) {
         val colecciones = mapOf(
             "turismo" to "turismo",
-            "gastronomia" to "restauran", // Verifica que sea "restauran"
+            "gastronomia" to "restauran",
             "hoteles" to "hotel",
             "vinedos" to "vinedos"
         )
 
-        val coleccion = colecciones[eleccion] ?: "turismo" // colección por defecto
-        Log.d("Firebase", "Colección seleccionada: $coleccion, Distrito: $distrito")
+        val coleccion = colecciones[eleccion] ?: "turismo"
+
+        val itemType = when (coleccion) {
+            "turismo" -> DatosAdapter.ItemType.TURISMO
+            "restauran" -> DatosAdapter.ItemType.GASTRONOMIA
+            "hotel" -> DatosAdapter.ItemType.HOTELES
+            "vinedos" -> DatosAdapter.ItemType.VINEDO
+            else -> DatosAdapter.ItemType.TURISMO
+        }
 
         FirebaseFirestore.getInstance().collection(coleccion)
             .whereEqualTo("idDistrito", distrito)
             .get()
             .addOnSuccessListener { documents ->
-                Log.d("Firebase", "Documentos obtenidos: ${documents.size()}")
-                if (documents.isEmpty) {
-                    Log.d("Firebase", "No se encontraron documentos para la colección $coleccion y distrito $distrito")
-                }
-                when (coleccion) {
-                    "turismo" -> {
-                        val user = documents.toObjects(Usersturismos::class.java)
-                        binding.recyclerTurismo.adapter = TurismoAdapter(this, user)
+                when (itemType) {
+                    DatosAdapter.ItemType.TURISMO -> {
+                        val items = documents.toObjects(Usersturismos::class.java)
+                        binding.recyclerdTurismo.adapter = DatosAdapter(this, items, DatosAdapter.TURISMO)
                     }
-                    "gastronomia" -> {
-                        val userGastrono = documents.toObjects(UserGastrono::class.java)
-                        binding.recyclerTurismo.adapter = GastroAdapter(this, userGastrono)
+                    DatosAdapter.ItemType.GASTRONOMIA -> {
+                        val items = documents.toObjects(UserGastrono::class.java)
+                        binding.recyclerdTurismo.adapter = DatosAdapter(this, items, DatosAdapter.GASTRONOMIA)
                     }
-                    "hoteles" -> {
-                        val usersHoteles = documents.toObjects(UsersHoteles::class.java)
-                        binding.recyclerTurismo.adapter = HotelAdapter(this, usersHoteles)
+                    DatosAdapter.ItemType.HOTELES -> {
+                        val items = documents.toObjects(UsersHoteles::class.java)
+                        binding.recyclerdTurismo.adapter = DatosAdapter(this, items, DatosAdapter.HOTELES)
                     }
-                    "vinedos" -> {
-                        val usersVinedos = documents.toObjects(UsersVinedos::class.java)
-                        binding.recyclerTurismo.adapter = VinedosAdapter(this, usersVinedos)
+                    DatosAdapter.ItemType.VINEDO -> {
+                        val items = documents.toObjects(UsersVinedos::class.java)
+                        binding.recyclerdTurismo.adapter = DatosAdapter(this, items, DatosAdapter.VINEDOS)
                     }
                 }
             }

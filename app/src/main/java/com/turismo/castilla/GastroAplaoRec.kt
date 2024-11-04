@@ -22,10 +22,11 @@ class GastroAplaoRec : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@GastroAplaoRec)
 
         }
-        restaplao(namedistrito.toString())
+        //restaplao(namedistrito.toString())
 
 
     }
+    /*
     private fun restaplao(dase:String) {
         Toast.makeText(this,dase.toString(), Toast.LENGTH_LONG).show()
 
@@ -41,5 +42,7 @@ class GastroAplaoRec : AppCompatActivity() {
             .addOnFailureListener{
 
             }
+             */
+
     }
-}
+

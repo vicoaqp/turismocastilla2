@@ -58,6 +58,7 @@ class Distritos : MenuTodos() {
             else -> Intent(this, Eleccion::class.java).apply {
                 putExtra("Distrito", distritoId)
                 putExtra("codigo", if (distritoId == "uyC1afkIWd23narJPGMP" || distritoId == "85LN38HemVE0bnJUCcMb") "vino" else "novino")
+
             }
         }
         startActivity(intent)

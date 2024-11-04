@@ -2,22 +2,20 @@ package com.turismo.castilla
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 
-class GastroAdapter(private var context: GastroAplaoRec, private val usersgas: List<UserGastrono>): RecyclerView.Adapter<UserViewHolder5>() {
+class GastroAdapter(private var context: Context, private val usersgas: List<UserGastrono>): RecyclerView.Adapter<UserViewHolder5>() {
 
     private lateinit var mContext: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder5 {
-        mContext = parent.context as GastroAplaoRec
+        mContext = context
         return UserViewHolder5(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.rgastro_aplao,parent,false)
@@ -67,6 +65,6 @@ class GastroAdapter(private var context: GastroAplaoRec, private val usersgas: L
 
 
 class UserViewHolder5(itemView: View) :RecyclerView.ViewHolder(itemView){
-    val FotoEvento: ImageView =itemView.findViewById(R.id.imagenrestaurante)
+    val FotoEvento: ImageView =itemView.findViewById(R.id.imgturismos)
 
 }

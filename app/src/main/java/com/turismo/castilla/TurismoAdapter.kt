@@ -9,11 +9,11 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class TurismoAdapter(private var context: Turismo, private val usersturi: List<Usersturismos>): RecyclerView.Adapter<UserViewHolder9>() {
+class TurismoAdapter(private var context: Context, private val usersturi: List<Usersturismos>): RecyclerView.Adapter<UserViewHolder9>() {
     private lateinit var mContext: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder9 {
-        mContext = parent.context as Turismo
+        mContext = context
         return UserViewHolder9(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.turismot_aplao,parent,false)

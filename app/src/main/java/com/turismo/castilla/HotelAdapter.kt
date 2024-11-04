@@ -9,14 +9,14 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class HotelAdapter(private var context: Hoteles, private val usershotel: List<UsersHoteles>): RecyclerView.Adapter<UserViewHolder7>() {
+class HotelAdapter(private var context: Context, private val usershotel: List<UsersHoteles>): RecyclerView.Adapter<UserViewHolder7>() {
     private lateinit var mContext: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder7 {
         mContext = parent.context as Hoteles
         return UserViewHolder7(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.hotelesaplao,parent,false)
+                .inflate(R.layout.turismot_aplao,parent,false)
         )
     }
 
@@ -58,6 +58,6 @@ class HotelAdapter(private var context: Hoteles, private val usershotel: List<Us
 
 }
 class UserViewHolder7(itemView: View) :RecyclerView.ViewHolder(itemView){
-    val FotoHotel: ImageView =itemView.findViewById(R.id.rimghoteles)
+    val FotoHotel: ImageView =itemView.findViewById(R.id.imgturismos)
 
 }

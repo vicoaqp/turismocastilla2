@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.turismo.castilla.databinding.ActivityEventosInfoBinding
-import com.turismo.castilla.databinding.ActivityFotosWebBinding
 
 class EventosInfo : AppCompatActivity() {
 
