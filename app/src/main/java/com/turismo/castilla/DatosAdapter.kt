@@ -85,8 +85,21 @@ class DatosAdapter(
         fun bindTurismo(turismo: Usersturismos) {
             itemView.setOnClickListener {
                 val intent = Intent(context, InfoGeneral::class.java)
-                intent.putExtra("idgeneral", turismo.idTurismo)
-                intent.putExtra("nameg", turismo.nameturismo)
+                intent.putExtra("idgeneral",turismo.idTurismo)
+                intent.putExtra("celularg",turismo.celular)
+                intent.putExtra("descripciong",turismo.descripcion)
+                intent.putExtra("diasg",turismo.dias)
+                intent.putExtra("direcciong",turismo.direccion)
+                intent.putExtra("horariog",turismo.horario)
+                intent.putExtra("nameg",turismo.nameturismo)
+                intent.putExtra("facebookg",turismo.facebook)
+                intent.putExtra("mapag",turismo.mapa)
+                intent.putExtra("mapag2",turismo.mapa2)
+                intent.putExtra("img1",turismo.img1)
+                intent.putExtra("img2",turismo.img2)
+                intent.putExtra("img3",turismo.img3)
+                intent.putExtra("img4",turismo.img4)
+                intent.putExtra("idDistrito",turismo.idDistrito)
                 context.startActivity(intent)
             }
         }
@@ -94,8 +107,21 @@ class DatosAdapter(
         fun bindGastronomy(gastronomy: UserGastrono) {
             itemView.setOnClickListener {
                 val intent = Intent(context, InfoGeneral::class.java)
-                intent.putExtra("idgeneral", gastronomy.idRestaurante)
-                intent.putExtra("nameg", gastronomy.namerest)
+                intent.putExtra("idDistrito",gastronomy.idDistrito)
+                intent.putExtra("idgeneral",gastronomy.idRestaurante)
+                intent.putExtra("celularg",gastronomy.celular)
+                intent.putExtra("descripciong",gastronomy.descripcion)
+                intent.putExtra("diasg",gastronomy.dias)
+                intent.putExtra("direcciong",gastronomy.direccion)
+                intent.putExtra("horariog",gastronomy.horario)
+                intent.putExtra("nameg",gastronomy.namerest)
+                intent.putExtra("facebookg",gastronomy.facebook)
+                intent.putExtra("mapag",gastronomy.mapa)
+                intent.putExtra("mapag2",gastronomy.mapa2)
+                intent.putExtra("img1",gastronomy.img1)
+                intent.putExtra("img2",gastronomy.img2)
+                intent.putExtra("img3",gastronomy.img3)
+                intent.putExtra("img4",gastronomy.img4)
                 context.startActivity(intent)
             }
         }
@@ -103,8 +129,21 @@ class DatosAdapter(
         fun bindHotel(hotel: UsersHoteles) {
             itemView.setOnClickListener {
                 val intent = Intent(context, InfoGeneral::class.java)
-                intent.putExtra("idgeneral", hotel.idhoteles)
-                intent.putExtra("nameg", hotel.namehotel)
+                intent.putExtra("idgeneral",hotel.idhoteles)
+                intent.putExtra("celularg",hotel.celular)
+                intent.putExtra("descripciong",hotel.descripcion)
+                intent.putExtra("diasg",hotel.dias)
+                intent.putExtra("direcciong",hotel.direccion)
+                intent.putExtra("horariog",hotel.horario)
+                intent.putExtra("nameg",hotel.namehotel)
+                intent.putExtra("facebookg",hotel.facebook)
+                intent.putExtra("mapag",hotel.mapa)
+                intent.putExtra("img1",hotel.img1)
+                intent.putExtra("img2",hotel.img2)
+                intent.putExtra("img3",hotel.img3)
+                intent.putExtra("img4",hotel.img4)
+                intent.putExtra("mapag2",hotel.mapa2)
+
                 context.startActivity(intent)
             }
         }
@@ -112,8 +151,22 @@ class DatosAdapter(
         fun bindVineyard(vineyard: UsersVinedos) {
             itemView.setOnClickListener {
                 val intent = Intent(context, InfoGeneral::class.java)
-                intent.putExtra("idgeneral", vineyard.idVinedos)
-                intent.putExtra("nameg", vineyard.namevinedos)
+
+                intent.putExtra("idgeneral",vineyard.idVinedos)
+                intent.putExtra("celularg",vineyard.celular)
+                intent.putExtra("descripciong",vineyard.descripcion)
+                intent.putExtra("diasg",vineyard.dias)
+                intent.putExtra("direcciong",vineyard.direccion)
+                intent.putExtra("horariog",vineyard.horario)
+                intent.putExtra("nameg",vineyard.namevinedos)
+                intent.putExtra("facebookg",vineyard.facebook)
+                intent.putExtra("mapag",vineyard.mapa)
+                intent.putExtra("mapag2",vineyard.mapa2)
+                intent.putExtra("img1",vineyard.img1)
+                intent.putExtra("img2",vineyard.img2)
+                intent.putExtra("img3",vineyard.img3)
+                intent.putExtra("img4",vineyard.img4)
+
                 context.startActivity(intent)
             }
         }
