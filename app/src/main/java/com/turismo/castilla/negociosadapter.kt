@@ -56,5 +56,5 @@ class negociosadapter(private var context: NeFarmacia, private val userscal: Lis
     }
 }
     class UserViewHolder25(itemView: View) :RecyclerView.ViewHolder(itemView){
-        val FotoEvento: ImageView =itemView.findViewById(R.id.imagenrestaurante)
+        val FotoEvento: ImageView =itemView.findViewById(R.id.imgturismos)
     }

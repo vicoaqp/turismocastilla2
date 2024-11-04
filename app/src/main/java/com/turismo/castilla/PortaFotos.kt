@@ -1,5 +1,7 @@
 package com.turismo.castilla
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -25,6 +27,12 @@ class PortaFotos : AppCompatActivity() {
         // Iniciar el indicador de carga y comenzar a obtener los datos
         binding.progressBar.visibility = View.VISIBLE
         fetchData(namedistrito.toString())
+
+        // Configurar el botón para abrir el enlace de Google Forms
+        binding.uploadButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/2riHXUrqYRiM5Cky8"))
+            startActivity(intent)
+        }
     }
 
     private fun fetchData(dase: String) {

@@ -1,13 +1,9 @@
 package com.turismo.castilla
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
-import com.turismo.castilla.databinding.ActivityHotelesBinding
 import com.turismo.castilla.databinding.ActivityVinedosBinding
 
 class Vinedos : AppCompatActivity() {
@@ -26,10 +22,10 @@ class Vinedos : AppCompatActivity() {
         binding.recyclervinedos.apply {
             layoutManager = LinearLayoutManager(this@Vinedos)
         }
-        vinedosaplao(namedistrito.toString())
+       //vinedosaplao(namedistrito.toString())
 
     }
-
+    /*
     private fun vinedosaplao(dase:String) {
 
         FirebaseFirestore.getInstance().collection("vinedos")
@@ -45,5 +41,7 @@ class Vinedos : AppCompatActivity() {
 
             }
     }
+
+     */
 
 }

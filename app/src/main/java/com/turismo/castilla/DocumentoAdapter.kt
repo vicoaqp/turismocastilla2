@@ -19,7 +19,7 @@ class DocumentoAdapter(private var context:documentos, private val usersDocument
         mContext = parent.context as documentos
         return UserViewHolder15(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.hotelesaplao,parent,false)
+                .inflate(R.layout.turismot_aplao,parent,false)
         )
     }
     override fun onBindViewHolder(holder: UserViewHolder15, position: Int) {
@@ -42,5 +42,5 @@ class DocumentoAdapter(private var context:documentos, private val usersDocument
 
 }
 class UserViewHolder15(itemView: View) :RecyclerView.ViewHolder(itemView){
-    val FotoHotel: ImageView =itemView.findViewById(R.id.rimghoteles)
+    val FotoHotel: ImageView =itemView.findViewById(R.id.imgturismos)
 }

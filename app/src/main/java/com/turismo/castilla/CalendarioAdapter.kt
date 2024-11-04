@@ -18,7 +18,7 @@ class CalendarioAdapter(private var context: eleccionmes, private val userscalen
         mContext = parent.context as eleccionmes
         return UserViewHolder12(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.hotelesaplao,parent,false)
+                .inflate(R.layout.turismot_aplao,parent,false)
         )
     }
 
@@ -57,7 +57,7 @@ class CalendarioAdapter(private var context: eleccionmes, private val userscalen
 }
 
 class UserViewHolder12(itemView: View) :RecyclerView.ViewHolder(itemView){
-    val FotoEleccionmes: ImageView =itemView.findViewById(R.id.rimghoteles)
+    val FotoEleccionmes: ImageView =itemView.findViewById(R.id.imgturismos)
 
 
 

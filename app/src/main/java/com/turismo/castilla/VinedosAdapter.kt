@@ -9,7 +9,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class VinedosAdapter(private var context: Vinedos, private val usersvine: List<UsersVinedos>): RecyclerView.Adapter<UserViewHolder8>() {
+class VinedosAdapter(private var context: Context, private val usersvine: List<UsersVinedos>): RecyclerView.Adapter<UserViewHolder8>() {
 
     private lateinit var mContext: Context
 
@@ -58,6 +58,6 @@ class VinedosAdapter(private var context: Vinedos, private val usersvine: List<U
 
 }
 class UserViewHolder8(itemView: View) : RecyclerView.ViewHolder(itemView){
-    val FotoVinedo: ImageView =itemView.findViewById(R.id.limgvinedos)
+    val FotoVinedo: ImageView =itemView.findViewById(R.id.imgturismos)
 
 }

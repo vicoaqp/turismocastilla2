@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Castilla"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".DatosTurismo"
+            android:exported="false" />
+        <activity
             android:name=".InfoGeneral"
             android:exported="false" />
         <activity
