@@ -1,5 +1,7 @@
 package com.turismo.castilla
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
@@ -15,19 +17,20 @@ import com.turismo.castilla.databinding.ActivityNeFarmaciaBinding
 class NeFarmacia : AppCompatActivity() {
     private lateinit var binding: ActivityNeFarmaciaBinding
     private lateinit var imagegeneralcambio: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNeFarmaciaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Inicializar la variable con el ImageView del binding
+
         imagegeneralcambio = binding.imagegeneralne
 
-        // Obtener los datos del intent
+
         val negocate = intent.extras?.getString("categorianegocio")
         val neDistrito = intent.extras?.getString("Distrito")
 
-        // Map para las categorías y sus respectivas imágenes
+
         val imagenesCategorias = mapOf(
             "farmacia" to R.drawable.backfarmacias,
             "abarrotes" to R.drawable.backabarrotes,
@@ -36,17 +39,24 @@ class NeFarmacia : AppCompatActivity() {
             "floreria" to R.drawable.backfloreria,
             "heladerias" to R.drawable.backheladerias,
             "panaderias" to R.drawable.backpanaderias,
-            "tamales" to R.drawable.backtamales // imagen por defecto
+            "tamales" to R.drawable.backtamales
         )
 
-        // Establecer la imagen correspondiente
+
         imagegeneralcambio.setImageResource(imagenesCategorias[negocate] ?: R.drawable.backtamales)
 
-        // Configurar el RecyclerView
+
         binding.recyclerFarmacia.layoutManager = LinearLayoutManager(this)
 
-        // Llamar a la función para elegir el negocio
+
         neDistrito?.let { elegirNegocio(it, negocate ?: "") }
+
+
+        binding.btnSubeTuNegocio.setOnClickListener {
+            val formularioUrl = "https://forms.gle/uqorWBXpBNPX4Vox8"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(formularioUrl))
+            startActivity(intent)
+        }
     }
 
     private fun elegirNegocio(distrito: String, negocio: String) {

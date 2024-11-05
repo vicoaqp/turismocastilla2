@@ -31,12 +31,16 @@ class Negocios : AppCompatActivity() {
             R.id.imagetamales to "tamales"
         )
 
+
+
         // Establecer los click listeners para cada botón
         for ((buttonId, categoria) in categorias) {
             findViewById<ImageView>(buttonId).setOnClickListener {
                 abrirActividad(distrito, categoria)
             }
         }
+
+
     }
 
     // Función para abrir la actividad de NeFarmacia
