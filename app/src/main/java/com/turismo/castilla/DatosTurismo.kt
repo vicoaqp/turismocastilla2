@@ -56,6 +56,8 @@ class DatosTurismo : AppCompatActivity() {
         }
 
 
+
+
     }
 
     private fun elegirNegocio(distrito: String, eleccion: String) {
