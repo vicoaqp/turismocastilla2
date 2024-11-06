@@ -11,45 +11,53 @@
 
     <ImageView
         android:id="@+id/imagegeneralne"
-        android:layout_width="0dp"
+        app:srcCompat="@drawable/backfarmacias"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:adjustViewBounds="true"
-        android:background="@drawable/rounded_background_img"
-        android:padding="8dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/recycler_farmacia"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        android:layout_gravity="center"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:background="@drawable/rounded_backgroundlayout"
+         />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_farmacia"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="?android:attr/windowBackground"
+        android:clipToOutline="true"
+        android:elevation="4dp"
+        android:nestedScrollingEnabled="false"
+        android:outlineProvider="background"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubeTuNegocio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backfarmacias" />
+        app:layout_constraintTop_toBottomOf="@id/imagegeneralne" />
 
 
-<androidx.recyclerview.widget.RecyclerView
-android:id="@+id/recycler_farmacia"
-android:layout_width="0dp"
-android:layout_height="0dp"
-android:layout_margin="8dp"
-app:layout_constraintTop_toBottomOf="@+id/imagegeneralne"
-app:layout_constraintBottom_toTopOf="@+id/btnSubeTuNegocio"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintEnd_toEndOf="parent" />
-
-
-<Button
-android:id="@+id/btnSubeTuNegocio"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="Sube tu negocio"
-android:textAllCaps="true"
-android:textColor="@android:color/white"
-android:textSize="16sp"
-android:backgroundTint="@color/primaryColor"
-android:background="@drawable/rounded_button"
-android:elevation="6dp"
-app:layout_constraintBottom_toBottomOf="parent"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintEnd_toEndOf="parent"
-android:layout_marginBottom="24dp" />
+    <Button
+        android:id="@+id/btnSubeTuNegocio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sube tu negocio"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:backgroundTint="@color/primaryColor"
+        android:background="@drawable/rounded_button"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

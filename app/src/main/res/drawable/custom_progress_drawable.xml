@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sombra -->
+    <item android:right="2dp" android:left="2dp" android:top="2dp" android:bottom="2dp">
+        <shape>
+            <solid android:color="#AA000000"/>
+            <corners android:radius="50dp"/>
+        </shape>
+    </item>
+
+    <!-- Fondo del ProgressBar -->
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="@android:color/darker_gray"/>
+            <corners android:radius="50dp"/>
+        </shape>
+    </item>
+
+    <item>
+        <rotate
+            android:fromDegrees="0"
+            android:toDegrees="360"
+            android:drawable="@android:drawable/progress_horizontal"
+            android:pivotX="50%"
+            android:pivotY="50%"/>
+    </item>
+</layer-list>

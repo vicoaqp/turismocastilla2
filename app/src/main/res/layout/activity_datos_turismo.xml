@@ -14,50 +14,57 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
+        android:layout_margin="16dp"
+        android:layout_gravity="center"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:background="@drawable/rounded_backgroundlayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/lugares" />
 
-    <ScrollView
-        android:layout_width="match_parent"
+    <ProgressBar
+    android:id="@+id/progressBar"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_centerInParent="true"
+    android:indeterminate="true"
+    android:visibility="gone"
+    android:layout_marginStart="50dp"
+    android:layout_marginEnd="50dp"
+    android:layout_marginTop="50dp"
+    android:layout_marginBottom="50dp"
+    android:indeterminateDrawable="@drawable/custom_progress_drawable"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerdTurismo"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@id/upload_button"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="?android:attr/windowBackground"
+        android:clipToOutline="true"
+        android:elevation="4dp"
+        android:nestedScrollingEnabled="false"
+        android:outlineProvider="background"
+        app:layout_constraintBottom_toTopOf="@+id/upload_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imagedesav">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerdTurismo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:overScrollMode="never"
-                android:paddingBottom="8dp" />
-        </LinearLayout>
-    </ScrollView>
-
+        app:layout_constraintTop_toBottomOf="@id/imagedesav"
+                />
 
     <Button
         android:id="@+id/upload_button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:background="@drawable/rounded_button"
         android:backgroundTint="@color/primaryColor"
-        android:elevation="4dp"
-        android:paddingStart="24dp"
-        android:paddingTop="12dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="12dp"
         android:text="Sube un Lugar"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
