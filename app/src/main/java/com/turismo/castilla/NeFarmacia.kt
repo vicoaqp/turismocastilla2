@@ -3,7 +3,9 @@ package com.turismo.castilla
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -17,19 +19,18 @@ import com.turismo.castilla.databinding.ActivityNeFarmaciaBinding
 class NeFarmacia : AppCompatActivity() {
     private lateinit var binding: ActivityNeFarmaciaBinding
     private lateinit var imagegeneralcambio: ImageView
+    private lateinit var progressBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNeFarmaciaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         imagegeneralcambio = binding.imagegeneralne
-
+        progressBar = binding.progressBar
 
         val negocate = intent.extras?.getString("categorianegocio")
         val neDistrito = intent.extras?.getString("Distrito")
-
 
         val imagenesCategorias = mapOf(
             "farmacia" to R.drawable.backfarmacias,
@@ -42,15 +43,11 @@ class NeFarmacia : AppCompatActivity() {
             "tamales" to R.drawable.backtamales
         )
 
-
         imagegeneralcambio.setImageResource(imagenesCategorias[negocate] ?: R.drawable.backtamales)
-
 
         binding.recyclerFarmacia.layoutManager = LinearLayoutManager(this)
 
-
         neDistrito?.let { elegirNegocio(it, negocate ?: "") }
-
 
         binding.btnSubeTuNegocio.setOnClickListener {
             val formularioUrl = "https://forms.gle/uqorWBXpBNPX4Vox8"
@@ -60,7 +57,10 @@ class NeFarmacia : AppCompatActivity() {
     }
 
     private fun elegirNegocio(distrito: String, negocio: String) {
-        // Mapeo de categorías a las colecciones de Firebase
+        // Mostrar el ProgressBar mientras se carga la data
+        progressBar.visibility = View.VISIBLE
+        binding.recyclerFarmacia.visibility = View.GONE
+
         val colecciones = mapOf(
             "farmacia" to "negociofarmacia",
             "abarrotes" to "negocioabarrotes",
@@ -72,8 +72,7 @@ class NeFarmacia : AppCompatActivity() {
             "tamales" to "negociotamales"
         )
 
-        // Obtener la colección correspondiente a la categoría
-        val coleccion = colecciones[negocio] ?: "negociotamales" // colección por defecto
+        val coleccion = colecciones[negocio] ?: "negociotamales"
 
         FirebaseFirestore.getInstance().collection(coleccion)
             .whereEqualTo("idDistrito", distrito)
@@ -81,9 +80,13 @@ class NeFarmacia : AppCompatActivity() {
             .addOnSuccessListener { documents ->
                 val userList = documents.toObjects(UserGastrono::class.java)
                 binding.recyclerFarmacia.adapter = negociosadapter(this, userList)
+                progressBar.visibility = View.GONE // Ocultar ProgressBar
+                binding.recyclerFarmacia.visibility = View.VISIBLE // Mostrar RecyclerView
             }
             .addOnFailureListener {
-                // Manejo de errores aquí (por ejemplo, mostrar un mensaje al usuario)
+                // Manejo de errores
+                progressBar.visibility = View.GONE // Ocultar ProgressBar
+                // Aquí podrías mostrar un mensaje de error si es necesario
             }
     }
 }

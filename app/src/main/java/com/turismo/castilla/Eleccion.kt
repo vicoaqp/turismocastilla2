@@ -19,9 +19,6 @@ class Eleccion : MenuTodos() {
         val codigoDist = intent.extras?.getString("codigo")
         val codigoChoco = intent.extras?.getString("codigos")
 
-        // Mostrar el nombre del distrito
-        Toast.makeText(this, nombreDistrito, Toast.LENGTH_LONG).show()
-
         // Inicializar botones
         val btnHistoria = findViewById<Button>(R.id.button_historia)
         val btnQueHacer = findViewById<Button>(R.id.button_quehacer)
