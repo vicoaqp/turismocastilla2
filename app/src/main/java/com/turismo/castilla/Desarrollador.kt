@@ -16,7 +16,7 @@ class Desarrollador : AppCompatActivity() {
 
 
         botonface.setOnClickListener{
-            val face= Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/municipiocastilla"))
+            val face= Intent(Intent.ACTION_VIEW, Uri.parse("https://web.facebook.com/vicoaqp/"))
             startActivity(face)
         }
 

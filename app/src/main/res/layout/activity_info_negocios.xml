@@ -10,17 +10,23 @@
     tools:context=".InfoNegocios">
 
 
-    <ImageView
-        android:id="@+id/imageViewcabecera"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imagecard"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        tools:srcCompat="@tools:sample/avatars"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewcabecera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.cardview.widget.CardView>
 
 
     <ScrollView
@@ -28,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginVertical="8dp"
-        app:layout_constraintTop_toBottomOf="@id/imageViewcabecera"
+        app:layout_constraintTop_toBottomOf="@id/imagecard"
         app:layout_constraintBottom_toTopOf="@id/horizontalScrollView2">
 
         <LinearLayout
@@ -40,50 +46,55 @@
 
             <TextView
                 android:id="@+id/textnedescripcion"
-                style="@style/LabelTitle"
-                android:text="@string/txtdezcripcion"/>
+                style="@style/labeltitulo"
+                android:text="@string/txtdezcripcion"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
             <TextView
                 android:id="@+id/textnedes"
-                style="@style/LabelDescription"
+                style="@style/labeldezcripcion"
                 android:ellipsize="end"
                 android:justificationMode="inter_word"/>
 
             <TextView
                 android:id="@+id/textnedireccion"
-                style="@style/LabelTitle"
-                android:text="@string/txtdireccion"/>
+                style="@style/labeltitulo"
+                android:text="@string/txtdireccion"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
             <TextView
                 android:id="@+id/textnedir"
-                style="@style/LabelDescription"/>
+                style="@style/labeldezcripcion"/>
 
             <TextView
                 android:id="@+id/textnehorarios"
-                style="@style/LabelTitle"
-                android:text="@string/txthorarios"/>
+                style="@style/labeltitulo"
+                android:text="@string/txthorarios"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <TextView
                 android:id="@+id/textnehor"
-                style="@style/LabelDescription"/>
+                style="@style/labeldezcripcion" />
 
             <TextView
                 android:id="@+id/textnediasatencion"
-                style="@style/LabelTitle"
-                android:text="@string/txtdiasatencion"/>
+                style="@style/labeltitulo"
+                android:text="@string/txtdiasatencion"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <TextView
                 android:id="@+id/textneate"
-                style="@style/LabelDescription"/>
+                style="@style/labeldezcripcion"/>
 
             <TextView
                 android:id="@+id/textnecelulares"
-                style="@style/LabelTitle"
-                android:text="@string/txtcelulares"/>
+                style="@style/labeltitulo"
+                android:text="@string/txtcelulares"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
             <TextView
                 android:id="@+id/textnecel"
-                style="@style/LabelDescription"/>
+                style="@style/labeldezcripcion"/>
         </LinearLayout>
     </ScrollView>
 
