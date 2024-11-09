@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.api.Context
@@ -41,6 +42,7 @@ class DatosAdapter(
     override fun onBindViewHolder(holder: GenericViewHolder, position: Int) {
         val item = dataList[position]
 
+
         when (tipo) {
             TURISMO -> {
                 val turismo = item as Usersturismos
@@ -48,6 +50,7 @@ class DatosAdapter(
                     .load(turismo.imgturismo)  // Verifica que imgturismo sea la propiedad correcta
                     .into(holder.imageView)
                 holder.bindTurismo(turismo)
+                holder.NombreLugar.text = item.nameturismo
             }
             GASTRONOMIA -> {
                 val gastronomy = item as UserGastrono
@@ -55,6 +58,7 @@ class DatosAdapter(
                     .load(gastronomy.imgRestaurante)
                     .into(holder.imageView)
                 holder.bindGastronomy(gastronomy)
+                holder.NombreLugar.text = item.namerest
             }
             HOTELES -> {
                 val hotel = item as UsersHoteles
@@ -62,6 +66,7 @@ class DatosAdapter(
                     .load(hotel.imghoteles)
                     .into(holder.imageView)
                 holder.bindHotel(hotel)
+                holder.NombreLugar.text = item.namehotel
             }
             VINEDOS -> {
                 val vineyard = item as UsersVinedos
@@ -69,6 +74,8 @@ class DatosAdapter(
                     .load(vineyard.imgVinedos)
                     .into(holder.imageView)
                 holder.bindVineyard(vineyard)
+                holder.NombreLugar.text = item.namevinedos
+
             }
         }
     }
@@ -81,6 +88,7 @@ class DatosAdapter(
     inner class GenericViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Cambiar a "imgturismos" para que coincida con el ID en turismot_aplao.xml
         val imageView: ImageView = itemView.findViewById(R.id.imgturismos)
+        val NombreLugar: TextView = itemView.findViewById(R.id.textfirebase)
 
         fun bindTurismo(turismo: Usersturismos) {
             itemView.setOnClickListener {

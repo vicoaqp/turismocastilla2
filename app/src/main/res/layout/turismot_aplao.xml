@@ -5,38 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imgturismos"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <!-- CardView que contiene un FrameLayout para superponer elementos -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/fotoweb"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/textfirebase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Texto desde Firebase"
-        android:background="@drawable/textview_backgroundimage"
-        android:elevation="4dp"
-        android:gravity="center"
-        android:padding="10dp"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/imgturismos"
-        app:layout_constraintEnd_toEndOf="@id/imgturismos"
-        tools:text="Texto desde Firebase" />
+        <!-- FrameLayout para superponer la imagen y el texto -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- ImageView con la imagen de fondo -->
+            <ImageView
+                android:id="@+id/imgturismos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <!-- TextView que se muestra encima de la imagen -->
+            <TextView
+                android:id="@+id/textfirebase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Texto desde Firebase"
+                android:background="@drawable/textview_backgroundimage"
+                android:elevation="8dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="10dp"
+                tools:text="Texto desde Firebase" />
+
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,8 @@
 package com.turismo.castilla
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -30,8 +32,6 @@ class InfoNegocios : AppCompatActivity() {
         var infoimg1=intent.getStringExtra("img1")
 
 
-        //Log.i("imagenesdos",img1.toString())
-
         val textodes = findViewById<TextView>(R.id.textnedes)
         val textodir = findViewById<TextView>(R.id.textnedir)
         val textocel = findViewById<TextView>(R.id.textnecel)
@@ -51,9 +51,25 @@ class InfoNegocios : AppCompatActivity() {
         textodias.text=infodias.toString()
         textohora.text=infohorario.toString()
 
+        btnmapa.setOnClickListener{
+            val lanzar3= Intent(this,Pruebas::class.java)
+            lanzar3.putExtra("mapa",infomapa.toString())
+            lanzar3.putExtra("mapa2",infomapas2.toString())
+            lanzar3.putExtra("namehotel",infonamenego.toString())
+            lanzar3.putExtra("imagen1",infoimg1.toString())
+            startActivity(lanzar3)
+        }
 
-
-
+        btnface.setOnClickListener{
+            val face= Intent(Intent.ACTION_VIEW, Uri.parse(""+infofacebook.toString()))
+            startActivity(face)
+        }
+        btnllamada.setOnClickListener{
+            val myUri= Uri.parse("tel:"+infocelular.toString()).let { numeroTelefonoUri ->
+                Intent(Intent.ACTION_DIAL,numeroTelefonoUri)
+            }
+            startActivity(myUri)
+        }
     }
 
 }
