@@ -47,7 +47,7 @@ class NeFarmacia : AppCompatActivity() {
 
         binding.recyclerFarmacia.layoutManager = LinearLayoutManager(this)
 
-        neDistrito?.let { elegirNegocio(it, negocate ?: "") }
+        neDistrito?.let { elegirNegocio(neDistrito, negocate ?: "") }
 
         binding.btnSubeTuNegocio.setOnClickListener {
             val formularioUrl = "https://forms.gle/uqorWBXpBNPX4Vox8"
@@ -78,7 +78,7 @@ class NeFarmacia : AppCompatActivity() {
             .whereEqualTo("idDistrito", distrito)
             .get()
             .addOnSuccessListener { documents ->
-                val userList = documents.toObjects(UserGastrono::class.java)
+                val userList = documents.toObjects(UserNegociosd::class.java)
                 binding.recyclerFarmacia.adapter = negociosadapter(this, userList)
                 progressBar.visibility = View.GONE // Ocultar ProgressBar
                 binding.recyclerFarmacia.visibility = View.VISIBLE // Mostrar RecyclerView

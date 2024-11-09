@@ -17,20 +17,18 @@ class InfoNegocios : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info_negocios)
 
-        var vidHotel=intent.getStringExtra("idDistrito")
-        var vcelular=intent.getStringExtra("celular")
-        var vdescripcion=intent.getStringExtra("descripcion")
-        var vdias=intent.getStringExtra("dias")
-        var vdireccion=intent.getStringExtra("direccion")
-        var vhorario=intent.getStringExtra("horario")
-        var vnamehotel=intent.getStringExtra("namerest")
-        var vfacebook=intent.getStringExtra("facebook")
-        var vmapa=intent.getStringExtra("mapa")
-        var mapas2=intent.getStringExtra("mapa2")
-        var img1=intent.getStringExtra("img1")
-        var img2=intent.getStringExtra("img2")
-        var img3=intent.getStringExtra("img3")
-        var img4=intent.getStringExtra("img4")
+        var infonego=intent.getStringExtra("idDistrito")
+        var infocelular=intent.getStringExtra("celular")
+        var infodescripcion=intent.getStringExtra("descripcion")
+        var infodias=intent.getStringExtra("dias")
+        var infodireccion=intent.getStringExtra("direccion")
+        var infohorario=intent.getStringExtra("horario")
+        var infonamenego=intent.getStringExtra("namenegocio")
+        var infofacebook=intent.getStringExtra("facebook")
+        var infomapa=intent.getStringExtra("mapa")
+        var infomapas2=intent.getStringExtra("mapa2")
+        var infoimg1=intent.getStringExtra("img1")
+
 
         //Log.i("imagenesdos",img1.toString())
 
@@ -45,13 +43,13 @@ class InfoNegocios : AppCompatActivity() {
         val btnllamada = findViewById<Button>(R.id.btnllamadane)
 
         val imagencabecera = findViewById<ImageView>(R.id.imageViewcabecera)
-        Glide.with(this).load(img1).into(imagencabecera)
+        Glide.with(this).load(infoimg1).into(imagencabecera)
 
-        textodes.text=vdescripcion.toString()
-        textodir.text=vdireccion.toString()
-        textocel.text=vcelular.toString()
-        textodias.text=vdias.toString()
-        textohora.text=vhorario.toString()
+        textodes.text=infodescripcion.toString()
+        textodir.text=infodireccion.toString()
+        textocel.text=infocelular.toString()
+        textodias.text=infodias.toString()
+        textohora.text=infohorario.toString()
 
 
 

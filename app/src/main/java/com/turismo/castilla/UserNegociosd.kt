@@ -11,9 +11,13 @@ class UserNegociosd (
     val horario: String,
     val idDistrito: String,
     val nombre: String,
+    val mapa: String,
+    val mapa2: String,
     val img1: String
 ){
     constructor():this(
+        "",
+        "",
         "",
         "",
         "",
