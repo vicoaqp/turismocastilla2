@@ -47,7 +47,7 @@ class DatosAdapter(
             TURISMO -> {
                 val turismo = item as Usersturismos
                 Glide.with(holder.itemView.context)
-                    .load(turismo.imgturismo)  // Verifica que imgturismo sea la propiedad correcta
+                    .load(turismo.img1)  // Verifica que imgturismo sea la propiedad correcta
                     .into(holder.imageView)
                 holder.bindTurismo(turismo)
                 holder.NombreLugar.text = item.nameturismo
@@ -55,7 +55,7 @@ class DatosAdapter(
             GASTRONOMIA -> {
                 val gastronomy = item as UserGastrono
                 Glide.with(holder.itemView.context)
-                    .load(gastronomy.imgRestaurante)
+                    .load(gastronomy.img1)
                     .into(holder.imageView)
                 holder.bindGastronomy(gastronomy)
                 holder.NombreLugar.text = item.namerest
@@ -63,7 +63,7 @@ class DatosAdapter(
             HOTELES -> {
                 val hotel = item as UsersHoteles
                 Glide.with(holder.itemView.context)
-                    .load(hotel.imghoteles)
+                    .load(hotel.img1)
                     .into(holder.imageView)
                 holder.bindHotel(hotel)
                 holder.NombreLugar.text = item.namehotel
@@ -71,7 +71,7 @@ class DatosAdapter(
             VINEDOS -> {
                 val vineyard = item as UsersVinedos
                 Glide.with(holder.itemView.context)
-                    .load(vineyard.imgVinedos)
+                    .load(vineyard.img1)
                     .into(holder.imageView)
                 holder.bindVineyard(vineyard)
                 holder.NombreLugar.text = item.namevinedos

@@ -60,6 +60,8 @@
                 android:layout_height="120dp"
                 android:layout_marginEnd="16dp"
                 android:scaleType="centerCrop"
+                android:background="@drawable/rounded_backgroundlayout"
+                android:clipToOutline="true"
                 tools:srcCompat="@tools:sample/avatars" />
 
         </LinearLayout>
