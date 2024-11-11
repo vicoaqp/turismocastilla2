@@ -180,6 +180,12 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             app:srcCompat="@drawable/iconocontacto" />
+                        <ImageView
+                            android:id="@+id/imageViewseguridad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/icoseguridad" />
                     </LinearLayout>
 
                 </LinearLayout>

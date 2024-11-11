@@ -105,6 +105,7 @@ class Portada : AppCompatActivity() {
         setButtonListener(R.id.imageViewdescarga, documentos::class.java, "codigodoc", "docu")
         setButtonListener(R.id.imageViewradioonline, RadioCastilla::class.java)
         setButtonListener(R.id.imageViewnegocios, Distritos::class.java, "NEGOCIOS", "vnegocio")
+        setButtonListener(R.id.imageViewseguridad, mapasereno::class.java)
     }
 
     // Método para asignar listeners a los botones
