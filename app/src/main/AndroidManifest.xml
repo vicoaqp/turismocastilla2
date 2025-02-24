@@ -14,6 +14,18 @@
         android:theme="@style/Theme.Castilla"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MapaDeRuta"
+            android:exported="false" />
+        <activity
+            android:name=".RutaCombiCastilla"
+            android:exported="false" />
+        <activity
+            android:name=".det_transporte"
+            android:exported="false" />
+        <activity
+            android:name=".transportes"
+            android:exported="false" />
+        <activity
             android:name=".mapasereno"
             android:exported="false" />
         <activity

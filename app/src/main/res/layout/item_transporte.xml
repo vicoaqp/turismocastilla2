@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageViewFoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="Foto del conductor"/>
+
+        <TextView
+            android:id="@+id/textViewNombres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:text="Nombres" />
+
+        <TextView
+            android:id="@+id/textViewApellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="Apellidos" />
+
+        <TextView
+            android:id="@+id/textViewPlaca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="Placa" />
+
+        <TextView
+            android:id="@+id/textViewEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="Empresa" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/buttonLlamar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Llamar"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/buttonWhatsapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WhatsApp"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

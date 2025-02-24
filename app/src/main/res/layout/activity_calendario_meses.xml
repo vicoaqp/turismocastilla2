@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".CalendarioMeses">
 
     <ScrollView
@@ -17,270 +18,207 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp"> <!-- Espacio alrededor del contenido -->
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <TextView
+                android:id="@+id/cabecera"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="CALENDARIO DE LA PROVINCIA DE CASTILLA"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/cabecera"
+            <TextView
+                android:id="@+id/cuerpo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/calendariodes"
+                android:textColor="@color/text_secondary"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                />
+
+            <TextView
+                android:id="@+id/eleccionapp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Elige un mes para ver eventos"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold" />
+
+            <!-- Grid de Imágenes de Meses -->
+            <GridLayout
+                android:id="@+id/contenedor_meses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:columnCount="2"
+                android:rowCount="6"
+                android:background="@drawable/rounded_background"
+                android:padding="8dp"
+                >
+
+                <!-- Meses -->
+                <ImageView
+                    android:id="@+id/imageVieweneroc"
                     android:layout_width="0dp"
-                    android:layout_height="26dp"
-                    android:layout_marginTop="20dp"
-                    android:gravity="center"
-                    android:text="CALENDARIO DE LA PROVINCIA DE CASTILLA"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/cuerpo"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp"
-                    android:gravity="center"
-                    android:text="@string/calendariodes"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cabecera" />
-
-                <TextView
-                    android:id="@+id/eleccionapp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="Eliga un mes para ver que eventos existen"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cuerpo" />
-
-                <LinearLayout
-                    android:id="@+id/contenidovirtual"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="#DDDDDD"
-                    android:orientation="vertical"
-                    app:layout_constraintTop_toBottomOf="@id/eleccionapp">
-
-                    <LinearLayout
-                        android:id="@+id/linearLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="15dp"
-                        android:background="#DDDDDD"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/imageVieweneroc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/eneroc" />
-
-                        <ImageView
-                            android:id="@+id/imageViewfebreroc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/febreroc" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="15dp"
-                        android:background="#DDDDDD"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/imageViewmarzoc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/marzoc" />
-
-                        <ImageView
-                            android:id="@+id/imageViewabrilc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/abrilc" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="15dp"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/imageViewmayoc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/mayoc" />
-
-                        <ImageView
-                            android:id="@+id/imageViewjunioc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/junioc" />
-
-                    </LinearLayout>
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="15dp"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/imageViewjulioc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/julioc" />
-                        <ImageView
-                            android:id="@+id/imageViewagostoc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/agostoc" />
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:layout_marginTop="15dp"
-                        android:orientation="horizontal">
-
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="15dp"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/imageViewsetiembrec"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/setiembrec" />
-                        <ImageView
-                            android:id="@+id/imageViewoctubrec"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/octubrec" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="15dp"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/imageViewnoviembrec"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/noviembrec" />
-                        <ImageView
-                            android:id="@+id/imageViewdiciembrec"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/diciembrec" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:layout_marginTop="15dp"
-                        android:orientation="horizontal">
-
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/saludocastilla"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="Castilla te espera"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/contenidovirtual" />
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/eneroc" />
 
                 <ImageView
-                    android:id="@+id/imageandagua"
+                    android:id="@+id/imageViewfebreroc"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitStart"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/saludocastilla"
-                    app:srcCompat="@drawable/volcan2" />
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/febreroc" />
 
-                <TextView
-                    android:id="@+id/cuerpoandagua"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="5dp"
-                    android:gravity="center"
-                    android:text="La provincia de Castilla cuenta con 14 Distritos en los cuales encontraras mucha diversidad de Gastronimia entre otros."
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/imageandagua" />
 
                 <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="10dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitStart"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cuerpoandagua"
-                    app:srcCompat="@drawable/volcan1" />
+                    android:id="@+id/imageViewmarzoc"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/marzoc" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/imageViewabrilc"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/abrilc" />
+
+
+                <ImageView
+                    android:id="@+id/imageViewmayoc"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mayoc" />
+
+                <ImageView
+                    android:id="@+id/imageViewjunioc"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/junioc" />
+
+
+                <ImageView
+                    android:id="@+id/imageViewjulioc"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/julioc" />
+
+                <ImageView
+                    android:id="@+id/imageViewagostoc"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/agostoc" />
+
+
+                <ImageView
+                    android:id="@+id/imageViewsetiembrec"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/setiembrec" />
+                <ImageView
+                    android:id="@+id/imageViewoctubrec"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/octubrec" />
+
+                <ImageView
+                    android:id="@+id/imageViewnoviembrec"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/noviembrec" />
+
+                <ImageView
+                    android:id="@+id/imageViewdiciembrec"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/diciembrec" />
+
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/saludocastilla"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="Castilla te espera"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageandagua"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/volcan2" />
+
+
+            <TextView
+                android:id="@+id/cuerpoandagua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="La provincia de Castilla cuenta con 14 Distritos en los cuales encontraras mucha diversidad de Gastronomía entre otros."
+                android:textColor="@color/text_secondary"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/volcan1" />
+
         </LinearLayout>
     </ScrollView>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,93 +4,184 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondobanner"
     tools:context=".Distritos">
+
+    <!-- Título Mejorado -->
+    <TextView
+        android:id="@+id/textView_titulo"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:text="Elige un Distrito de la Provincia de Castilla"
+        android:textSize="28sp"
+        android:textColor="#1D0101"
+        android:gravity="center"
+        android:padding="24dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_titulo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <LinearLayout
+        <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:rowCount="6">
 
+            <!-- Definir cada botón como un ítem dentro del GridLayout -->
             <Button
                 android:id="@+id/button_dAplao"
                 style="@style/botonesdise"
-                android:background="@drawable/aplaopripng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/icaplao"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dHuancarqui"
                 style="@style/botonesdise"
-                android:background="@drawable/huancarquipng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/ichuancarqui"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dUraca"
                 style="@style/botonesdise"
-                android:background="@drawable/uracapng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/icuraca"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dViraco"
                 style="@style/botonesdise"
-                android:background="@drawable/viracopng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/icviraco"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dPampacolca"
                 style="@style/botonesdise"
-                android:background="@drawable/pampacolcapripng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/icpampacolca"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dMachahuay"
                 style="@style/botonesdise"
-                android:background="@drawable/machahuaypng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/icmachahuay"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dAndagua"
                 style="@style/botonesdise"
-                android:background="@drawable/andaguapng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/icandagua"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dChilcaymarca"
                 style="@style/botonesdise"
-                android:background="@drawable/chilcaymarcapng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/icchilcaymarca"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dUnon"
                 style="@style/botonesdise"
-                android:background="@drawable/unonpng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/icunon"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dChoco"
                 style="@style/botonesdise"
-                android:background="@drawable/chocopng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/icchoco"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dChachas"
                 style="@style/botonesdise"
-                android:background="@drawable/chachaspng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/icchachas"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dTipan"
                 style="@style/botonesdise"
-                android:background="@drawable/tipanpripng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/ictipan"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dAyo"
                 style="@style/botonesdise"
-                android:background="@drawable/ayopripng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/icayo"
+                android:stateListAnimator="@null"/>
 
             <Button
                 android:id="@+id/button_dOrcopampa"
                 style="@style/botonesdise"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/orcopampapng" />
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/icorcopampa"
+                android:stateListAnimator="@null"/>
 
-        </LinearLayout>
+        </GridLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
