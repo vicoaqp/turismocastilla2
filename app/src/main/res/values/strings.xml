@@ -52,4 +52,7 @@
     <string name="title_activity_detalle_noticias">detalle_noticias</string>
     <string name="calendariodes">Bienvenidos al Calendario Turistico de Castilla, en el cual podras encontrar todos los eventos de nuestra provincia:</string>
 
+
+    <string name="fullscreen_image">Imagen a pantalla completa</string>
+
 </resources>

@@ -19,6 +19,18 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
+            <TextView
+                android:id="@+id/text_nombre_distrito"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Explora: Aplao"
+                android:textSize="30sp"
+                android:textColor="#004D40"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+
             <Button
                 android:id="@+id/button_historia"
                 style="@style/botonesdise"

@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Castilla"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".FullScreenImage"
+            android:exported="false" />
+        <activity
             android:name=".MapaDeRuta"
             android:exported="false" />
         <activity

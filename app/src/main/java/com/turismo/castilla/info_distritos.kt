@@ -9,9 +9,12 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
+import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+import me.relex.circleindicator.CircleIndicator3
 
 
 class info_distritos : AppCompatActivity() {
@@ -44,10 +47,13 @@ class info_distritos : AppCompatActivity() {
         val btnllamada = findViewById<Button>(R.id.buttonllamadadist)
 
         val imagencabecera = findViewById<ImageView>(R.id.imageViewcabecera)
-
+        val viewPager = findViewById<ViewPager2>(R.id.viewPagerImagenes)
+        val indicator = findViewById<CircleIndicator3>(R.id.indicator)
 
 
         var vanamedistrito = intent.extras?.getString("dist")
+
+
 
         FirebaseFirestore.getInstance().collection("distritos")
             .whereEqualTo("idDistrito",vanamedistrito)
@@ -69,14 +75,26 @@ class info_distritos : AppCompatActivity() {
                     dvcelular = document.data.get("celular").toString()
                     dvfacebook = document.data.get("facebook").toString()
 
-                    Glide.with(this).load(dimg1).into(imagencabecera)
+                    //Glide.with(this).load(dimg1).into(imagencabecera)
 
+                    supportActionBar?.title = "Distrito de $dnamedist"
 
+                    val listaImagenes = mutableListOf<String>()
+                    dimg1?.let { if (it.isNotEmpty()) listaImagenes.add(it) }
+                    dimg2?.let { if (it.isNotEmpty()) listaImagenes.add(it) }
+                    dimg3?.let { if (it.isNotEmpty()) listaImagenes.add(it) }
+                    dimg4?.let { if (it.isNotEmpty()) listaImagenes.add(it) }
+
+                    val adapter = ImageSliderAdapter(listaImagenes, this)
+                    viewPager.adapter = adapter
+
+                    indicator.setViewPager(viewPager)
 
                 }
             }
             .addOnFailureListener{
             }
+
 
 
 
@@ -89,9 +107,15 @@ class info_distritos : AppCompatActivity() {
             startActivity(lanzar3)
         }
         Toast.makeText(this, dvfacebook.toString(), Toast.LENGTH_LONG).show()
-        btnface.setOnClickListener{
-            val face= Intent(Intent.ACTION_VIEW, Uri.parse(""+dvfacebook.toString()))
-            startActivity(face)
+
+
+        btnface.setOnClickListener {
+            if (!dvfacebook.isNullOrEmpty()) {
+                val face = Intent(Intent.ACTION_VIEW, Uri.parse(dvfacebook))
+                startActivity(face)
+            } else {
+                Toast.makeText(this, "Este distrito no tiene página de Facebook.", Toast.LENGTH_SHORT).show()
+            }
         }
         btnllamada.setOnClickListener{
             val myUri= Uri.parse("tel:"+dvcelular.toString()).let { numeroTelefonoUri ->

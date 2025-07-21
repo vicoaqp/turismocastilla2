@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isGone
 import androidx.core.view.isInvisible
@@ -25,6 +26,12 @@ class Eleccion : MenuTodos() {
         val btnHospedaje = findViewById<Button>(R.id.button_hospedaje)
         val btnGastronomia = findViewById<Button>(R.id.button_gastronomia)
         val btnVinedos = findViewById<Button>(R.id.button_vinedos)
+
+        val textDistrito = findViewById<TextView>(R.id.text_nombre_distrito)
+
+
+        textDistrito.text = "Explora: $nombreDistrito"
+
 
         // Configurar visibilidad de botones
         configurarVisibilidadBotones(codigoDist, codigoChoco, btnVinedos, btnHospedaje, btnGastronomia)
