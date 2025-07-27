@@ -8,8 +8,10 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.Toast
 import android.widget.VideoView
 import com.google.firebase.firestore.FirebaseFirestore
@@ -21,6 +23,8 @@ class Portada : AppCompatActivity() {
     private lateinit var vvfondo: VideoView
     private var videoapps: String? = null
     private val channelId = "mi_canal_id"
+    private lateinit var progressBar: ProgressBar
+
 
     private lateinit var btnPause: Button // Agregar referencia al botón de pausa
     private var isVideoPaused = false // Variable para rastrear el estado del video
@@ -31,10 +35,28 @@ class Portada : AppCompatActivity() {
 
         vvfondo = findViewById(R.id.videoview)
         btnPause = findViewById(R.id.btnPause) // Inicializar el botón de pausa
+        progressBar = findViewById(R.id.progressBar)
+        val btnpdf= findViewById<Button>(R.id.btnVerMapaAmpliado)
+        val btnpdf2= findViewById<Button>(R.id.btnVerMapaValle)
 
         setupNotificationChannel()
         loadVideoFromFirebase()
         setupButtonListeners()
+
+        btnpdf.setOnClickListener {
+            val url = "https://drive.google.com/file/d/168i5GbXeqH0fOklP3rxCwLMJQYeP2w39/view?usp=sharing"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
+        btnpdf2.setOnClickListener {
+            val url = "https://drive.google.com/file/d/1W4Q8Ax7sSHnEF1Gsk0oM7Ap0L5JPWpx_/view?usp=sharing"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
     }
 
     // Configuración del canal de notificaciones
@@ -71,12 +93,16 @@ class Portada : AppCompatActivity() {
     private fun playVideo(videoUrl: String?) {
         videoUrl?.let {
             val uri = Uri.parse(it)
+            progressBar.visibility = View.VISIBLE // Muestra el loading
             vvfondo.setVideoURI(uri)
-            vvfondo.setOnPreparedListener { vvfondo.start() }
+            vvfondo.setOnPreparedListener {
+                progressBar.visibility = View.GONE // Oculta cuando cargue
+                vvfondo.start()
+            }
             vvfondo.setOnCompletionListener {
                 Toast.makeText(this, "Gracias por ver el video", Toast.LENGTH_SHORT).show()
             }
-            setupPauseButton() // Configura el botón de pausa
+            setupPauseButton()
         } ?: run {
             Toast.makeText(this, "No se pudo cargar el video", Toast.LENGTH_SHORT).show()
         }
@@ -104,8 +130,8 @@ class Portada : AppCompatActivity() {
         setButtonListener(R.id.imageViewCalenda, CalendarioMeses::class.java)
         setButtonListener(R.id.imageViewdescarga, documentos::class.java, "codigodoc", "docu")
         setButtonListener(R.id.imageViewradioonline, RadioCastilla::class.java)
-        setButtonListener(R.id.imageViewnegocios, Distritos::class.java, "NEGOCIOS", "vnegocio")
-        setButtonListener(R.id.imageViewseguridad, transportes::class.java)
+        //setButtonListener(R.id.imageViewnegocios, Distritos::class.java, "NEGOCIOS", "vnegocio")
+        //setButtonListener(R.id.imageViewseguridad, transportes::class.java)
     }
 
     // Método para asignar listeners a los botones

@@ -16,6 +16,8 @@ class CalendarioAdapter(private var context: eleccionmes, private val userscalen
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder12 {
         mContext = parent.context as eleccionmes
+
+
         return UserViewHolder12(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.turismot_aplao,parent,false)
@@ -27,6 +29,8 @@ class CalendarioAdapter(private var context: eleccionmes, private val userscalen
         Glide.with(context)
             .load(user.imgcalendario)
             .into(holder.FotoEleccionmes)
+
+        holder.NombreEvento.text = user.nombreevento
 
         holder.FotoEleccionmes.setOnClickListener{
             //Log.e("distritova",user.idDistrito)
@@ -42,6 +46,7 @@ class CalendarioAdapter(private var context: eleccionmes, private val userscalen
             lanzar2.putExtra("nombreevento",user.nombreevento)
             //lanzar2.putExtra("facebook",user.facebook)
             //lanzar2.putExtra("mapa",user.mapa)
+            lanzar2.putExtra("imgcalendario",user.imgcalendario)
             lanzar2.putExtra("img1",user.img1)
             lanzar2.putExtra("img2",user.img2)
             lanzar2.putExtra("img3",user.img3)
@@ -58,8 +63,6 @@ class CalendarioAdapter(private var context: eleccionmes, private val userscalen
 
 class UserViewHolder12(itemView: View) :RecyclerView.ViewHolder(itemView){
     val FotoEleccionmes: ImageView =itemView.findViewById(R.id.imgturismos)
-
-
-
+    val NombreEvento: TextView = itemView.findViewById(R.id.textfirebase)
 
 }

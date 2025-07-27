@@ -19,6 +19,8 @@ class eleccionmes : AppCompatActivity() {
 
         var nameMes = intent.extras?.getString("Mes")
 
+        binding.textoMesSeleccionado.text = nameMes ?: "Mes no identificado"
+
         binding.recyclerMes.apply {
             layoutManager = LinearLayoutManager(this@eleccionmes)
         }

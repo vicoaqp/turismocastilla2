@@ -34,6 +34,7 @@ class InfoCalendario : AppCompatActivity() {
         var vfacebook=intent.getStringExtra("facebook")
         var vmapa=intent.getStringExtra("mapa")
         var mapas2=intent.getStringExtra("mapa2")
+        var imgcalendario=intent.getStringExtra("imgcalendario")
 
         var img1=intent.getStringExtra("img1")
         var img2=intent.getStringExtra("img2")
@@ -51,7 +52,7 @@ class InfoCalendario : AppCompatActivity() {
 
 
         val imagencabecera = findViewById<ImageView>(R.id.imageViewcabecera)
-        Glide.with(this).load(img1).into(imagencabecera)
+        Glide.with(this).load(imgcalendario).into(imagencabecera)
 
         textodes.text=vdescripcion.toString()
         textodir.text=vdireccion.toString()

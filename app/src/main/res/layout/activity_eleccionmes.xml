@@ -18,27 +18,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"
-        android:layout_gravity="center"
         android:clipToOutline="true"
         android:outlineProvider="background"
-        android:background="@drawable/rounded_backgroundlayout"/>
+        android:background="@drawable/rounded_backgroundlayout" />
 
+    <!-- TEXTO DEL MES SELECCIONADO -->
+    <TextView
+        android:id="@+id/textoMesSeleccionado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Mes Seleccionado"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/imageView5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerMes"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_gravity="center"
         android:layout_margin="16dp"
         android:background="?android:attr/windowBackground"
         android:clipToOutline="true"
         android:elevation="4dp"
         android:nestedScrollingEnabled="false"
         android:outlineProvider="background"
+        app:layout_constraintTop_toBottomOf="@id/textoMesSeleccionado"
         app:layout_constraintBottom_toTopOf="@+id/buttonIngresar"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView5" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/buttonIngresar"
@@ -54,6 +66,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

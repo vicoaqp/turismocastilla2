@@ -9,16 +9,18 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isGone
 import androidx.core.view.isInvisible
+import com.google.firebase.firestore.FirebaseFirestore
 
 class Eleccion : MenuTodos() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_eleccion)
 
         // Obtener datos del Intent
-        val nombreDistrito = intent.extras?.getString("Distrito") ?: "Distrito Desconocido"
-        val codigoDist = intent.extras?.getString("codigo")
-        val codigoChoco = intent.extras?.getString("codigos")
+        val codigoDistrito = intent.extras?.getString("Distrito") ?: "desconocido"
+        val codigoVinedos = intent.extras?.getString("codigo")
+        val codigoTurismo = intent.extras?.getString("codigos")
 
         // Inicializar botones
         val btnHistoria = findViewById<Button>(R.id.button_historia)
@@ -29,46 +31,70 @@ class Eleccion : MenuTodos() {
 
         val textDistrito = findViewById<TextView>(R.id.text_nombre_distrito)
 
-
-        textDistrito.text = "Explora: $nombreDistrito"
-
+        // Obtener nombre real del distrito desde Firestore
+        val db = FirebaseFirestore.getInstance()
+        db.collection("distritos")
+            .whereEqualTo("idDistrito", codigoDistrito)
+            .get()
+            .addOnSuccessListener { documentos ->
+                if (!documentos.isEmpty) {
+                    val nombreReal = documentos.documents[0].getString("namedistrito")
+                    textDistrito.text = "Explora: $nombreReal"
+                } else {
+                    textDistrito.text = "Explora: Distrito desconocido"
+                }
+            }
+            .addOnFailureListener {
+                textDistrito.text = "Error al obtener distrito"
+            }
 
         // Configurar visibilidad de botones
-        configurarVisibilidadBotones(codigoDist, codigoChoco, btnVinedos, btnHospedaje, btnGastronomia)
+        configurarVisibilidadBotones(codigoVinedos, codigoTurismo, btnVinedos, btnHospedaje, btnGastronomia)
 
-
-        btnHistoria.setOnClickListener { iniciarActividad(info_distritos::class.java, nombreDistrito, "historia") }
+        // Configurar acciones de los botones
+        btnHistoria.setOnClickListener {
+            iniciarActividad(info_distritos::class.java, codigoDistrito, "historia")
+        }
 
         btnQueHacer.setOnClickListener {
-            iniciarActividad(DatosTurismo::class.java, nombreDistrito, "turismo")
+            iniciarActividad(DatosTurismo::class.java, codigoDistrito, "turismo")
         }
+
         btnGastronomia.setOnClickListener {
-            iniciarActividad(DatosTurismo::class.java, nombreDistrito, "gastronomia")
+            iniciarActividad(DatosTurismo::class.java, codigoDistrito, "gastronomia")
         }
+
         btnHospedaje.setOnClickListener {
-            iniciarActividad(DatosTurismo::class.java, nombreDistrito, "hoteles")
+            iniciarActividad(DatosTurismo::class.java, codigoDistrito, "hoteles")
         }
+
         btnVinedos.setOnClickListener {
-            iniciarActividad(DatosTurismo::class.java, nombreDistrito, "vinedos")
+            iniciarActividad(DatosTurismo::class.java, codigoDistrito, "vinedos")
         }
     }
 
     // Función para configurar la visibilidad de los botones
-    private fun configurarVisibilidadBotones(codigoDist: String?, codigoChoco: String?, btnVinedos: Button, btnHospedaje: Button, btnGastronomia: Button) {
-        if (codigoDist == "novino") {
+    private fun configurarVisibilidadBotones(
+        codigoVinedos: String?,
+        codigoTurismo: String?,
+        btnVinedos: Button,
+        btnHospedaje: Button,
+        btnGastronomia: Button
+    ) {
+        if (codigoVinedos == "novino") {
             btnVinedos.visibility = View.INVISIBLE
         }
-        if (codigoChoco == "pocainformacion") {
+        if (codigoTurismo == "pocainformacion") {
             btnHospedaje.visibility = View.INVISIBLE
             btnGastronomia.visibility = View.INVISIBLE
         }
     }
 
     // Función para iniciar actividades
-    private fun <T> iniciarActividad(actividad: Class<T>, nombreDistrito: String, eleccion: String) {
+    private fun <T> iniciarActividad(actividad: Class<T>, codigoDistrito: String, eleccion: String) {
         val intent = Intent(this, actividad)
-        intent.putExtra("dist", nombreDistrito)
-        intent.putExtra("eleccion", eleccion) // Pasar el dato "elección"
+        intent.putExtra("dist", codigoDistrito)
+        intent.putExtra("eleccion", eleccion)
         startActivity(intent)
     }
 }
