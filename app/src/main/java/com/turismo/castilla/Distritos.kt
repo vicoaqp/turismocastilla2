@@ -21,6 +21,8 @@ class Distritos : MenuTodos() {
         val lanmesest = intent.extras?.getString("Mes")
 
         // Mapa de botones y distritos
+
+
         val botonesDistritos = mapOf(
             R.id.button_dAplao to "uyC1afkIWd23narJPGMP",
             R.id.button_dHuancarqui to "7BYUbi0kDD8EZGRvV5UF",
@@ -44,6 +46,7 @@ class Distritos : MenuTodos() {
                 handleButtonClick(distritoId, lanegocios, lanmeses, lanmesest)
             }
         }
+
     }
 
     // Función para manejar el clic en cada botón

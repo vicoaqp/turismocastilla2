@@ -5,50 +5,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:elevation="4dp"
-    app:cardCornerRadius="8dp">
+    android:layout_margin="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:background="@android:color/white">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <!-- Imagen principal -->
+        <ImageView
+            android:id="@+id/imageView_user"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:contentDescription="Foto"
+            android:background="@drawable/bg_gradient"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-            <!-- Imagen de usuario -->
-            <ImageView
-                android:id="@+id/imageView_user"
-                android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+        <!-- Contenedor de texto -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
 
-            <!-- Nombre de usuario -->
+            <!-- Nombre / título -->
             <TextView
                 android:id="@+id/TextView_Fotos"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:textColor="#2C2A2A"
-                android:textSize="20sp"
+                android:text="Nombre del lugar"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/imageView_user"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                android:textColor="#212121"
+                android:ellipsize="end"
+                android:maxLines="1" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- Descripción opcional -->
+            <TextView
+                android:id="@+id/TextView_Descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Descripción breve o detalle del lugar turístico."
+                android:textSize="14sp"
+                android:textColor="#616161"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
